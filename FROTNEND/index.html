@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Avsar — Find the scholarship that's already looking for you</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Work+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="pre-login">
+
+<!-- ===== LOGIN SCREEN ===== -->
+<div class="login-screen" id="loginScreen">
+  <div class="login-card">
+    <div class="login-card-head">
+      <span class="login-stamp" aria-hidden="true">
+        <svg viewBox="0 0 120 120" width="60" height="60">
+          <circle cx="60" cy="60" r="54" fill="none" stroke="currentColor" stroke-width="2.5"/>
+          <circle cx="60" cy="60" r="44" fill="none" stroke="currentColor" stroke-width="1"/>
+          <text x="60" y="52" text-anchor="middle" font-family="Fraunces" font-size="14" font-weight="600" fill="currentColor">AVSAR</text>
+          <text x="60" y="70" text-anchor="middle" font-family="IBM Plex Mono" font-size="8" fill="currentColor" letter-spacing="2">VERIFIED</text>
+        </svg>
+      </span>
+      <p class="section-eyebrow">Page 00 — Open your passbook</p>
+      <h1>Log in to see your matches</h1>
+      <p class="login-sub">Your name and email personalise the passbook — nothing here is sent anywhere, it all stays in this browser.</p>
+    </div>
+
+    <form class="login-form" id="loginForm" novalidate>
+      <div class="field">
+        <label for="loginName">Full name</label>
+        <input type="text" id="loginName" placeholder="e.g. Ananya Sharma" autocomplete="name" required>
+      </div>
+      <div class="field">
+        <label for="loginEmail">Email</label>
+        <input type="email" id="loginEmail" placeholder="you@example.com" autocomplete="email" required>
+      </div>
+      <div class="field">
+        <label for="loginPassword">Password</label>
+        <input type="password" id="loginPassword" placeholder="At least 6 characters" autocomplete="current-password" minlength="6" required>
+      </div>
+      <p class="login-error" id="loginError" role="alert" hidden></p>
+      <button type="submit" class="btn btn-primary btn-block">Open my passbook →</button>
+    </form>
+
+    <div class="login-divider"><span>or</span></div>
+    <button type="button" class="btn btn-ghost btn-block" id="guestBtn">Continue as guest</button>
+    <p class="login-note">Prototype login — any name, email, and 6+ character password will work. No account is actually created.</p>
+  </div>
+</div>
+
+<div class="app-shell" id="appShell">
+
+<!-- ===== NAV ===== -->
+<header class="site-nav">
+  <div class="nav-wrap">
+    <a href="#top" class="brand">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 40 40" width="34" height="34">
+          <circle cx="20" cy="20" r="18.5" fill="none" stroke="currentColor" stroke-width="1.4"/>
+          <circle cx="20" cy="20" r="13.5" fill="none" stroke="currentColor" stroke-width="0.8" stroke-dasharray="1.5 3"/>
+          <text x="20" y="24.5" text-anchor="middle" font-family="IBM Plex Mono" font-size="11" fill="currentColor">अ</text>
+        </svg>
+      </span>
+      <span class="brand-word">Avsar<span class="brand-sub">अवसर</span></span>
+    </a>
+    <nav class="nav-links">
+      <a href="#checker">Find scholarships</a>
+      <a href="#how">How it works</a>
+      <a href="#saathi">Ask Saathi</a>
+    </nav>
+    <div class="nav-account">
+      <span class="nav-user" id="navUser"></span>
+      <button class="nav-logout" id="logoutBtn">Log out</button>
+    </div>
+    <button class="nav-cta" data-scroll="checker">Start matching</button>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="hero-wrap">
+      <div class="hero-copy">
+        <p class="eyebrow">एक अवसर, हज़ार संभावनाएं — one opportunity, a thousand possibilities</p>
+        <h1>Somewhere, there's a scholarship built for exactly your marksheet, your category, your income bracket.<br><span class="hero-highlight">You just haven't met it yet.</span></h1>
+        <p class="hero-sub">Every year, thousands of scholarships across India and abroad go unclaimed — not because students aren't eligible, but because they never hear about them. Avsar checks your details against real eligibility criteria and hands you a ready roadmap.</p>
+        <div class="hero-actions">
+          <button class="btn btn-primary" data-scroll="checker">Check what I'm eligible for</button>
+          <button class="btn btn-ghost" data-scroll="saathi">Talk to Saathi instead</button>
+        </div>
+        <div class="hero-stats">
+          <div class="stat"><span class="stat-num" data-count="180">0</span><span class="stat-label">scholarships<br>in this demo index</span></div>
+          <div class="stat"><span class="stat-num" data-count="27">0</span><span class="stat-label">states &amp;<br>UTs covered</span></div>
+          <div class="stat"><span class="stat-num" data-count="6">0</span><span class="stat-label">education<br>stages</span></div>
+        </div>
+      </div>
+
+      <div class="hero-visual" aria-hidden="true">
+        <div class="passbook">
+          <div class="passbook-cover">
+            <span class="passbook-cover-label">STUDENT<br>OPPORTUNITY<br>PASSBOOK</span>
+            <span class="passbook-cover-id">FORM AV-01</span>
+          </div>
+          <div class="passbook-page passbook-page-1">
+            <div class="page-rule-line"></div>
+            <div class="page-rule-line"></div>
+            <div class="page-rule-line short"></div>
+            <div class="page-stamp">
+              <svg viewBox="0 0 120 120" width="92" height="92">
+                <circle cx="60" cy="60" r="54" fill="none" stroke="currentColor" stroke-width="2.5"/>
+                <circle cx="60" cy="60" r="44" fill="none" stroke="currentColor" stroke-width="1"/>
+                <text x="60" y="52" text-anchor="middle" font-family="Fraunces" font-size="14" font-weight="600" fill="currentColor">AVSAR</text>
+                <text x="60" y="70" text-anchor="middle" font-family="IBM Plex Mono" font-size="8" fill="currentColor" letter-spacing="2">VERIFIED</text>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ELIGIBILITY CHECKER ===== -->
+  <section class="checker" id="checker">
+    <div class="section-wrap">
+      <p class="section-eyebrow">Page 01 — Your details</p>
+      <h2 class="section-title">Fill this in like a form counter clerk would want it filled.</h2>
+      <p class="section-sub">Nothing here is stored or sent anywhere — it only runs in your browser to match you against the list below.</p>
+
+      <form class="ledger-form" id="checkerForm">
+        <div class="field">
+          <label for="level">Currently studying in</label>
+          <select id="level" required>
+            <option value="" disabled selected>Select stage</option>
+            <option value="class10">Class 10</option>
+            <option value="class12">Class 12</option>
+            <option value="ug">Undergraduate</option>
+            <option value="pg">Postgraduate</option>
+            <option value="phd">Doctoral / PhD</option>
+            <option value="diploma">Diploma / ITI</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="category">Category</label>
+          <select id="category" required>
+            <option value="" disabled selected>Select category</option>
+            <option value="general">General</option>
+            <option value="obc">OBC</option>
+            <option value="sc">SC</option>
+            <option value="st">ST</option>
+            <option value="ews">EWS</option>
+            <option value="minority">Minority</option>
+          </select>
+        </div>
+
+        <div class="field field-wide">
+          <label>Looking for</label>
+          <div class="radio-row">
+            <label class="radio-pill"><input type="radio" name="type" value="merit" checked><span>Merit-based</span></label>
+            <label class="radio-pill"><input type="radio" name="type" value="need"><span>Need-based</span></label>
+            <label class="radio-pill"><input type="radio" name="type" value="either"><span>Either works</span></label>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="score">Last exam score (%)</label>
+          <input type="number" id="score" min="0" max="100" placeholder="e.g. 82" required>
+        </div>
+
+        <div class="field">
+          <label for="income">Annual family income (₹)</label>
+          <input type="number" id="income" min="0" placeholder="e.g. 250000" required>
+        </div>
+
+        <div class="field">
+          <label for="gender">Gender</label>
+          <select id="gender">
+            <option value="any">Prefer not to filter</option>
+            <option value="girl">Girl student</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="state">State / UT of domicile</label>
+          <select id="state">
+            <option value="all">Any / All-India</option>
+            <option>Andhra Pradesh</option><option>Assam</option><option>Bihar</option>
+            <option>Delhi</option><option>Gujarat</option><option>Karnataka</option>
+            <option>Kerala</option><option>Madhya Pradesh</option><option>Maharashtra</option>
+            <option>Odisha</option><option>Punjab</option><option>Rajasthan</option>
+            <option>Tamil Nadu</option><option>Telangana</option><option>Uttar Pradesh</option>
+            <option>West Bengal</option><option>Other</option>
+          </select>
+        </div>
+
+        <div class="field field-wide field-submit">
+          <button type="submit" class="btn btn-primary btn-block">Show my matches</button>
+          <p class="field-note">This is a demo dataset for illustration — always confirm final eligibility on the scholarship's official page.</p>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- ===== RESULTS ===== -->
+  <section class="results" id="results">
+    <div class="section-wrap">
+      <div class="results-head">
+        <p class="section-eyebrow" id="resultsEyebrow">Page 02 — Your matches</p>
+        <h2 class="section-title" id="resultsTitle">Fill the form above to see what opens up.</h2>
+      </div>
+      <div class="ledger-list" id="ledgerList"></div>
+    </div>
+  </section>
+
+  <!-- ===== HOW IT WORKS ===== -->
+  <section class="how" id="how">
+    <div class="section-wrap">
+      <p class="section-eyebrow">The process</p>
+      <h2 class="section-title">Three steps, in order — because this is the order it actually happens in.</h2>
+      <div class="steps-row">
+        <div class="step-card">
+          <span class="step-num">01</span>
+          <h3>Tell us about yourself</h3>
+          <p>Education stage, category, marks, income, state — the same fields every scholarship form asks for anyway.</p>
+        </div>
+        <div class="step-card">
+          <span class="step-num">02</span>
+          <h3>We match you instantly</h3>
+          <p>Every scholarship is checked against your exact numbers, not just your keywords. No scrolling through 40 that reject you at step 3.</p>
+        </div>
+        <div class="step-card">
+          <span class="step-num">03</span>
+          <h3>Follow the roadmap</h3>
+          <p>Each match comes with the documents to arrange and the exact next step — income certificate, bonafide letter, bank passbook copy, and so on.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SAATHI CHATBOT PROMO ===== -->
+  <section class="saathi-promo" id="saathi">
+    <div class="section-wrap saathi-wrap">
+      <div class="saathi-copy">
+        <p class="section-eyebrow">Still confused? Talk to someone</p>
+        <h2 class="section-title">Saathi answers the questions the form can't.</h2>
+        <p class="section-sub">"Do I need an income certificate if my father is a farmer?" "What's the difference between EWS and OBC-NCL?" "My college isn't listed — am I still eligible?" Ask Saathi in plain Hindi or English, using the chat bubble in the corner.</p>
+        <ul class="saathi-suggestions">
+          <li data-ask="What documents do I usually need?">What documents do I usually need?</li>
+          <li data-ask="What is the difference between merit and need based?">Merit vs need-based — what's the difference?</li>
+          <li data-ask="I missed a deadline, what now?">I missed a deadline. What now?</li>
+        </ul>
+      </div>
+      <div class="saathi-visual" aria-hidden="true">
+        <div class="saathi-bubble-demo">
+          <div class="chat-line chat-line-user">क्या मुझे income certificate चाहिए?</div>
+          <div class="chat-line chat-line-bot">Need-based scholarships के लिए, हाँ — तहसील office से बनवाना होगा। Merit-based के लिए ज़्यादातर नहीं चाहिए।</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer">
+  <div class="section-wrap footer-wrap">
+    <div>
+      <span class="brand-word small">Avsar<span class="brand-sub">अवसर</span></span>
+      <p class="footer-note">A prototype built to test one idea: eligibility, not awareness, shouldn't be the reason a scholarship goes unclaimed. Scholarship data on this page is illustrative sample data for demo purposes only.</p>
+    </div>
+    <div class="footer-cols">
+      <div>
+        <h4>Product</h4>
+        <a href="#checker">Eligibility checker</a>
+        <a href="#saathi">Saathi chatbot</a>
+        <a href="#how">How it works</a>
+      </div>
+      <div>
+        <h4>Trust</h4>
+        <a href="#">This is a demo — no data leaves your browser</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== SCHOLARSHIP DETAIL MODAL ===== -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal-sheet" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button class="modal-close" id="modalClose" aria-label="Close">✕</button>
+    <div id="modalBody"></div>
+  </div>
+</div>
+
+<!-- ===== SAATHI CHAT WIDGET ===== -->
+<div class="chat-widget" id="chatWidget">
+  <button class="chat-toggle" id="chatToggle" aria-label="Open Saathi chat">
+    <span class="chat-toggle-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6">
+        <path d="M4 5h16v10H8l-4 4V5z"/>
+      </svg>
+    </span>
+    <span class="chat-toggle-label">Saathi</span>
+  </button>
+
+  <div class="chat-panel" id="chatPanel">
+    <div class="chat-panel-head">
+      <div>
+        <strong>Saathi</strong>
+        <span>your scholarship साथी</span>
+      </div>
+      <button class="chat-minimize" id="chatMinimize" aria-label="Minimize chat">—</button>
+    </div>
+    <div class="chat-messages" id="chatMessages">
+      <div class="chat-line chat-line-bot">नमस्ते! I'm Saathi. Ask me about eligibility, documents, deadlines, or how any scholarship process works — in Hindi or English.</div>
+    </div>
+    <div class="chat-quick-replies" id="chatQuickReplies">
+      <button data-ask="What documents do I need?">Documents needed?</button>
+      <button data-ask="How do I know if I qualify?">How do I qualify?</button>
+      <button data-ask="What is EWS?">What is EWS?</button>
+    </div>
+    <form class="chat-input-row" id="chatForm">
+      <input type="text" id="chatInput" placeholder="Type your question…" autocomplete="off">
+      <button type="submit" aria-label="Send">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M4 12h16M13 5l7 7-7 7"/>
+        </svg>
+      </button>
+    </form>
+  </div>
+</div>
+
+</div><!-- /#appShell -->
+
+<script src="script.js"></script>
+</body>
+</html>
