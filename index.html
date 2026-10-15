@@ -123,6 +123,25 @@
     </div>
   </section>
 
+  <!-- ===== DEADLINE RADAR ===== -->
+  <section class="deadline-radar" id="deadlineRadar">
+    <div class="section-wrap">
+      <div class="radar-head">
+        <div>
+          <p class="section-eyebrow">Live — deadline radar</p>
+          <h2 class="section-title" style="font-size:1.3rem; max-width:none;">Every scheme's deadline, colour-coded by urgency</h2>
+        </div>
+        <div class="radar-legend">
+          <span class="radar-legend-item"><span class="radar-dot green"></span> Low urgency</span>
+          <span class="radar-legend-item"><span class="radar-dot yellow"></span> Apply soon</span>
+          <span class="radar-legend-item"><span class="radar-dot red"></span> Deadline approaching</span>
+          <span class="radar-legend-item"><span class="radar-dot rolling"></span> Rolling / ongoing</span>
+        </div>
+      </div>
+      <div class="radar-track" id="radarTrack"></div>
+    </div>
+  </section>
+
   <!-- ===== ELIGIBILITY CHECKER ===== -->
   <section class="checker" id="checker">
     <div class="section-wrap">
@@ -214,6 +233,35 @@
         <h2 class="section-title" id="resultsTitle">Fill the form above to see what opens up.</h2>
       </div>
       <div class="ledger-list" id="ledgerList"></div>
+    </div>
+  </section>
+
+  <!-- ===== DOCUMENT INTELLIGENCE ===== -->
+  <section class="doc-intel" id="docIntel" style="display:none;">
+    <div class="section-wrap">
+      <p class="section-eyebrow">Document Intelligence</p>
+      <h2 class="section-title">Tick off what you already have.</h2>
+      <p class="section-sub">Built from the documents your current matches actually ask for — ticks are remembered in this browser, and each match above shows how close its own checklist is to done.</p>
+      <div class="doc-intel-panel">
+        <div class="doc-progress-row">
+          <div class="doc-progress-track"><div class="doc-progress-fill" id="docProgressFill"></div></div>
+          <span class="doc-progress-label" id="docProgressLabel">0 of 0 ready</span>
+        </div>
+        <ul class="doc-checklist" id="docChecklist"></ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== OPPORTUNITY GRAPH ===== -->
+  <section class="opp-graph" id="oppGraph" style="display:none;">
+    <div class="section-wrap">
+      <p class="section-eyebrow">Opportunity Graph</p>
+      <h2 class="section-title">A scholarship is rarely the last stop.</h2>
+      <p class="section-sub">Based on your top match, here's how it connects onward — internships, jobs, and research openings that students at the same stage typically move into next.</p>
+      <div class="opp-graph-panel">
+        <svg class="opp-graph-svg" id="oppGraphSvg" viewBox="0 0 760 320" xmlns="http://www.w3.org/2000/svg"></svg>
+        <p class="opp-graph-note">Illustrative connections for this demo — not live listings.</p>
+      </div>
     </div>
   </section>
 
