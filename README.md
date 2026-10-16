@@ -8,8 +8,8 @@
 
 [![Live Demo](https://img.shields.io/badge/🔗_Live_Demo-avishrey--beep.github.io-6C5CE7?style=for-the-badge)](https://avishrey-beep.github.io/AVVSAR/)
 [![GitHub Pages](https://img.shields.io/badge/Hosted_on-GitHub_Pages-222222?style=for-the-badge&logo=github)](https://pages.github.com/)
-[![Status](https://img.shields.io/badge/Status-Prototype-orange?style=for-the-badge)]()
-[![Privacy](https://img.shields.io/badge/Privacy-No_Data_Leaves_Browser-2ECC71?style=for-the-badge)]()
+[![Status](https://img.shields.io/badge/Status-Active_Prototype-2ECC71?style=for-the-badge)]()
+[![Privacy](https://img.shields.io/badge/Privacy-100%25_Client--Side-blue?style=for-the-badge)]()
 
 </div>
 
@@ -19,70 +19,94 @@
 
 > Every year, thousands of scholarships across India go **unclaimed** — not because students aren't eligible, but because they **never hear about them**.
 
-**Avsar** is a front-end prototype that flips the script: instead of making students hunt through generic scholarship lists, it checks their *exact* details — education stage, category, marks, income, state — against real eligibility criteria and hands back a ready-made roadmap.
+**Avsar** is a front-end platform that flips the script: instead of making students hunt through endless generic PDFs or confusing portals, it checks their *exact* profile — education stage, category, academic score, family income bracket, and state of domicile — against real eligibility rules and instantly delivers a personalized **Opportunity Passbook**.
 
-Alongside it sits **Saathi**, a bilingual (Hindi/English) chat companion that answers the messy real-world questions a form can't: *"Do I need an income certificate if my father is a farmer?"*
-
-> ⚠️ **Demo notice** — The scholarship dataset is illustrative sample data only. All matching happens **client-side in the browser**; nothing is stored or sent to a server. Always confirm final eligibility on the scholarship's official page.
+Alongside the passbook sits **Saathi**, a bilingual (Hindi/English) conversational companion that resolves real-world application dilemmas in plain language.
 
 ---
 
-## 🧭 How It Works
-
-<div align="center">
-
-| Step | | What Happens |
-|:---:|:---:|:---|
-| **01** | 📝 | **Tell us about yourself** — stage, category, marks, income, state: the same fields every form asks for anyway |
-| **02** | ⚡ | **We match you instantly** — every scholarship is checked against your *exact* numbers, not just keywords |
-| **03** | 🗺️ | **Follow the roadmap** — each match comes with the documents to arrange and the exact next step |
-
-</div>
-
----
-
-## 🚀 Features
-
-- 🔐 **Prototype login / passbook** — any name, email, and 6+ character password works. No real account is created. Guest mode available.
-- 🎯 **Smart eligibility checker** — filters by:
-  - Education stage *(Class 10 → PhD)*
-  - Category *(General / OBC / SC / ST / EWS / Minority)*
-  - Merit-based, need-based, or either
-  - Last exam score & annual family income
-  - Gender & state/UT of domicile
-- 📋 **Instant, ranked matches** — each with a document checklist *(income certificate, bonafide letter, bank passbook copy…)*
-- 💬 **Saathi chatbot** — plain-language Q&A in Hindi or English:
-  - *"Merit vs need-based — what's the difference?"*
-  - *"My college isn't listed — am I still eligible?"*
-  - *"I missed a deadline. What now?"*
-- 🔒 **Privacy by design** — 100% client-side, nothing leaves your browser
-
----
-
-## 🛠️ Tech
-
-Static site deployed via **GitHub Pages**.
+## 🧭 Core Architectural Pillars
 
 ```
-Repo:  avishrey-beep/AVVSAR
-Live:  https://avishrey-beep.github.io/AVVSAR/
+┌────────────────────────────────────────────────────────────────────────┐
+│                          AVSAR CLIENT ENGINE                           │
+├──────────────────┬───────────────────┬─────────────────────────────────┤
+│  1. AUTH GATE    │ 2. MATCH ENGINE   │ 3. RADAR & ROADMAP              │
+│  - Passbook login│ - Stage & Category│ - Real-time deadline sorting    │
+│  - Guest fallback│ - Income & Score  │ - Required document checklist   │
+│  - Local storage │ - Need vs Merit   │ - Opportunity Graph (SVG)       │
+└──────────────────┴───────────────────┴─────────────────────────────────┘
+                                   │
+                                   ▼
+┌────────────────────────────────────────────────────────────────────────┐
+│                   SAATHI CONVERSATIONAL ADVISOR                        │
+│   - Bilingual rule-based reasoning engine                              │
+│   - Step-by-step guidance on certificates, portals, & deadlines        │
+└────────────────────────────────────────────────────────────────────────┘
 ```
-
-*(Exact stack — plain HTML/CSS/JS vs. a framework — isn't visible from the rendered page; check the repo source for specifics.)*
 
 ---
 
-## 🏁 Getting Started
+## 🚀 Key Features
+
+### 1. 🔐 Interactive Student Opportunity Passbook
+- Instant browser-based session initialization with personalized passbook UI.
+- Fast guest mode fallback without requiring registration.
+- Local state persistence ensures data remains private and confidential.
+
+### 2. 🎯 Precision Eligibility Engine
+- Evaluates scholarships across **6 education levels** (*Class 10 through PhD*).
+- Supports all demographic reservations (*General, OBC, SC, ST, EWS, Minority*).
+- Dynamic filtering across merit requirements, household income ceilings, gender, and state/UT quotas.
+
+### 3. ⏱️ Deadline Radar
+- Real-time urgency calculation for active application cycles.
+- Categorized badges for immediate action (*Closing soon, Next 30 days, Open*).
+
+### 4. 📂 Document Intelligence & Locker
+- Deduplicates document requirements across all matched scholarships.
+- Dynamic progress tracker calculating preparation completion percentage.
+- Interactive checkboxes to mark arranged documents in real time.
+
+### 5. 🌐 Interactive Opportunity Graph
+- Vector-rendered SVG visualizer connecting each scholarship to high-impact future milestones.
+- Maps pathways into summer internships, industry jobs, or research fellowships.
+
+### 6. 💬 Saathi Bilingual Advisor
+- Quick-response intelligence addressing common document and verification hurdles:
+  - *Income certificate rules for agricultural households*
+  - *School/College verification protocols on the National Scholarship Portal (NSP)*
+  - *What to do when missing a state portal cutoff*
+
+---
+
+## 🛠️ Technology Stack
+
+| Layer | Technology |
+|---|---|
+| **Structure** | Semantic HTML5 with accessibility attributes |
+| **Styling** | Modern CSS3 (CSS Variables, Flexbox, Grid, Glassmorphism) |
+| **Logic** | Vanilla ES6+ JavaScript (Zero external framework dependencies) |
+| **Graphics** | Dynamic SVG (Vector network diagrams & passbook stamps) |
+| **Storage** | Browser `localStorage` (No server-side telemetry or tracking) |
+| **Deployment** | GitHub Pages static continuous delivery |
+
+---
+
+## 🏁 Quick Start & Local Development
 
 ```bash
-# Clone the repo
+# Clone the repository
 git clone https://github.com/avishrey-beep/AVVSAR.git
+
+# Navigate into the project directory
 cd AVVSAR
 
-# Open directly in a browser
-open index.html
+# Open directly in any modern browser
+# On Windows:
+start index.html
 
-# ...or serve locally
+# ...or run with a local static web server
 npx serve .
 ```
 
@@ -90,12 +114,12 @@ npx serve .
 
 ## 📜 Disclaimer
 
-Scholarship data shown in the demo is for **illustration purposes only** and should not be relied on as a source of truth. Always confirm eligibility, documents, and deadlines on the **official scholarship page** before applying.
-
-<div align="center">
+Scholarship information presented within this prototype is illustrative and curated for educational and testing purposes. Always verify final application dates, quota criteria, and documentation on the respective official government and institutional scholarship portals before submitting applications.
 
 ---
 
-Made to test one idea: **eligibility, not awareness, shouldn't be the reason a scholarship goes unclaimed.**
+<div align="center">
+
+Made with ❤️ by [Shreyansh Srivastava (@avishrey-beep)](https://github.com/avishrey-beep)
 
 </div>
