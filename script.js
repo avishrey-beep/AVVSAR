@@ -336,6 +336,48 @@ const SCHOLARSHIPS = [
       "Register your fellowship with the host university",
       "Fellowship paid monthly through the university"
     ]
+  },
+  {
+    id: "pm-usp-higher-ed",
+    name: "PM-USP Central Sector Scheme for College & University Students",
+    provider: "Department of Higher Education (Ministry of Education)",
+    type: "merit",
+    levels: ["ug", "pg"],
+    categories: ["general", "obc", "sc", "st", "ews"],
+    minScore: 80,
+    maxIncome: 450000,
+    gender: "any",
+    states: "all",
+    amount: "₹12,000 – ₹20,000 / year",
+    deadline: "15 Jan",
+    documents: ["Class 12 board marksheet", "Income certificate", "Institute bonafide certificate", "Bank passbook copy", "Aadhaar card"],
+    steps: [
+      "Verify top-20th percentile board cutoff eligibility",
+      "Register on National Scholarship Portal (scholarships.gov.in)",
+      "Submit online verification form to college nodal officer",
+      "State board & Ministry verify before DBT disbursal"
+    ]
+  },
+  {
+    id: "dbt-jrf-biotech",
+    name: "DBT-JRF Fellowship in Biotechnology & Life Sciences",
+    provider: "Department of Biotechnology (Govt. of India)",
+    type: "merit",
+    levels: ["phd"],
+    categories: ["general", "obc", "sc", "st", "ews"],
+    minScore: 60,
+    maxIncome: 0,
+    gender: "any",
+    states: "all",
+    amount: "₹37,000 / month + HRA",
+    deadline: "28 Feb",
+    documents: ["Master degree certificate", "BET examination scorecard", "Category certificate", "Provisional PhD enrollment letter"],
+    steps: [
+      "Qualify the Biotechnology Eligibility Test (BET)",
+      "Obtain DBT-JRF award letter",
+      "Join PhD program in an accredited institution",
+      "Activate monthly DBT research stipend"
+    ]
   }
 ];
 
@@ -355,7 +397,9 @@ const DEADLINE_INFO = {
   "kvpy-fellowship":          { date: "2026-09-01" },
   "dhfl-need-based-ug":       { date: "2026-10-01" },
   "girl-child-diploma":       { date: "2026-10-20" },
-  "phd-jrf-ugc":              { rolling: true }
+  "phd-jrf-ugc":              { rolling: true },
+  "pm-usp-higher-ed":         { date: "2027-01-15" },
+  "dbt-jrf-biotech":          { date: "2027-02-28" }
 };
 SCHOLARSHIPS.forEach(s => {
   const info = DEADLINE_INFO[s.id] || {};
