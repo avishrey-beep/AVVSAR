@@ -1,0 +1,22 @@
+{
+  "name": "Avsar — Student Opportunity Passbook",
+  "short_name": "Avsar",
+  "description": "Find the scholarship that is already looking for you across India.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#FFFFFF",
+  "theme_color": "#FF7070",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": [
+    "education",
+    "productivity"
+  ]
+}
