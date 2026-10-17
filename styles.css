@@ -460,34 +460,34 @@ body.pre-login{ overflow: hidden; }
   font-size: 1rem;
 }
 
-/* ============ DEADLINE RADAR (new) ============ */
-.deadline-radar{ padding: 44px 0; background: var(--bg); border-bottom: 1px solid var(--surface-border); }
+/* ============ DEADLINE RADAR ============ */
+.deadline-radar{ padding: 44px 0; border-bottom: 1px solid var(--line-dark); }
 .radar-head{ display:flex; align-items:baseline; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 18px; }
 .radar-legend{ display:flex; gap: 16px; flex-wrap: wrap; }
-.radar-legend-item{ display:flex; align-items:center; gap: 6px; font-family: var(--font-mono); font-size: 0.72rem; color: var(--ink-muted); }
+.radar-legend-item{ display:flex; align-items:center; gap: 6px; font-family: var(--font-mono); font-size: 0.72rem; color: var(--muted-on-dark); }
 .radar-dot{ width: 9px; height: 9px; border-radius: 50%; display:inline-block; }
-.radar-dot.green{ background: var(--mint-deep); }
-.radar-dot.yellow{ background: var(--amber); }
-.radar-dot.red{ background: var(--rose-red); }
-.radar-dot.rolling{ background: var(--indigo); }
+.radar-dot.green{ background: var(--marigold-deep); }
+.radar-dot.yellow{ background: #E6A23C; }
+.radar-dot.red{ background: var(--rose); }
+.radar-dot.rolling{ background: var(--marigold); }
 .radar-track{
   display:flex; gap: 14px; overflow-x: auto; padding-bottom: 8px; scroll-snap-type: x proximity;
 }
 .radar-card{
   flex: 0 0 auto; width: 240px; scroll-snap-align: start;
-  background: var(--surface); border: 1px solid var(--surface-border); border-left: 4px solid var(--surface-border);
-  border-radius: 6px; padding: 14px 16px; box-shadow: var(--shadow-card);
+  background: var(--ink-2); border: 1px solid var(--line-dark); border-left: 4px solid var(--line-dark);
+  border-radius: 6px; padding: 14px 16px; box-shadow: var(--shadow-page); color: var(--off-white);
 }
-.radar-card.green{ border-left-color: var(--mint-deep); }
-.radar-card.yellow{ border-left-color: var(--amber); }
-.radar-card.red{ border-left-color: var(--rose-red); }
-.radar-card.rolling{ border-left-color: var(--indigo); }
-.radar-card-name{ font-size: 0.9rem; font-weight: 600; margin-bottom: 6px; line-height: 1.3; }
+.radar-card.green{ border-left-color: var(--marigold-deep); }
+.radar-card.yellow{ border-left-color: #E6A23C; }
+.radar-card.red{ border-left-color: var(--rose); }
+.radar-card.rolling{ border-left-color: var(--marigold); }
+.radar-card-name{ font-size: 0.9rem; font-weight: 600; margin-bottom: 6px; line-height: 1.3; color: var(--off-white); }
 .radar-card-days{ font-family: var(--font-mono); font-size: 0.72rem; }
-.radar-card-days.green{ color: var(--mint-deep); }
-.radar-card-days.yellow{ color: var(--amber-deep); }
-.radar-card-days.red{ color: var(--rose-red); }
-.radar-card-days.rolling{ color: var(--indigo-deep); }
+.radar-card-days.green{ color: var(--marigold); }
+.radar-card-days.yellow{ color: #E6A23C; }
+.radar-card-days.red{ color: var(--rose); }
+.radar-card-days.rolling{ color: var(--marigold-deep); }
 
 /* ============ CHECKER FORM ============ */
 .checker{ padding: 90px 0 20px; }
