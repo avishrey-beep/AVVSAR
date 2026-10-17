@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Avsar — Document Guide & Vault</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Work+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ============ TOKENS ============ */
+:root{
+  --coral: #FF7070; --rose-red: #D25353; --indigo: #7886C7; --indigo-deep: #4E5A9E;
+  --mauve: #C75B7A; --blush: #F7B5CA; --crimson: #CF4173; --crimson-deep: #A32F55;
+  --mint: #A5D6A7; --mint-deep: #3E7A45; --amber: #E6A23C; --amber-deep: #9C6B1E;
+  --bg: #FFFFFF; --bg-alt: #FBF1F3; --surface: #FFFFFF; --surface-border: #EBDEE2;
+  --ink: #2A1420; --ink-soft: #4A3540; --ink-muted: #83707A;
+  --footer-bg: #2E2F52; --footer-text: #E9E8F4; --footer-muted: #A7A9CC;
+  --font-display: "Fraunces", serif; --font-body: "Work Sans", sans-serif; --font-mono: "IBM Plex Mono", monospace;
+  --shadow-card: 0 2px 4px rgba(42,20,32,0.04), 0 12px 28px -16px rgba(42,20,32,0.14);
+  --shadow-lifted: 0 20px 48px -18px rgba(42,20,32,0.28);
+}
+*{ box-sizing: border-box; }
+html{ scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce){ html{ scroll-behavior: auto; } *{ animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; } }
+body{ margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font-body); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+h1,h2,h3,h4{ font-family: var(--font-display); margin: 0 0 0.5em; font-weight: 600; letter-spacing: -0.01em; color: var(--ink); }
+a{ color: inherit; text-decoration: none; }
+img,svg{ display: block; max-width: 100%; }
+button{ font-family: inherit; cursor: pointer; }
+:focus-visible{ outline: 2px solid var(--crimson); outline-offset: 3px; }
+.wrap{ max-width: 1180px; margin: 0 auto; padding: 0 32px; }
+@media(max-width:600px){ .wrap{ padding: 0 16px; } }
+
+/* ============ NAV ============ */
+.site-nav{ position: sticky; top: 0; z-index: 40; background: rgba(255,255,255,0.93); backdrop-filter: blur(10px); border-bottom: 1px solid var(--surface-border); }
+.nav-wrap{ max-width: 1180px; margin: 0 auto; padding: 14px 32px; display: flex; align-items: center; gap: 28px; }
+.brand{ display: flex; align-items: center; gap: 10px; font-family: var(--font-display); font-weight: 600; font-size: 1.25rem; margin-right: auto; color: var(--ink); }
+.brand-mark{ color: var(--crimson); display: flex; }
+.brand-sub{ font-family: var(--font-mono); font-size: 0.7rem; color: var(--ink-muted); letter-spacing: 0.04em; margin-left: 6px; }
+.nav-links{ display: flex; gap: 26px; }
+.nav-links a{ font-size: 0.9rem; color: var(--ink-soft); transition: color 0.15s; }
+.nav-links a:hover, .nav-links a.active{ color: var(--crimson); }
+.nav-back{ font-family: var(--font-mono); font-size: 0.76rem; background: none; border: 1px solid var(--surface-border); color: var(--ink-soft); padding: 8px 14px; border-radius: 3px; transition: border-color 0.15s, color 0.15s; }
+.nav-back:hover{ border-color: var(--crimson); color: var(--crimson); }
+@media(max-width:720px){ .nav-links{ display: none; } }
+
+/* ============ HERO STRIP ============ */
+.page-hero{ background: var(--bg-alt); border-bottom: 1px solid var(--surface-border); padding: 60px 0 44px; }
+.page-hero-eyebrow{ font-family: var(--font-mono); font-size: 0.76rem; letter-spacing: 0.05em; color: var(--crimson); margin: 0 0 14px; }
+.page-hero h1{ font-size: clamp(1.8rem, 3vw + 0.8rem, 2.75rem); max-width: 30ch; line-height: 1.15; }
+.page-hero p{ color: var(--ink-soft); font-size: 1.02rem; max-width: 62ch; margin: 14px 0 0; }
+.hero-stats{ display: flex; gap: 36px; margin-top: 28px; padding-top: 22px; border-top: 1px solid var(--surface-border); flex-wrap: wrap; }
+.h-stat span{ font-family: var(--font-display); font-size: 1.9rem; font-weight: 600; color: var(--crimson); display: block; }
+.h-stat small{ font-family: var(--font-mono); font-size: 0.68rem; color: var(--ink-muted); }
+
+/* ============ SEARCH BAR ============ */
+.search-bar{ background: var(--bg); border-bottom: 1px solid var(--surface-border); padding: 16px 0; }
+.search-wrap{ position: relative; max-width: 500px; }
+.search-wrap svg{ position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: var(--ink-muted); pointer-events: none; }
+#searchInput{ width: 100%; padding: 12px 14px 12px 42px; border: 1.5px solid var(--surface-border); border-radius: 8px; font-family: var(--font-body); font-size: 0.94rem; background: var(--surface); color: var(--ink); transition: border-color 0.15s; }
+#searchInput:focus{ outline: none; border-color: var(--crimson); }
+#searchInput::placeholder{ color: var(--ink-muted); }
+
+/* ============ CATEGORY TABS ============ */
+.cat-bar{ position: sticky; top: 57px; z-index: 30; background: var(--bg); border-bottom: 1px solid var(--surface-border); }
+.cat-bar-inner{ max-width: 1180px; margin: 0 auto; padding: 0 32px; display: flex; overflow-x: auto; scroll-snap-type: x mandatory; }
+@media(max-width:600px){ .cat-bar-inner{ padding: 0 16px; } }
+.cat-tab{ font-family: var(--font-mono); font-size: 0.76rem; padding: 15px 20px; border: none; background: none; color: var(--ink-muted); white-space: nowrap; scroll-snap-align: start; border-bottom: 2.5px solid transparent; transition: color 0.15s, border-color 0.15s; }
+.cat-tab:hover{ color: var(--ink); }
+.cat-tab.active{ color: var(--crimson); border-bottom-color: var(--crimson); font-weight: 600; }
+
+/* ============ DOCUMENT GRID ============ */
+.doc-section{ padding: 52px 0; }
+.doc-section + .doc-section{ border-top: 1px solid var(--surface-border); }
+.ds-head{ margin-bottom: 28px; display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+.ds-head h2{ font-size: 1.3rem; margin: 0; }
+.ds-badge{ font-family: var(--font-mono); font-size: 0.63rem; padding: 4px 10px; border-radius: 12px; text-transform: uppercase; letter-spacing: 0.05em; }
+.badge-govt{ background: rgba(120,134,199,0.15); color: var(--indigo-deep); }
+.badge-id{ background: rgba(207,65,115,0.1); color: var(--crimson); }
+.badge-edu{ background: rgba(62,122,69,0.1); color: var(--mint-deep); }
+.badge-finance{ background: rgba(230,162,60,0.15); color: var(--amber-deep); }
+
+.doc-grid{ display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
+@media(max-width:660px){ .doc-grid{ grid-template-columns: 1fr; } }
+
+.doc-card{ background: var(--surface); border: 1px solid var(--surface-border); border-radius: 10px; padding: 24px; cursor: pointer; position: relative; overflow: hidden; transition: box-shadow 0.18s, border-color 0.18s, transform 0.12s; display: flex; flex-direction: column; gap: 14px; }
+.doc-card:hover{ border-color: var(--crimson); box-shadow: var(--shadow-card); transform: translateY(-2px); }
+.doc-card.hidden{ display: none; }
+.dc-top{ display: flex; align-items: flex-start; gap: 14px; }
+.dc-icon{ width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; flex: 0 0 auto; }
+.dc-icon.govt{ background: rgba(120,134,199,0.15); }
+.dc-icon.id{ background: rgba(207,65,115,0.1); }
+.dc-icon.edu{ background: rgba(62,122,69,0.1); }
+.dc-icon.finance{ background: rgba(230,162,60,0.15); }
+.dc-title h3{ font-size: 1.02rem; margin: 0 0 3px; }
+.dc-hi{ font-family: var(--font-mono); font-size: 0.7rem; color: var(--ink-muted); }
+.dc-pills{ display: flex; gap: 7px; flex-wrap: wrap; }
+.dc-pill{ font-family: var(--font-mono); font-size: 0.64rem; padding: 4px 9px; border-radius: 12px; background: var(--bg-alt); border: 1px solid var(--surface-border); color: var(--ink-muted); }
+.dc-pill.online{ background: rgba(62,122,69,0.1); border-color: var(--mint); color: var(--mint-deep); }
+.dc-pill.offline{ background: rgba(230,162,60,0.1); border-color: var(--amber); color: var(--amber-deep); }
+.dc-foot{ display: flex; align-items: center; justify-content: space-between; padding-top: 12px; border-top: 1px solid var(--surface-border); font-family: var(--font-mono); font-size: 0.68rem; color: var(--ink-muted); }
+.dc-cta{ color: var(--crimson); display: flex; align-items: center; gap: 5px; transition: gap 0.15s; }
+.doc-card:hover .dc-cta{ gap: 9px; }
+
+/* ============ SLIDE PANEL ============ */
+.slide-overlay{ position: fixed; inset: 0; background: rgba(42,20,32,0.45); z-index: 200; display: none; justify-content: flex-end; }
+.slide-overlay.open{ display: flex; }
+.slide-panel{ width: min(560px, 96vw); height: 100%; background: var(--surface); overflow-y: auto; box-shadow: -10px 0 48px rgba(42,20,32,0.18); display: flex; flex-direction: column; animation: slideIn 0.3s cubic-bezier(0.22,1,0.36,1); }
+@keyframes slideIn{ from{ transform: translateX(110%); } to{ transform: translateX(0); } }
+.sp-head{ position: sticky; top: 0; background: var(--surface); z-index: 2; border-bottom: 1px solid var(--surface-border); padding: 20px 26px; display: flex; align-items: center; gap: 14px; }
+.sp-emoji{ width: 50px; height: 50px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.6rem; flex: 0 0 auto; }
+.sp-emoji.govt{ background: rgba(120,134,199,0.15); }
+.sp-emoji.id{ background: rgba(207,65,115,0.1); }
+.sp-emoji.edu{ background: rgba(62,122,69,0.1); }
+.sp-emoji.finance{ background: rgba(230,162,60,0.15); }
+.sp-head-txt{ flex: 1; }
+.sp-head-txt h3{ font-size: 1.18rem; margin: 0; }
+.sp-head-txt span{ font-family: var(--font-mono); font-size: 0.7rem; color: var(--ink-muted); }
+.sp-close{ width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--surface-border); background: var(--bg-alt); color: var(--ink-muted); font-size: 1rem; display: flex; align-items: center; justify-content: center; flex: 0 0 auto; transition: border-color 0.15s, color 0.15s; }
+.sp-close:hover{ border-color: var(--rose-red); color: var(--rose-red); }
+.sp-body{ padding: 26px; display: flex; flex-direction: column; gap: 22px; flex: 1; }
+.sp-meta{ display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.sp-meta-box{ background: var(--bg-alt); border: 1px solid var(--surface-border); border-radius: 8px; padding: 14px 16px; }
+.sp-meta-box strong{ display: block; font-family: var(--font-mono); font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--ink-muted); margin-bottom: 5px; }
+.sp-meta-box span{ font-size: 0.9rem; color: var(--ink); font-weight: 600; }
+.sp-meta-box.is-online span{ color: var(--mint-deep); }
+.sp-meta-box.is-offline span{ color: var(--amber-deep); }
+.sp-sec h4{ font-family: var(--font-mono); font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--crimson-deep); margin: 0 0 12px; padding-bottom: 8px; border-bottom: 1px solid var(--surface-border); }
+.sp-sec ol{ margin: 0; padding-left: 20px; }
+.sp-sec ol li{ margin-bottom: 10px; font-size: 0.91rem; line-height: 1.55; color: var(--ink-soft); }
+.sp-sec ol li::marker{ color: var(--crimson); font-weight: 700; }
+.sp-sec ul{ margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.sp-sec ul li{ font-size: 0.9rem; color: var(--ink-soft); display: flex; align-items: flex-start; gap: 10px; line-height: 1.45; }
+.sp-sec ul li::before{ content: "→"; color: var(--indigo); font-weight: 700; flex: 0 0 auto; }
+.sp-chips{ display: flex; gap: 8px; flex-wrap: wrap; }
+.sp-chip{ font-family: var(--font-mono); font-size: 0.7rem; padding: 6px 14px; border-radius: 16px; background: rgba(120,134,199,0.12); color: var(--indigo-deep); border: 1px solid rgba(120,134,199,0.25); }
+.sp-portal{ display: flex; align-items: center; gap: 10px; background: var(--bg-alt); border: 1px solid var(--surface-border); border-radius: 8px; padding: 14px 16px; font-family: var(--font-mono); font-size: 0.76rem; color: var(--indigo-deep); transition: border-color 0.15s; }
+.sp-portal:hover{ border-color: var(--indigo); }
+.sp-tip{ background: rgba(165,214,167,0.18); border: 1px solid var(--mint); border-radius: 8px; padding: 16px 20px; font-size: 0.88rem; color: var(--mint-deep); line-height: 1.6; }
+.sp-tip strong{ display: block; font-size: 0.8rem; margin-bottom: 5px; }
+@media(max-width:520px){ .sp-meta{ grid-template-columns: 1fr; } .sp-body{ padding: 18px; } }
+
+/* ============ VAULT ============ */
+.vault-sec{ background: var(--bg-alt); border-top: 1px solid var(--surface-border); padding: 62px 0 80px; }
+.vault-sec h2{ font-size: 1.6rem; }
+.vault-sec > .wrap > p{ color: var(--ink-soft); max-width: 62ch; margin: 10px 0 0; }
+.vault-panel{ background: var(--surface); border: 1px solid var(--surface-border); border-radius: 12px; box-shadow: var(--shadow-card); margin-top: 32px; overflow: hidden; }
+.vault-upload{ display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 48px 32px; border-bottom: 2px dashed var(--surface-border); text-align: center; transition: background 0.2s, border-color 0.2s; }
+.vault-upload.drag-over{ background: rgba(207,65,115,0.05); border-color: var(--crimson); }
+.vu-icon{ color: var(--ink-muted); opacity: 0.7; margin-bottom: 14px; }
+.vu-main{ font-size: 1rem; color: var(--ink-soft); margin: 0 0 6px; }
+.vu-browse{ color: var(--crimson); cursor: pointer; text-decoration: underline; font-weight: 600; }
+.vu-hint{ font-family: var(--font-mono); font-size: 0.68rem; color: var(--ink-muted); margin: 0; }
+.vault-list{ min-height: 60px; }
+.vault-empty{ padding: 32px; text-align: center; color: var(--ink-muted); font-family: var(--font-mono); font-size: 0.83rem; }
+.vault-item{ display: flex; align-items: center; gap: 16px; padding: 16px 24px; border-bottom: 1px solid var(--surface-border); transition: background 0.12s; }
+.vault-item:last-child{ border-bottom: none; }
+.vault-item:hover{ background: var(--bg-alt); }
+.v-icon{ width: 42px; height: 42px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; flex: 0 0 auto; }
+.v-icon.pdf{ background: rgba(210,83,83,0.1); }
+.v-icon.img{ background: rgba(120,134,199,0.1); }
+.v-info{ flex: 1; min-width: 0; }
+.v-name{ font-weight: 600; font-size: 0.92rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.v-meta{ font-family: var(--font-mono); font-size: 0.66rem; color: var(--ink-muted); margin-top: 2px; }
+.v-actions{ display: flex; gap: 8px; flex: 0 0 auto; }
+.v-btn{ font-family: var(--font-mono); font-size: 0.68rem; padding: 7px 12px; border-radius: 4px; border: 1px solid var(--surface-border); background: transparent; color: var(--ink-soft); transition: border-color 0.15s, color 0.15s; }
+.v-btn:hover{ border-color: var(--crimson); color: var(--crimson); }
+.v-btn.del:hover{ border-color: var(--rose-red); color: var(--rose-red); }
+@media(max-width:640px){ .vault-item{ flex-wrap: wrap; } .v-actions{ width: 100%; justify-content: flex-end; } }
+
+/* ============ FOOTER ============ */
+.site-footer{ background: var(--footer-bg); color: var(--footer-text); border-top: 3px solid var(--crimson); padding: 44px 0; }
+.footer-inner{ display: flex; justify-content: space-between; gap: 40px; flex-wrap: wrap; }
+.footer-brand{ font-family: var(--font-display); font-weight: 600; font-size: 1.1rem; }
+.footer-note{ color: var(--footer-muted); font-size: 0.83rem; max-width: 44ch; margin-top: 10px; }
+.footer-links{ display: flex; gap: 48px; flex-wrap: wrap; }
+.footer-links div h4{ font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--blush); margin: 0 0 12px; }
+.footer-links div a{ display: block; color: var(--footer-muted); font-size: 0.84rem; margin-bottom: 8px; transition: color 0.15s; }
+.footer-links div a:hover{ color: var(--footer-text); }
+
+/* ============ BACK TO TOP ============ */
+.back-top{ position: fixed; bottom: 28px; right: 28px; z-index: 50; width: 44px; height: 44px; border-radius: 50%; background: var(--crimson); color: #fff; border: none; display: none; align-items: center; justify-content: center; box-shadow: var(--shadow-lifted); transition: background 0.15s; }
+.back-top.visible{ display: flex; }
+.back-top:hover{ background: var(--crimson-deep); }
+</style>
+</head>
+<body>
+
+<!-- ===== NAV ===== -->
+<header class="site-nav">
+  <div class="nav-wrap">
+    <a href="index.html" class="brand">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 40 40" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.4">
+          <circle cx="20" cy="20" r="18.5"/>
+          <circle cx="20" cy="20" r="13.5" stroke-dasharray="1.5 3" stroke-width="0.8"/>
+          <text x="20" y="24.5" text-anchor="middle" font-family="IBM Plex Mono" font-size="11" fill="currentColor">अ</text>
+        </svg>
+      </span>
+      Avsar<span class="brand-sub">अवसर</span>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html#checker">Find Scholarships</a>
+      <a href="documents.html" class="active">Documents</a>
+      <a href="index.html#saathi">Ask Saathi</a>
+    </nav>
+    <button class="nav-back" onclick="window.location.href='index.html'">← Back to Avsar</button>
+  </div>
+</header>
+
+<!-- ===== PAGE HERO ===== -->
+<section class="page-hero">
+  <div class="wrap">
+    <p class="page-hero-eyebrow">दस्तावेज़ गाइड — Document Centre</p>
+    <h1>Every document you need for your scholarship — one place.</h1>
+    <p>Understand what each document is, exactly how to get it, which official to approach, how long it takes, and where to apply online. Plus your personal vault to store everything securely in your browser.</p>
+    <div class="hero-stats">
+      <div class="h-stat"><span>12</span><small>Documents covered</small></div>
+      <div class="h-stat"><span>4</span><small>Categories</small></div>
+      <div class="h-stat"><span>8</span><small>With online process</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SEARCH ===== -->
+<div class="search-bar">
+  <div class="wrap">
+    <div class="search-wrap">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input type="text" id="searchInput" class="" placeholder="Search documents… income, passport, caste, bonafide…">
+    </div>
+  </div>
+</div>
+
+<!-- ===== CATEGORY TABS ===== -->
+<div class="cat-bar">
+  <div class="cat-bar-inner">
+    <button class="cat-tab active" data-cat="all">All Documents</button>
+    <button class="cat-tab" data-cat="govt">🏛 Government</button>
+    <button class="cat-tab" data-cat="id">🪪 Identity</button>
+    <button class="cat-tab" data-cat="edu">🎓 Education</button>
+    <button class="cat-tab" data-cat="finance">💰 Financial</button>
+  </div>
+</div>
+
+<!-- ===== DOCUMENT GRID ===== -->
+<main id="docMain">
+  <section class="doc-section" id="sec-govt">
+    <div class="wrap">
+      <div class="ds-head">
+        <h2>🏛 Government Documents</h2>
+        <span class="ds-badge badge-govt">Issued by State / Central Govt.</span>
+      </div>
+      <div class="doc-grid" id="grid-govt"></div>
+    </div>
+  </section>
+
+  <section class="doc-section" id="sec-id">
+    <div class="wrap">
+      <div class="ds-head">
+        <h2>🪪 Identity Documents</h2>
+        <span class="ds-badge badge-id">Proof of who you are</span>
+      </div>
+      <div class="doc-grid" id="grid-id"></div>
+    </div>
+  </section>
+
+  <section class="doc-section" id="sec-edu">
+    <div class="wrap">
+      <div class="ds-head">
+        <h2>🎓 Education Documents</h2>
+        <span class="ds-badge badge-edu">From your institution</span>
+      </div>
+      <div class="doc-grid" id="grid-edu"></div>
+    </div>
+  </section>
+
+  <section class="doc-section" id="sec-finance">
+    <div class="wrap">
+      <div class="ds-head">
+        <h2>💰 Financial Documents</h2>
+        <span class="ds-badge badge-finance">Bank & financial records</span>
+      </div>
+      <div class="doc-grid" id="grid-finance"></div>
+    </div>
+  </section>
+</main>
+
+<!-- ===== DOCUMENT VAULT ===== -->
+<section class="vault-sec" id="vault">
+  <div class="wrap">
+    <p style="font-family:var(--font-mono);font-size:0.74rem;color:var(--crimson);letter-spacing:0.05em;margin:0 0 12px;">📁 YOUR DOCUMENT VAULT</p>
+    <h2>Upload once, use everywhere.</h2>
+    <p>Store your documents here like a personal DigiLocker — securely in your browser, never sent anywhere. When filling scholarship forms, your files are always ready to link.</p>
+    <div class="vault-panel">
+      <div class="vault-upload" id="vaultUpload">
+        <div class="vu-icon" aria-hidden="true">
+          <svg viewBox="0 0 64 64" width="60" height="60" fill="none" stroke="currentColor" stroke-width="1.4">
+            <path d="M32 42V22m0 0l-10 10m10-10l10 10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M20 46a14 14 0 1 1 6.6-26.3A12 12 0 1 1 44 38" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <p class="vu-main">Drag &amp; drop files here, or <label for="vaultInput" class="vu-browse">browse to upload</label></p>
+        <p class="vu-hint">PDF, JPG, PNG — up to 5 MB per file. All files stay only in this browser.</p>
+        <input type="file" id="vaultInput" multiple accept=".pdf,.jpg,.jpeg,.png" hidden>
+      </div>
+      <div class="vault-list" id="vaultList"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div>
+      <div class="footer-brand">Avsar <span style="font-family:var(--font-mono);font-size:0.68rem;color:var(--footer-muted);margin-left:6px;">अवसर</span></div>
+      <p class="footer-note">A prototype ensuring eligibility, not awareness, is never the reason a scholarship goes unclaimed. All data stays in your browser.</p>
+    </div>
+    <div class="footer-links">
+      <div>
+        <h4>Navigate</h4>
+        <a href="index.html">← Scholarships</a>
+        <a href="index.html#checker">Eligibility Checker</a>
+        <a href="index.html#saathi">Ask Saathi</a>
+        <a href="#vault">Document Vault</a>
+      </div>
+      <div>
+        <h4>By Category</h4>
+        <a href="#sec-govt">Government</a>
+        <a href="#sec-id">Identity</a>
+        <a href="#sec-edu">Education</a>
+        <a href="#sec-finance">Financial</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== SLIDE PANEL ===== -->
+<div class="slide-overlay" id="slideOverlay" role="dialog" aria-modal="true">
+  <div class="slide-panel" id="slidePanel">
+    <div class="sp-head">
+      <div class="sp-emoji" id="spEmoji"></div>
+      <div class="sp-head-txt">
+        <h3 id="spTitle"></h3>
+        <span id="spSub"></span>
+      </div>
+      <button class="sp-close" id="spClose" aria-label="Close">✕</button>
+    </div>
+    <div class="sp-body" id="spBody"></div>
+  </div>
+</div>
+
+<!-- ===== BACK TO TOP ===== -->
+<button class="back-top" id="backTop" aria-label="Scroll to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 15l7-7 7 7"/></svg>
+</button>
+
+<script>
+/* =====================================================
+   DOCUMENT KNOWLEDGE BASE
+   ===================================================== */
+const DOCS = [
+  /* ---- GOVERNMENT ---- */
+  {
+    id:"income-cert", name:"Income Certificate", nameHi:"आय प्रमाण पत्र",
+    icon:"📄", iconType:"govt", cat:"govt",
+    validity:"6 months – 1 year (varies by state)",
+    fee:"₹10 – ₹50", time:"3 – 15 working days", online:true,
+    portal:"State e-District portal (e.g. edistrict.up.gov.in, edistrict.delhi.gov.in)",
+    office:"Tehsil Office / SDM Office / Block Development Office",
+    officials:["Tehsildar","Sub-Divisional Magistrate (SDM)","District Magistrate (DM)","Lekhpal / Patwari (verification)"],
+    steps:[
+      "Collect documents: Aadhaar card, ration card, salary slips (salaried) or a self-declaration affidavit (farmer / self-employed).",
+      "Visit your state's e-District portal or the nearest Common Service Centre (CSC / Jan Seva Kendra).",
+      "Fill the income certificate application form online or request the form at the Tehsil office counter.",
+      "Upload or submit scanned copies of supporting documents.",
+      "Pay the processing fee online or at the cash counter (₹10 – ₹50).",
+      "A Lekhpal or Patwari may visit your home / village to verify your income on the ground.",
+      "The Tehsildar or SDM reviews the Patwari report and digitally signs the certificate.",
+      "Download from the e-District portal or collect the printed copy from the Tehsil office."
+    ],
+    docsRequired:["Aadhaar Card","Ration Card","Salary slips or Form-16 (salaried)","Self-declaration on stamp paper (farmer / self-employed)","Passport-size photograph","Filled application form"],
+    tip:"Most scholarship portals need a current-year income certificate. Apply 4–6 weeks before the scholarship deadline — Patwari verification takes time. Check the validity date before submitting."
+  },
+  {
+    id:"caste-cert", name:"Caste Certificate (SC / ST / OBC-NCL)", nameHi:"जाति प्रमाण पत्र",
+    icon:"📋", iconType:"govt", cat:"govt",
+    validity:"Lifetime for SC/ST. OBC-NCL: renew every 1–3 years.",
+    fee:"₹10 – ₹50", time:"7 – 21 working days", online:true,
+    portal:"State e-District portal (e.g. edistrict.delhi.gov.in, mahaonline.gov.in)",
+    office:"Tehsil Office / SDM Office / District Magistrate Office",
+    officials:["Tehsildar","Sub-Divisional Magistrate (SDM)","District Magistrate (DM)"],
+    steps:[
+      "Visit your state's e-District portal or collect the form from the Tehsil / SDM office.",
+      "Fill your personal and parents' caste details accurately.",
+      "Attach: parent's caste certificate, school records mentioning caste, and a self-declaration affidavit.",
+      "Submit the application with the required fee.",
+      "A Patwari / Revenue Inspector may conduct a local inquiry to verify your caste.",
+      "The Tehsildar or SDM reviews the inquiry report and issues the caste certificate.",
+      "Download from the e-District portal or collect in person."
+    ],
+    docsRequired:["Parent's Caste Certificate (father's or mother's)","Aadhaar Card","School / transfer certificate showing caste","Self-declaration affidavit on stamp paper","Ration Card","Passport-size photograph"],
+    tip:"For OBC scholarships you need the OBC Non-Creamy Layer (NCL) certificate — not just an OBC caste certificate. The NCL certificate needs periodic renewal and confirms family income is below ₹8 lakh/year."
+  },
+  {
+    id:"domicile-cert", name:"Domicile / Residence Certificate", nameHi:"निवास / अधिवास प्रमाण पत्र",
+    icon:"🏠", iconType:"govt", cat:"govt",
+    validity:"Lifetime in most states; 3 years in some.",
+    fee:"₹10 – ₹50", time:"7 – 15 working days", online:true,
+    portal:"State e-District portal (varies by state)",
+    office:"Tehsil Office / SDM Office",
+    officials:["Tehsildar","Sub-Divisional Magistrate (SDM)"],
+    steps:[
+      "Visit the state e-District portal or Tehsil office and download or pick up the application form.",
+      "Fill in your residential details and duration of stay in the state.",
+      "Attach residence proof (ration card, voter ID, utility bills) and Aadhaar.",
+      "Pay the nominal fee.",
+      "A Patwari may verify your address locally.",
+      "The Tehsildar or SDM signs and issues the domicile certificate.",
+      "Download from e-District or collect in person."
+    ],
+    docsRequired:["Aadhaar Card","Voter ID or Ration Card","Electricity / water bill in family's name","Parent's domicile certificate (if available)","School records showing state of study","Passport-size photograph"],
+    tip:"State-specific scholarships require this to prove you're a resident of that state. Apply for it alongside your income certificate to save trips to the Tehsil office."
+  },
+  {
+    id:"ews-cert", name:"EWS Certificate", nameHi:"आर्थिक रूप से कमज़ोर वर्ग प्रमाण पत्र",
+    icon:"📑", iconType:"govt", cat:"govt",
+    validity:"One financial year (April–March). Renew every year.",
+    fee:"₹10 – ₹30", time:"5 – 15 working days", online:true,
+    portal:"State e-District portal (EWS certificate section)",
+    office:"Tehsil Office / SDM Office",
+    officials:["Tehsildar","Sub-Divisional Magistrate (SDM)"],
+    steps:[
+      "Confirm eligibility: General category, annual family income below ₹8 lakh, and below asset thresholds (5 acres agri land / 1000 sq.ft residential plot etc.).",
+      "Visit the e-District portal or Tehsil and fill the EWS certificate application (separate from income certificate form).",
+      "Attach income proof, Aadhaar, and a self-declaration of assets.",
+      "Pay the fee.",
+      "The Tehsildar or SDM verifies and issues the EWS certificate.",
+      "Download or collect — note the validity date (expires 31 March) and renew the following April."
+    ],
+    docsRequired:["Aadhaar Card","Income certificate or salary slips (total family income)","Self-declaration of agricultural land and property","Ration Card","Passport-size photograph"],
+    tip:"EWS is NOT the same as an income certificate. It is a composite certificate confirming both your General category and economic weakness. Renew it every financial year — apply in April/May so it's ready before scholarship season."
+  },
+  {
+    id:"postman-stmt", name:"Postman Statement / Address Verification", nameHi:"डाकिया बयान / पते का सत्यापन",
+    icon:"📮", iconType:"govt", cat:"govt",
+    validity:"3 – 6 months (purpose-specific)",
+    fee:"Usually free", time:"2 – 7 working days", online:false,
+    portal:"Not available online — physical postman verification required.",
+    office:"Local Post Office (Head Post Office or Sub Post Office)",
+    officials:["Postman / Beat Postman","Postmaster","Head Post Office Superintendent"],
+    steps:[
+      "Visit your nearest Post Office and request a Postman Statement or Address Verification Letter.",
+      "Write a simple application to the Postmaster explaining the purpose (e.g. passport verification, scholarship address proof).",
+      "The Postmaster assigns your area's Beat Postman to physically visit your residence.",
+      "The Postman visits, verifies you reside there, and writes a signed statement.",
+      "The Postmaster countersigns the statement on official Post Office letterhead.",
+      "Collect the signed statement from the Post Office."
+    ],
+    docsRequired:["Written application addressed to the Postmaster","Aadhaar Card or any ID proof","Purpose statement (e.g. 'required for passport police verification')"],
+    tip:"This is free in most Post Offices. Useful for passport police verification when other address proofs are disputed. Just walk in and ask the Postmaster — they know exactly what to do."
+  },
+
+  /* ---- IDENTITY ---- */
+  {
+    id:"aadhaar", name:"Aadhaar Card", nameHi:"आधार कार्ड",
+    icon:"🆔", iconType:"id", cat:"id",
+    validity:"Lifetime (update biometrics every 10 years recommended)",
+    fee:"Free for first enrolment. ₹50 for detail updates.", time:"New: 15–60 days. Updates: 7–15 days.", online:true,
+    portal:"myaadhaar.uidai.gov.in — download, update, status check",
+    office:"Aadhaar Enrolment Centre — find nearest at appointments.uidai.gov.in",
+    officials:["UIDAI Authorised Enrolment Operator"],
+    steps:[
+      "Locate nearest Aadhaar Enrolment Centre at appointments.uidai.gov.in and book an appointment.",
+      "Carry proof of identity (voter ID, passport, school ID) and proof of address (ration card, utility bill) — originals + copies.",
+      "At the centre, biometrics (fingerprints + iris scan) and a photograph are captured.",
+      "Receive an acknowledgement slip with a 14-digit Enrolment ID (EID).",
+      "Track status at myaadhaar.uidai.gov.in using the EID.",
+      "Once generated, download the e-Aadhaar (password-protected PDF) from the portal."
+    ],
+    docsRequired:["Proof of Identity — voter ID, passport, PAN, school ID","Proof of Address — ration card, utility bill, bank statement","Proof of Date of Birth — birth certificate, Class X certificate"],
+    tip:"e-Aadhaar from myaadhaar.uidai.gov.in is legally equivalent to the physical card. Ensure your Aadhaar is linked to your bank account (Aadhaar-seeding / NPCI mapping) for scholarship DBT disbursements — without this, payments will not reach you."
+  },
+  {
+    id:"passport", name:"Passport", nameHi:"पासपोर्ट",
+    icon:"🛂", iconType:"id", cat:"id",
+    validity:"10 years (adults). 5 years (minors under 18).",
+    fee:"₹1,500 (normal, 36-page). ₹3,500 (tatkal). ₹2,000 (60-page).", time:"Normal: 7–30 working days. Tatkal: 1–3 days after police verification.", online:true,
+    portal:"passportindia.gov.in — Passport Seva Portal",
+    office:"Passport Seva Kendra (PSK) or Post Office Passport Seva Kendra (POPSK)",
+    officials:["Regional Passport Officer (RPO)","Police Verification Officer (local police station)"],
+    steps:[
+      "Register on passportindia.gov.in and log in to your account.",
+      "Fill the online application — select Fresh Passport (first time) or Reissue.",
+      "Pay the fee — net banking, card, or UPI.",
+      "Book an appointment at your nearest PSK or POPSK.",
+      "Visit on appointment date with original documents + self-attested photocopies — checked at counters A, B, C.",
+      "After PSK visit, police verification is initiated (officer visits your registered address).",
+      "After clearance, passport is dispatched via Speed Post to your registered address."
+    ],
+    docsRequired:["Aadhaar Card (address + identity proof)","Birth Certificate or Class X marksheet (date of birth)","Passport-size photographs (white background, recent)","Old passport if reissue","Electricity / water bill (additional address)","Postman statement if other proofs are disputed"],
+    tip:"Students applying for the first time: school bonafide letter + parent's address proof is usually sufficient. If you need a passport urgently for a scholarship abroad, use Tatkal — more expensive but processed in 1–3 days."
+  },
+
+  /* ---- EDUCATION ---- */
+  {
+    id:"bonafide", name:"Bonafide Certificate", nameHi:"बोनाफाइड / छात्र प्रमाण पत्र",
+    icon:"🎓", iconType:"edu", cat:"edu",
+    validity:"Current academic session only.",
+    fee:"Free (issued by your institution).", time:"1 – 5 working days.", online:false,
+    portal:"Not available online — must be issued by your school / college.",
+    office:"School / College Administrative Office or Principal's Office",
+    officials:["Principal","Registrar","Head of Department (HOD)"],
+    steps:[
+      "Write an application to your Principal or Registrar requesting a Bonafide Certificate.",
+      "Clearly state the purpose: 'required for scholarship application on [portal name]'.",
+      "Submit at the admin office with your student ID.",
+      "The office verifies your enrolment and academic standing.",
+      "The Principal or Registrar signs the certificate on official institute letterhead.",
+      "Collect — ask for 2–3 copies if multiple scholarships need originals."
+    ],
+    docsRequired:["Student ID Card","Written application stating the purpose","Current semester fee receipt (sometimes required)","Admission letter (for first-year students)"],
+    tip:"Ask for 2–3 original copies at once — some scholarship portals insist on originals, not scans. Some colleges issue digitally signed bonafide letters — check if the scholarship portal accepts them."
+  },
+  {
+    id:"lor", name:"Letter of Recommendation (LOR)", nameHi:"अनुशंसा / सिफारिश पत्र",
+    icon:"✉️", iconType:"edu", cat:"edu",
+    validity:"6 months – 1 year (most portals accept within 1 year of issue).",
+    fee:"Free — written personally by your teacher or professor.", time:"3 – 10 working days (depends on the teacher).", online:false,
+    portal:"Not applicable — personally issued by a teacher on institution letterhead.",
+    office:"Your school or college — approach your class teacher, HOD, or Principal.",
+    officials:["Class Teacher","Subject Professor","Head of Department (HOD)","Principal"],
+    steps:[
+      "Choose a recommender who knows your academic work and character well.",
+      "Approach them at least 2–3 weeks before your scholarship deadline.",
+      "Give them: scholarship name, your academic highlights, and a bullet-point list of what you'd like highlighted.",
+      "Request they mention your academic performance, commitment, financial background (if relevant), and future potential.",
+      "The teacher writes and signs on institution letterhead with their official designation.",
+      "Collect the signed letter — scan it as a clear PDF for uploading."
+    ],
+    docsRequired:["Your latest resume or biodata","Scholarship name, provider, and deadline","Summary of academic achievements and extra-curriculars","Previous marksheets (for the teacher's reference)"],
+    tip:"Give your teacher a bullet-point cheat sheet of what to include — it makes their job easier and ensures the letter covers the right points. Never approach with less than 2 weeks to go. Always thank them afterwards."
+  },
+  {
+    id:"marksheet", name:"Marksheet / Academic Records", nameHi:"अंक पत्र / परीक्षा परिणाम",
+    icon:"📝", iconType:"edu", cat:"edu",
+    validity:"Lifetime (never expires). DigiLocker copies are always live.",
+    fee:"Free (original). ₹100–₹500 for duplicate from board/university.", time:"Already in hand. Duplicate: 7–30 days.", online:true,
+    portal:"digilocker.gov.in — most boards auto-push marksheets here",
+    office:"Board of Education / University Examination Office / School Office",
+    officials:["Board of Education","University Registrar","School Principal"],
+    steps:[
+      "Check DigiLocker (digilocker.gov.in) first — link your Aadhaar to find your board marksheet already there.",
+      "Download the digitally signed copy from DigiLocker — legally valid for all scholarship portals.",
+      "If you have the physical original, make 2–3 clear photocopies and self-attest them.",
+      "For scholarship upload, scan the marksheet in colour at 200+ DPI as a clear PDF.",
+      "If the original is lost, apply for a duplicate at your board or university exam office: bring FIR copy, application form, and fee."
+    ],
+    docsRequired:["Original marksheet or admit card (to get roll number for DigiLocker)","Aadhaar Card (for DigiLocker login)","FIR copy + fee (only if applying for duplicate)"],
+    tip:"DigiLocker marksheets are accepted on NSP and most scholarship portals as equivalent to originals. Link your Aadhaar — Class X, XII, and many university marksheets may already be there waiting."
+  },
+
+  /* ---- FINANCIAL ---- */
+  {
+    id:"pan-card", name:"PAN Card", nameHi:"पैन कार्ड",
+    icon:"💳", iconType:"finance", cat:"finance",
+    validity:"Lifetime (does not expire).",
+    fee:"₹107 (India address). Free instant e-PAN via Income Tax portal.", time:"Physical: 15–20 days. Instant e-PAN: immediate.", online:true,
+    portal:"incometax.gov.in (instant e-PAN) or onlineservices.nsdl.com (physical)",
+    office:"TIN-NSDL / UTIITSL facilitation centres",
+    officials:["Income Tax Department (NSDL / Protean)"],
+    steps:[
+      "Instant e-PAN (free): visit incometax.gov.in → 'Instant e-PAN' → enter Aadhaar → validate OTP → download immediately.",
+      "Physical PAN: visit onlineservices.nsdl.com → 'New PAN – Indian Citizen (Form 49A)'.",
+      "Fill your name, DOB, mobile, and email exactly as on Aadhaar.",
+      "Upload photograph, signature, and ID / address / DOB proof.",
+      "Pay ₹107 online via net banking, card, or UPI.",
+      "Note the 15-digit acknowledgement number for tracking.",
+      "Physical PAN dispatched via Speed Post in 15–20 days."
+    ],
+    docsRequired:["Aadhaar Card (mandatory for instant e-PAN)","Proof of Identity — Aadhaar, voter ID, passport","Proof of Address — Aadhaar, utility bill, bank statement","Proof of Date of Birth — birth certificate, Class X certificate","Passport-size photograph","Signature on white paper (for physical PAN)"],
+    tip:"Use the free instant e-PAN route on incometax.gov.in if your Aadhaar has a linked mobile number — you get a digitally signed PAN in minutes with zero fee and zero wait."
+  },
+  {
+    id:"bank-passbook", name:"Bank Passbook / Account Details", nameHi:"बैंक पासबुक / खाते की जानकारी",
+    icon:"🏦", iconType:"finance", cat:"finance",
+    validity:"As long as the account is active.",
+    fee:"Free under Jan Dhan or student account schemes at most public banks.", time:"Same day to 3 working days (for account opening).", online:true,
+    portal:"SBI YONO, PNB ONE, BOB World — most banks offer online account opening.",
+    office:"Any scheduled bank branch (SBI, PNB, BOB, Canara Bank, etc.)",
+    officials:["Bank Manager","Branch KYC Officer"],
+    steps:[
+      "Visit any bank branch with Aadhaar, PAN (optional), and a passport-size photograph.",
+      "Request to open a savings account — ask for a zero-balance or student BSBD account.",
+      "Fill the KYC form and submit documents.",
+      "Ask the bank officer to link / seed your Aadhaar to the account (NPCI mapping) — mandatory for DBT scholarship payments.",
+      "Get your passbook printed — shows name, account number, branch, and IFSC code.",
+      "Photocopy or scan the first page of the passbook for scholarship forms.",
+      "Ask for a cancelled cheque if any portal requires it."
+    ],
+    docsRequired:["Aadhaar Card","PAN Card (recommended; required if annual transactions exceed ₹50,000)","Passport-size photographs","Proof of address (Aadhaar is sufficient)","Student ID (for student / minor accounts)"],
+    tip:"The account MUST be in the student's own name — not a parent's — for DBT scholarship disbursement. Ask the bank to confirm Aadhaar–NPCI mapping is active. This is the single most common reason scholarship money fails to reach students."
+  }
+];
+
+/* =====================================================
+   HELPERS
+   ===================================================== */
+function esc(s){ return String(s).replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+
+/* =====================================================
+   RENDER CARDS
+   ===================================================== */
+function renderCards(){
+  const grids = {govt:'grid-govt', id:'grid-id', edu:'grid-edu', finance:'grid-finance'};
+  DOCS.forEach(doc => {
+    const grid = document.getElementById(grids[doc.cat]);
+    if(!grid) return;
+    const card = document.createElement('div');
+    card.className = 'doc-card';
+    card.dataset.id = doc.id;
+    card.dataset.cat = doc.cat;
+    card.dataset.search = (doc.name + ' ' + doc.nameHi).toLowerCase();
+    card.setAttribute('role','button');
+    card.setAttribute('tabindex','0');
+    card.innerHTML = `
+      <div class="dc-top">
+        <div class="dc-icon ${doc.iconType}">${doc.icon}</div>
+        <div class="dc-title">
+          <h3>${esc(doc.name)}</h3>
+          <span class="dc-hi">${esc(doc.nameHi)}</span>
+        </div>
+      </div>
+      <div class="dc-pills">
+        <span class="dc-pill">⏱ ${esc(doc.time)}</span>
+        <span class="dc-pill">${esc(doc.fee)}</span>
+        <span class="dc-pill ${doc.online?'online':'offline'}">${doc.online?'🌐 Online available':'🏢 Offline only'}</span>
+      </div>
+      <div class="dc-foot">
+        <span>Validity: ${esc(doc.validity)}</span>
+        <span class="dc-cta">View guide →</span>
+      </div>`;
+    card.addEventListener('click', () => openPanel(doc.id));
+    card.addEventListener('keydown', e => { if(e.key==='Enter') openPanel(doc.id); });
+    grid.appendChild(card);
+  });
+}
+
+/* =====================================================
+   SLIDE PANEL
+   ===================================================== */
+const overlay = document.getElementById('slideOverlay');
+const spEmoji = document.getElementById('spEmoji');
+const spTitle = document.getElementById('spTitle');
+const spSub   = document.getElementById('spSub');
+const spBody  = document.getElementById('spBody');
+
+function openPanel(id){
+  const doc = DOCS.find(d => d.id === id);
+  if(!doc) return;
+  spEmoji.className = `sp-emoji ${doc.iconType}`;
+  spEmoji.textContent = doc.icon;
+  spTitle.textContent = doc.name;
+  spSub.textContent = doc.nameHi + ' · ' + ({govt:'Government',id:'Identity',edu:'Education',finance:'Financial'}[doc.cat]||doc.cat);
+
+  spBody.innerHTML = `
+    <div class="sp-meta">
+      <div class="sp-meta-box"><strong>Validity</strong><span>${esc(doc.validity)}</span></div>
+      <div class="sp-meta-box"><strong>Fee</strong><span>${esc(doc.fee)}</span></div>
+      <div class="sp-meta-box"><strong>Time Required</strong><span>${esc(doc.time)}</span></div>
+      <div class="sp-meta-box ${doc.online?'is-online':'is-offline'}"><strong>Online Available?</strong><span>${doc.online?'✅ Yes — apply online':'❌ Offline only'}</span></div>
+    </div>
+
+    ${doc.online ? `<div class="sp-sec"><h4>🌐 Online Portal</h4><div class="sp-portal"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>${esc(doc.portal)}</div></div>` : ''}
+
+    <div class="sp-sec"><h4>🏢 Offline Office</h4><ul><li>${esc(doc.office)}</li></ul></div>
+
+    <div class="sp-sec">
+      <h4>👤 Officials Involved</h4>
+      <div class="sp-chips">${doc.officials.map(o=>`<span class="sp-chip">${esc(o)}</span>`).join('')}</div>
+    </div>
+
+    <div class="sp-sec">
+      <h4>📋 Step-by-Step Process</h4>
+      <ol>${doc.steps.map(s=>`<li>${esc(s)}</li>`).join('')}</ol>
+    </div>
+
+    <div class="sp-sec">
+      <h4>📎 Documents You'll Need</h4>
+      <ul>${doc.docsRequired.map(d=>`<li>${esc(d)}</li>`).join('')}</ul>
+    </div>
+
+    <div class="sp-tip"><strong>💡 Pro Tip</strong>${esc(doc.tip)}</div>`;
+
+  overlay.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  document.getElementById('slidePanel').scrollTop = 0;
+}
+
+function closePanel(){
+  overlay.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.getElementById('spClose').addEventListener('click', closePanel);
+overlay.addEventListener('click', e => { if(e.target === overlay) closePanel(); });
+document.addEventListener('keydown', e => { if(e.key==='Escape' && overlay.classList.contains('open')) closePanel(); });
+
+/* =====================================================
+   CATEGORY TABS
+   ===================================================== */
+document.querySelectorAll('.cat-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.cat-tab').forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    const cat = tab.dataset.cat;
+    document.querySelectorAll('.doc-card').forEach(card => {
+      card.classList.toggle('hidden', cat !== 'all' && card.dataset.cat !== cat);
+    });
+    ['govt','id','edu','finance'].forEach(c => {
+      const sec = document.getElementById('sec-'+c);
+      if(sec) sec.style.display = (cat==='all' || cat===c) ? '' : 'none';
+    });
+  });
+});
+
+/* =====================================================
+   SEARCH
+   ===================================================== */
+document.getElementById('searchInput').addEventListener('input', function(){
+  const q = this.value.trim().toLowerCase();
+  document.querySelectorAll('.doc-card').forEach(card => {
+    card.classList.toggle('hidden', q !== '' && !card.dataset.search.includes(q));
+  });
+  if(q){
+    document.querySelectorAll('.cat-tab').forEach(t => t.classList.remove('active'));
+    document.querySelector('[data-cat="all"]').classList.add('active');
+    ['govt','id','edu','finance'].forEach(c => { const s=document.getElementById('sec-'+c); if(s) s.style.display=''; });
+  }
+});
+
+/* =====================================================
+   DOCUMENT VAULT — IndexedDB
+   ===================================================== */
+const DB_NAME='avsar_doc_vault', DB_VER=1, STORE='files';
+let db=null;
+
+function openDB(){ return new Promise((res,rej)=>{ const r=indexedDB.open(DB_NAME,DB_VER); r.onupgradeneeded=e=>{ e.target.result.createObjectStore(STORE,{keyPath:'id',autoIncrement:true}); }; r.onsuccess=e=>{ db=e.target.result; res(db); }; r.onerror=()=>rej(r.error); }); }
+const txS=(m='readonly')=>db.transaction(STORE,m).objectStore(STORE);
+function dbAdd(file){ return new Promise((res,rej)=>{ const fr=new FileReader(); fr.onload=()=>{ const r=txS('readwrite').add({name:file.name,type:file.type,size:file.size,data:fr.result,at:new Date().toISOString()}); r.onsuccess=()=>res(r.result); r.onerror=()=>rej(r.error); }; fr.onerror=()=>rej(fr.error); fr.readAsDataURL(file); }); }
+function dbAll(){ return new Promise((res,rej)=>{ const r=txS().getAll(); r.onsuccess=()=>res(r.result); r.onerror=()=>rej(r.error); }); }
+function dbGet(id){ return new Promise((res,rej)=>{ const r=txS().get(id); r.onsuccess=()=>res(r.result); r.onerror=()=>rej(r.error); }); }
+function dbDel(id){ return new Promise((res,rej)=>{ const r=txS('readwrite').delete(id); r.onsuccess=()=>res(); r.onerror=()=>rej(r.error); }); }
+function fmtSz(b){ return b<1024?b+' B':b<1048576?(b/1024).toFixed(1)+' KB':(b/1048576).toFixed(1)+' MB'; }
+function fIcon(t){ return t==='application/pdf'?{e:'📕',c:'pdf'}:t.startsWith('image/')?{e:'🖼️',c:'img'}:{e:'📄',c:'pdf'}; }
+
+async function renderVault(){
+  const list=document.getElementById('vaultList');
+  try{
+    const files=await dbAll();
+    if(!files.length){ list.innerHTML='<div class="vault-empty">Your vault is empty. Upload files above — they stay only in this browser, never sent anywhere.</div>'; return; }
+    list.innerHTML=files.map(f=>{
+      const ic=fIcon(f.type);
+      const d=new Date(f.at).toLocaleDateString('en-IN',{day:'numeric',month:'short',year:'numeric'});
+      return `<div class="vault-item" data-id="${f.id}">
+        <div class="v-icon ${ic.c}">${ic.e}</div>
+        <div class="v-info"><div class="v-name" title="${esc(f.name)}">${esc(f.name)}</div><div class="v-meta">${fmtSz(f.size)} · ${d}</div></div>
+        <div class="v-actions">
+          <button class="v-btn pv" data-id="${f.id}">👁 Preview</button>
+          <button class="v-btn dl" data-id="${f.id}">⬇ Download</button>
+          <button class="v-btn del" data-id="${f.id}">✕ Remove</button>
+        </div>
+      </div>`;
+    }).join('');
+    list.querySelectorAll('.pv').forEach(b=>b.addEventListener('click',async()=>{ const f=await dbGet(+b.dataset.id); if(!f) return; const w=window.open('','_blank'); if(f.type.startsWith('image/')) w.document.write(`<html><body style="margin:0;background:#111;display:flex;align-items:center;justify-content:center;min-height:100vh"><img src="${f.data}" style="max-width:100%;max-height:100vh"></body></html>`); else w.document.write(`<html><body style="margin:0"><iframe src="${f.data}" style="width:100%;height:100vh;border:none"></iframe></body></html>`); }));
+    list.querySelectorAll('.dl').forEach(b=>b.addEventListener('click',async()=>{ const f=await dbGet(+b.dataset.id); if(!f) return; const a=Object.assign(document.createElement('a'),{href:f.data,download:f.name}); document.body.appendChild(a); a.click(); document.body.removeChild(a); }));
+    list.querySelectorAll('.del').forEach(b=>b.addEventListener('click',async()=>{ const nm=b.closest('.vault-item').querySelector('.v-name').textContent; if(!confirm(`Delete "${nm}" from vault?`)) return; await dbDel(+b.dataset.id); renderVault(); }));
+  }catch(e){ list.innerHTML='<div class="vault-empty">Could not load vault — IndexedDB may be unavailable.</div>'; }
+}
+
+async function handleFiles(files){
+  const MAX=5*1024*1024;
+  const OK=['application/pdf','image/jpeg','image/jpg','image/png'];
+  for(const f of files){
+    if(!OK.includes(f.type)){ alert(`"${f.name}" — only PDF, JPG, PNG allowed.`); continue; }
+    if(f.size>MAX){ alert(`"${f.name}" is ${fmtSz(f.size)} — max 5 MB.`); continue; }
+    await dbAdd(f);
+  }
+  renderVault();
+}
+
+function initVault(){
+  openDB().then(renderVault).catch(()=>{ document.getElementById('vaultList').innerHTML='<div class="vault-empty">IndexedDB not available in this browser.</div>'; });
+  const area=document.getElementById('vaultUpload');
+  const inp=document.getElementById('vaultInput');
+  area.addEventListener('dragover',e=>{e.preventDefault();area.classList.add('drag-over');});
+  area.addEventListener('dragleave',()=>area.classList.remove('drag-over'));
+  area.addEventListener('drop',e=>{e.preventDefault();area.classList.remove('drag-over');if(e.dataTransfer.files.length) handleFiles(e.dataTransfer.files);});
+  inp.addEventListener('change',()=>{ if(inp.files.length) handleFiles(inp.files); inp.value=''; });
+}
+
+/* =====================================================
+   BACK TO TOP
+   ===================================================== */
+const bt=document.getElementById('backTop');
+window.addEventListener('scroll',()=>bt.classList.toggle('visible',window.scrollY>400),{passive:true});
+
+/* =====================================================
+   INIT
+   ===================================================== */
+renderCards();
+initVault();
+</script>
+</body>
+</html>
