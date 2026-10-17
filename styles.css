@@ -490,37 +490,76 @@ body.pre-login{ overflow: hidden; }
 .radar-card-days.rolling{ color: var(--indigo-deep); }
 
 /* ============ CHECKER FORM ============ */
-.checker{ padding: 90px 0 20px; background: var(--bg-alt); }
+.checker{ padding: 90px 0 20px; }
 .ledger-form{
-  margin-top: 40px; background: var(--surface); color: var(--ink);
-  border: 1px solid var(--surface-border); border-radius: 6px; box-shadow: var(--shadow-card);
-  padding: 40px 44px 34px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px 28px; position: relative;
+  margin-top: 40px;
+  background: var(--paper);
+  color: var(--paper-text);
+  border-radius: 6px;
+  box-shadow: var(--shadow-page);
+  padding: 40px 40px 32px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px 28px;
+  position: relative;
 }
 .ledger-form::before{
-  content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 46px;
-  background-image: radial-gradient(circle at 8px 0, transparent 6px, var(--bg-alt) 6.5px);
-  background-size: 100% 26px; background-repeat: repeat-y; transform: translateX(-24px);
+  content: "";
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 46px;
+  background-image: radial-gradient(circle at 8px 0, transparent 6px, var(--ink) 6.5px);
+  background-size: 100% 26px;
+  background-repeat: repeat-y;
+  transform: translateX(-24px);
+  opacity: 0.9;
 }
 .field{ display:flex; flex-direction: column; gap: 8px; }
 .field-wide{ grid-column: 1 / -1; }
-.field label{ font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.03em; color: var(--ink-muted); text-transform: uppercase; }
-.field select, .field input[type="number"], .field input[type="text"], .field input[type="email"], .field input[type="password"]{
-  font-family: var(--font-body); font-size: 0.98rem; padding: 11px 12px; border: none;
-  border-bottom: 1.5px solid var(--surface-border); background: transparent; color: var(--ink); border-radius: 0;
+.field label{
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.03em;
+  color: var(--paper-muted);
+  text-transform: uppercase;
 }
-.field select:focus, .field input:focus{ border-bottom-color: var(--crimson); }
+.field select, .field input[type="number"], .field input[type="text"], .field input[type="email"], .field input[type="password"]{
+  font-family: var(--font-body);
+  font-size: 0.98rem;
+  padding: 11px 12px;
+  border: none;
+  border-bottom: 1.5px solid var(--line-paper);
+  background: transparent;
+  color: var(--paper-text);
+  border-radius: 0;
+}
+.field select:focus, .field input:focus{
+  border-bottom-color: var(--marigold-deep);
+}
 .radio-row{ display:flex; gap: 10px; flex-wrap: wrap; }
 .radio-pill{
-  border: 1.5px solid var(--surface-border); border-radius: 20px; padding: 9px 16px; cursor: pointer;
-  font-size: 0.88rem; transition: border-color 0.15s ease, background 0.15s ease; position: relative;
+  border: 1.5px solid var(--line-paper);
+  border-radius: 20px;
+  padding: 9px 16px;
+  cursor: pointer;
+  font-size: 0.88rem;
+  transition: border-color 0.15s ease, background 0.15s ease;
+  position: relative;
 }
 .radio-pill input{ position:absolute; opacity:0; }
-.radio-pill:has(input:checked){ border-color: var(--crimson); background: rgba(207,65,115,0.08); color: var(--crimson-deep); }
+.radio-pill:has(input:checked){
+  border-color: var(--marigold-deep);
+  background: rgba(63,191,182,0.16);
+}
 .field-submit{ display:flex; flex-direction: column; align-items: flex-start; gap: 10px; margin-top: 6px; }
-.field-note{ font-size: 0.8rem; color: var(--ink-muted); margin:0; max-width: 60ch; }
+.field-note{ font-size: 0.8rem; color: var(--paper-muted); margin:0; max-width: 60ch; }
 
-@media (max-width: 860px){ .ledger-form{ grid-template-columns: 1fr 1fr; padding: 32px 26px; } }
-@media (max-width: 560px){ .ledger-form{ grid-template-columns: 1fr; } }
+@media (max-width: 860px){
+  .ledger-form{ grid-template-columns: 1fr 1fr; padding: 32px 24px; }
+}
+@media (max-width: 560px){
+  .ledger-form{ grid-template-columns: 1fr; }
+}
 
 /* ============ RESULTS / LEDGER LIST ============ */
 .results{ padding: 76px 0; background: var(--bg); }
