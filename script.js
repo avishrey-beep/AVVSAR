@@ -763,14 +763,116 @@ form.addEventListener("submit", (e) => {
 });
 
 /* =========================================================
-   MODAL
+   VAULT (DIGILOCKER) INTEGRATION FOR SCHOLARSHIP APPLICATIONS
+   Connects the scholarship finder directly to the user's
+   local browser vault in IndexedDB.
+   ========================================================= */
+function getVaultFilesFromDB(){
+  return new Promise((resolve) => {
+    try {
+      const req = indexedDB.open("avsar_doc_vault", 1);
+      req.onsuccess = e => {
+        const db = e.target.result;
+        if (!db.objectStoreNames.contains("files")){ resolve([]); return; }
+        const tx = db.transaction("files", "readonly");
+        const store = tx.objectStore("files");
+        const allReq = store.getAll();
+        allReq.onsuccess = () => resolve(allReq.result || []);
+        allReq.onerror = () => resolve([]);
+      };
+      req.onerror = () => resolve([]);
+    } catch (err) {
+      resolve([]);
+    }
+  });
+}
+
+function matchDocRequirement(docName, vaultFiles){
+  const clean = docName.toLowerCase();
+  for (const f of vaultFiles){
+    const fn = f.name.toLowerCase();
+    if (clean.includes("income") && fn.includes("income")) return f;
+    if (clean.includes("aadhaar") && fn.includes("aadhaar")) return f;
+    if (clean.includes("caste") && (fn.includes("caste") || fn.includes("category"))) return f;
+    if (clean.includes("tribe") && (fn.includes("st") || fn.includes("tribe"))) return f;
+    if (clean.includes("marksheet") && (fn.includes("mark") || fn.includes("score") || fn.includes("10") || fn.includes("12") || fn.includes("degree") || fn.includes("result"))) return f;
+    if (clean.includes("passbook") && (fn.includes("passbook") || fn.includes("bank") || fn.includes("account"))) return f;
+    if (clean.includes("bonafide") && fn.includes("bonafide")) return f;
+    if (clean.includes("ews") && fn.includes("ews")) return f;
+    if (clean.includes("domicile") && (fn.includes("domicile") || fn.includes("niwas") || fn.includes("residence"))) return f;
+    if (clean.includes("recommendation") && (fn.includes("lor") || fn.includes("recommendation"))) return f;
+    if (clean.includes("admission") && (fn.includes("admission") || fn.includes("allotment") || fn.includes("fee"))) return f;
+  }
+  return null;
+}
+
+function downloadApplicationDossier(scholarship, matchedList){
+  const currentUser = lastUser || {};
+  let loginData = {};
+  try { loginData = JSON.parse(localStorage.getItem(LOGIN_KEY) || "{}"); } catch(e){}
+
+  const dossier = {
+    dossierTitle: "Avsar Scholarship Application Dossier (DigiLocker Integration)",
+    generatedAt: new Date().toISOString(),
+    applicant: {
+      fullName: loginData.name || "Student Applicant",
+      email: loginData.email || "student@example.com",
+      educationStage: levelLabel[currentUser.level] || currentUser.level || "Not specified",
+      category: (currentUser.category || "General").toUpperCase(),
+      lastExamScore: (currentUser.score || 0) + "%",
+      annualFamilyIncome: "₹" + (currentUser.income || 0).toLocaleString("en-IN"),
+      gender: currentUser.gender || "Not specified",
+      domicileState: currentUser.state || "All-India"
+    },
+    scholarshipScheme: {
+      id: scholarship.id,
+      name: scholarship.name,
+      provider: scholarship.provider,
+      awardAmount: scholarship.amount,
+      deadline: scholarship.deadline,
+      applicationType: typeLabel[scholarship.type]
+    },
+    documentChecklistManifest: scholarship.documents.map(d => {
+      const match = matchedList.find(m => m.requirement === d);
+      return {
+        requiredDocument: d,
+        statusInVault: match && match.file ? "VERIFIED_IN_VAULT" : "PENDING_UPLOAD",
+        attachedVaultFileName: match && match.file ? match.file.name : null,
+        fileSize: match && match.file ? match.file.size + " bytes" : null
+      };
+    }),
+    submissionSteps: scholarship.steps,
+    verificationNotice: "Documents attached via Avsar Client-Side Vault. Verify final compatibility on official provider portal."
+  };
+
+  const blob = new Blob([JSON.stringify(dossier, null, 2)], { type: "application/json;charset=utf-8" });
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = `Avsar_Dossier_${scholarship.id}_${(loginData.name || "Applicant").replace(/\s+/g, "_")}.json`;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+}
+
+/* =========================================================
+   MODAL WITH DIGILOCKER VAULT AUTO-MATCHING
    ========================================================= */
 const modalOverlay = document.getElementById("modalOverlay");
 const modalBody = document.getElementById("modalBody");
 
-function openModal(id){
+async function openModal(id){
   const s = SCHOLARSHIPS.find(x => x.id === id);
   if (!s) return;
+
+  // Query Vault documents from IndexedDB
+  const vaultFiles = await getVaultFilesFromDB();
+  const matchedDocs = s.documents.map(d => ({
+    requirement: d,
+    file: matchDocRequirement(d, vaultFiles)
+  }));
+
+  const attachedCount = matchedDocs.filter(m => m.file !== null).length;
+  const totalCount = s.documents.length;
 
   modalBody.innerHTML = `
     <h3 id="modalTitle">${s.name}</h3>
@@ -780,15 +882,55 @@ function openModal(id){
       <div class="modal-meta-item"><strong>Deadline</strong>${s.deadline}</div>
       <div class="modal-meta-item"><strong>Type</strong>${typeLabel[s.type]}</div>
     </div>
-    <div class="modal-section">
-      <h4>Documents to prepare</h4>
-      <ul>${s.documents.map(d => `<li>${d}</li>`).join("")}</ul>
+
+    <!-- DigiLocker Vault Status Banner -->
+    <div style="background:var(--bg-alt); border:1px solid var(--surface-border); border-radius:8px; padding:16px 20px; margin-bottom:22px;">
+      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
+        <div>
+          <strong style="font-family:var(--font-mono); font-size:0.75rem; text-transform:uppercase; color:var(--crimson-deep); letter-spacing:0.04em;">📁 Vault (DigiLocker) Auto-Link Status</strong>
+          <p style="margin:4px 0 0; font-size:0.86rem; color:var(--ink-soft);">
+            ${attachedCount === totalCount
+              ? `<span style="color:var(--mint-deep); font-weight:600;">✨ All ${totalCount} documents matched & auto-linked from your vault!</span>`
+              : `<strong>${attachedCount} of ${totalCount}</strong> documents ready in your vault.`}
+          </p>
+        </div>
+        <a href="documents.html#vault" target="_blank" style="font-family:var(--font-mono); font-size:0.72rem; color:var(--crimson); text-decoration:underline; font-weight:600;">
+          Open Vault / Upload ↗
+        </a>
+      </div>
+
+      <div style="margin-top:14px; display:flex; flex-direction:column; gap:8px;">
+        ${matchedDocs.map(m => `
+          <div style="display:flex; justify-content:space-between; align-items:center; background:#fff; border:1px solid var(--surface-border); border-radius:6px; padding:8px 12px; font-size:0.84rem;">
+            <span><strong>${escapeHtml(m.requirement)}</strong></span>
+            ${m.file 
+              ? `<span style="font-family:var(--font-mono); font-size:0.72rem; color:var(--mint-deep); background:rgba(165,214,167,0.25); padding:3px 8px; border-radius:12px;">✓ Auto-Linked: ${escapeHtml(m.file.name)}</span>`
+              : `<span style="font-family:var(--font-mono); font-size:0.72rem; color:var(--amber-deep); background:rgba(230,162,60,0.15); padding:3px 8px; border-radius:12px;">⚠️ Not in Vault</span>`}
+          </div>
+        `).join("")}
+      </div>
+
+      <div style="margin-top:16px; display:flex; gap:10px; flex-wrap:wrap;">
+        <button id="exportDossierBtn" class="ledger-view-btn" style="background:var(--crimson); font-size:0.78rem; padding:10px 18px; border-radius:4px;">
+          📦 Export Application Dossier (.json)
+        </button>
+        <a href="documents.html" target="_blank" class="ledger-view-btn" style="background:transparent; border:1px solid var(--surface-border); color:var(--ink); font-size:0.78rem; padding:9px 16px; text-decoration:none; display:inline-block;">
+          📖 View Document Steps Guide ↗
+        </a>
+      </div>
     </div>
+
     <div class="modal-section">
       <h4>Steps to apply</h4>
       <ol>${s.steps.map(st => `<li>${st}</li>`).join("")}</ol>
     </div>
   `;
+
+  const expBtn = document.getElementById("exportDossierBtn");
+  if (expBtn){
+    expBtn.addEventListener("click", () => downloadApplicationDossier(s, matchedDocs));
+  }
+
   modalOverlay.classList.add("open");
 }
 
@@ -905,8 +1047,24 @@ const SAATHI_RULES = [
     reply: "Most scholarships ask for: your latest marksheet, an income certificate (for need-based ones), a category certificate if relevant (SC/ST/OBC/EWS/minority), a bonafide/admission letter from your institute, Aadhaar, and a bank passbook copy in the applicant's own name. Merit-based scholarships usually skip the income certificate. Once you've searched, the 'Document Intelligence' section below your matches lets you tick off what you already have."
   },
   {
-    keywords: ["income certificate", "income proof"],
-    reply: "Yes, if you're applying for a need-based or 'merit or need-based' scholarship, you'll need a current income certificate — get it from your tehsildar, SDM office, or the state e-district portal. It's usually valid for 6–12 months, so time it close to your application. Purely merit-based scholarships usually don't ask for it."
+    keywords: ["income certificate", "income proof", "tehsildar", "magistrate", "income tax certificate", "itr"],
+    reply: "Income Certificate vs ITR: Scholarships require an official 'Income Certificate' issued by revenue authorities (Tehsildar, Sub-Divisional Magistrate [SDM], or Revenue Officer), NOT merely an Income Tax Return (ITR). For salaried families, Form 16 / ITR acts as supporting evidence, but for agricultural/informal income, the Patwari or Lekhpal conducts a field inquiry. Timeline: 7–15 working days. Fee: ₹20–₹50 (e-District / CSC centers). Validity: 1 financial year. Visit our Documents page (/documents.html) for full official authority workflows."
+  },
+  {
+    keywords: ["recommendation", "lor", "letter of recommendation", "reference letter"],
+    reply: "Letter of Recommendation (LOR): Needed for merit, doctoral, study-abroad, and research fellowships. Obtain it from your department Head, Dean, or Professor who taught you relevant subjects. We have an interactive 'Interactive LOR Generator' on our Documents page (documents.html) where you can fill in student & faculty details, preview the draft, copy to clipboard, or export as a .txt letter immediately!"
+  },
+  {
+    keywords: ["postman", "postman statement", "postal address", "postmaster"],
+    reply: "Postman Statement / Address Verification: Issued by your local Sub-Postmaster or Beat Postman with official postal rubber stamp. It certifies that the student/family has resided at the specified rural or unnumbered residential address for at least 1–3 years. Often requested when formal house tax or utility bills are unavailable. Usually completed in 1–3 days with zero official fee."
+  },
+  {
+    keywords: ["passport", "passport document", "passport seva"],
+    reply: "Passport Requirements: Keep ready: 1) Proof of Date of Birth (Aadhaar, Birth Certificate, or 10th marksheet), 2) Proof of Present Address (Aadhaar, Voter ID, Bank Passbook with photo, or Electricity bill), and 3) Non-ECR proof (Class 10+ passing certificate). Book appointments at passportindia.gov.in. Normal fee: ₹1,500 (15–30 days); Tatkaal: ₹3,500 (3–7 days). Check our Documents page for full checklist."
+  },
+  {
+    keywords: ["vault", "digilocker", "dossier", "auto feed", "save documents", "library"],
+    reply: "Avsar DigiLocker Vault: You can upload your documents (Marksheet, Income, Caste, Aadhaar, Bank Passbook, LOR) ONCE into your browser's private vault on documents.html. When you check scholarships on this page, Avsar auto-matches your saved files and lets you download a ready-to-submit 'Application Dossier (.json)' directly—eliminating the hassle of clicking photos and converting PDFs every time!"
   },
   {
     keywords: ["ews"],
