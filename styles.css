@@ -226,56 +226,107 @@ body.pre-login{ overflow: hidden; }
   justify-content: center;
   padding: 24px;
   background:
-    radial-gradient(circle at 14% 10%, rgba(207,65,115,0.22), transparent 42%),
-    radial-gradient(circle at 86% 90%, rgba(120,134,199,0.30), transparent 50%),
-    var(--indigo-deep);
+    radial-gradient(circle at 12% 8%, rgba(101,220,213,0.14), transparent 45%),
+    radial-gradient(circle at 88% 92%, rgba(67,99,126,0.28), transparent 50%),
+    var(--ink);
 }
 .login-card{
   width: 100%;
   max-width: 420px;
-  background: var(--surface);
-  color: var(--ink);
-  border-radius: 6px;
-  padding: 42px 38px 34px;
-  box-shadow: var(--shadow-lifted);
+  background: var(--paper);
+  color: var(--paper-text);
+  border-radius: 8px;
+  padding: 40px 36px 32px;
+  box-shadow: var(--shadow-page);
   position: relative;
-  border-top: 3px solid var(--crimson);
 }
-.login-card-head{ text-align: center; margin-bottom: 28px; }
-.login-stamp{ display:inline-flex; color: var(--crimson); margin-bottom: 14px; }
+.login-card-head{
+  text-align: center;
+  margin-bottom: 26px;
+}
+.login-stamp{
+  display:inline-flex;
+  color: var(--rose);
+  margin-bottom: 14px;
+}
 .login-card-head .section-eyebrow{ text-align: center; }
-.login-card-head h1{ font-size: 1.5rem; margin-bottom: 10px; }
-.login-sub{ color: var(--ink-muted); font-size: 0.9rem; max-width: 34ch; margin: 0 auto; }
-.login-form{ display:flex; flex-direction: column; gap: 18px; }
-.login-form .field select, .login-form .field input{ width: 100%; }
-.login-error{ font-family: var(--font-mono); font-size: 0.8rem; color: var(--rose-red); margin: -6px 0 0; }
-.login-divider{
-  display:flex; align-items:center; gap: 12px; margin: 24px 0 18px;
-  color: var(--ink-muted); font-family: var(--font-mono); font-size: 0.72rem; text-transform: uppercase;
+.login-card-head h1{
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: var(--paper-text);
 }
-.login-divider::before, .login-divider::after{ content:""; flex:1; height: 1px; background: var(--surface-border); }
-.login-note{ font-size: 0.78rem; color: var(--ink-muted); text-align: center; margin: 20px 0 0; }
-#guestBtn{ border-color: var(--surface-border); color: var(--ink); }
-#guestBtn:hover{ border-color: var(--indigo); color: var(--indigo-deep); }
+.login-sub{
+  color: var(--paper-muted);
+  font-size: 0.9rem;
+  max-width: 34ch;
+  margin: 0 auto;
+}
+.login-form{
+  display:flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.login-form .field select, .login-form .field input{
+  width: 100%;
+}
+.login-error{
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--rose);
+  margin: -6px 0 0;
+}
+.login-divider{
+  display:flex;
+  align-items:center;
+  gap: 12px;
+  margin: 22px 0 16px;
+  color: var(--paper-muted);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+}
+.login-divider::before, .login-divider::after{
+  content:"";
+  flex:1;
+  height: 1px;
+  background: var(--line-paper);
+}
+.login-note{
+  font-size: 0.78rem;
+  color: var(--paper-muted);
+  text-align: center;
+  margin: 18px 0 0;
+}
+#guestBtn{ border-color: var(--line-paper); color: var(--paper-text); }
+#guestBtn:hover{ border-color: var(--marigold-deep); color: var(--marigold-deep); }
 
-@media (max-width: 480px){ .login-card{ padding: 34px 24px 28px; } }
+@media (max-width: 480px){
+  .login-card{ padding: 32px 22px 26px; }
+}
 
 /* ============ BUTTONS ============ */
 .btn{
   font-family: var(--font-body);
   font-weight: 600;
   font-size: 0.95rem;
-  padding: 14px 26px;
+  padding: 14px 24px;
   border-radius: 2px;
   border: 1px solid transparent;
   cursor: pointer;
   transition: transform 0.12s ease, background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
 }
 .btn:active{ transform: translateY(1px); }
-.btn-primary{ background: var(--crimson); color: #fff; }
-.btn-primary:hover{ background: var(--crimson-deep); }
-.btn-ghost{ background: transparent; color: var(--ink); border-color: var(--surface-border); }
-.btn-ghost:hover{ border-color: var(--crimson); color: var(--crimson); }
+.btn-primary{
+  background: var(--marigold);
+  color: var(--ink);
+}
+.btn-primary:hover{ background: var(--marigold-deep); }
+.btn-ghost{
+  background: transparent;
+  color: var(--off-white);
+  border-color: var(--line-dark);
+}
+.btn-ghost:hover{ border-color: var(--marigold); color: var(--marigold); }
 .btn-block{ width: 100%; }
 
 /* ============ HERO ============ */
