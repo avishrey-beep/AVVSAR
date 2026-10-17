@@ -1,35 +1,52 @@
 /* ============ TOKENS ============ */
 :root{
-  --coral: #FF7070;
-  --rose-red: #D25353;
-  --indigo: #7886C7;
-  --indigo-deep: #4E5A9E;
-  --mauve: #C75B7A;
-  --blush: #F7B5CA;
-  --crimson: #CF4173;
-  --crimson-deep: #A32F55;
-  --mint: #A5D6A7;
-  --mint-deep: #3E7A45;
-  --amber: #E6A23C;
-  --amber-deep: #9C6B1E;
-
-  --bg: #FFFFFF;
-  --bg-alt: #FBF1F3;
-  --surface: #FFFFFF;
-  --surface-border: #EBDEE2;
-  --ink: #2A1420;
-  --ink-soft: #4A3540;
-  --ink-muted: #83707A;
-  --footer-bg: #2E2F52;
-  --footer-text: #E9E8F4;
-  --footer-muted: #A7A9CC;
+  --ink: #321E48;
+  --ink-2: #3D2A57;
+  --ink-3: #43637E;
+  --paper: #D9FFF4;
+  --paper-dim: #C2EFDF;
+  --paper-text: #321E48;
+  --paper-muted: #5C6E7A;
+  --marigold: #65DCD5;
+  --marigold-deep: #3FBFB6;
+  --teal: #43637E;
+  --rose: #E4675B;
+  --line-dark: rgba(217,255,244,0.16);
+  --line-paper: #B7DED0;
+  --off-white: #D9FFF4;
+  --muted-on-dark: #9FAFC2;
 
   --font-display: "Fraunces", serif;
   --font-body: "Work Sans", sans-serif;
   --font-mono: "IBM Plex Mono", monospace;
 
-  --shadow-card: 0 2px 4px rgba(42,20,32,0.04), 0 12px 28px -16px rgba(42,20,32,0.14);
-  --shadow-lifted: 0 20px 48px -18px rgba(42,20,32,0.28);
+  --radius-card: 4px;
+  --shadow-page: 0 18px 40px -18px rgba(0,0,0,0.45);
+
+  /* Semantic compatibility tokens for dynamic elements */
+  --bg: var(--ink);
+  --bg-alt: var(--ink-2);
+  --surface: var(--paper);
+  --surface-border: var(--line-paper);
+  --ink-soft: var(--muted-on-dark);
+  --ink-muted: var(--muted-on-dark);
+  --crimson: var(--marigold);
+  --crimson-deep: var(--marigold-deep);
+  --indigo: var(--ink-3);
+  --indigo-deep: var(--ink-2);
+  --mauve: var(--teal);
+  --blush: var(--marigold);
+  --mint: var(--marigold);
+  --mint-deep: var(--marigold-deep);
+  --amber: #E6A23C;
+  --amber-deep: #9C6B1E;
+  --rose-red: var(--rose);
+  --coral: var(--marigold);
+  --footer-bg: var(--ink);
+  --footer-text: var(--off-white);
+  --footer-muted: var(--muted-on-dark);
+  --shadow-card: 0 10px 26px -14px rgba(0,0,0,0.4);
+  --shadow-lifted: var(--shadow-page);
 }
 
 *{ box-sizing: border-box; }
