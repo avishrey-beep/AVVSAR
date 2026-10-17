@@ -547,7 +547,7 @@ function openPanel(id) {
     </div>
 
     <div style="margin-top:12px; padding-top:16px; border-top:1px solid var(--surface-border); display:flex; gap:10px; flex-wrap:wrap;">
-      <button class="v-btn" onclick="openLORGenerator('${doc.id}')" style="background:var(--crimson); color:#fff; border-color:var(--crimson); font-weight:600; padding:10px 18px;">
+      <button class="v-btn" onclick="openLORGenerator('${doc.id}')" style="background:var(--marigold); color:var(--ink); border-color:var(--marigold); font-weight:600; padding:10px 18px;">
         ${doc.id === 'lor' ? '✍️ Generate LOR Draft Template' : '✍️ Quick Reference / Template'}
       </button>
       <button class="v-btn" onclick="document.getElementById('vault').scrollIntoView({behavior:'smooth'}); closePanel();" style="padding:10px 18px;">
@@ -853,17 +853,17 @@ function openLORGenerator(docId) {
             <input type="text" id="lorStrengths" placeholder="e.g. Top 5% academic rank, exceptional dedication, strong leadership" style="width:100%; padding:10px; border:1px solid var(--surface-border); border-radius:6px; font-size:0.9rem;">
           </div>
 
-          <button id="lorGenerateBtn" class="v-btn" style="background:var(--crimson); color:#fff; border-color:var(--crimson); font-weight:600; padding:12px; width:100%; font-size:0.85rem;">
+          <button id="lorGenerateBtn" class="v-btn" style="background:var(--marigold); color:var(--ink); border-color:var(--marigold); font-weight:600; padding:12px; width:100%; font-size:0.85rem;">
             ✨ Generate Formatted LOR Letter
           </button>
 
           <div id="lorResultContainer" style="display:none; margin-top:14px;">
             <label style="font-family:var(--font-mono); font-size:0.7rem; text-transform:uppercase; color:var(--ink-muted); display:flex; justify-content:space-between;">
               <span>Generated Recommendation Draft</span>
-              <button id="lorCopyBtn" style="background:none; border:none; color:var(--crimson); cursor:pointer; font-weight:600; font-family:var(--font-mono);">📋 Copy to Clipboard</button>
+              <button id="lorCopyBtn" style="background:none; border:none; color:var(--marigold-deep); cursor:pointer; font-weight:600; font-family:var(--font-mono);">📋 Copy to Clipboard</button>
             </label>
-            <textarea id="lorOutputText" rows="12" readonly style="width:100%; margin-top:6px; padding:12px; font-family:var(--font-mono); font-size:0.82rem; line-height:1.5; border:1px solid var(--surface-border); border-radius:6px; background:var(--bg-alt);"></textarea>
-            <button id="lorDownloadBtn" class="v-btn" style="margin-top:10px; width:100%; border-color:var(--mint); color:var(--mint-deep); font-weight:600;">
+            <textarea id="lorOutputText" rows="12" readonly style="width:100%; margin-top:6px; padding:12px; font-family:var(--font-mono); font-size:0.82rem; line-height:1.5; border:1px solid var(--surface-border); border-radius:6px; background:var(--paper-dim); color:var(--paper-text);"></textarea>
+            <button id="lorDownloadBtn" class="v-btn" style="margin-top:10px; width:100%; border-color:var(--marigold-deep); color:var(--marigold-deep); font-weight:600;">
               ⬇ Download as Official Draft (.txt)
             </button>
           </div>

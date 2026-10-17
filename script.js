@@ -884,37 +884,37 @@ async function openModal(id){
     </div>
 
     <!-- DigiLocker Vault Status Banner -->
-    <div style="background:var(--bg-alt); border:1px solid var(--surface-border); border-radius:8px; padding:16px 20px; margin-bottom:22px;">
+    <div style="background:var(--paper-dim); border:1px solid var(--line-paper); border-radius:8px; padding:16px 20px; margin-bottom:22px;">
       <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
         <div>
-          <strong style="font-family:var(--font-mono); font-size:0.75rem; text-transform:uppercase; color:var(--crimson-deep); letter-spacing:0.04em;">📁 Vault (DigiLocker) Auto-Link Status</strong>
-          <p style="margin:4px 0 0; font-size:0.86rem; color:var(--ink-soft);">
+          <strong style="font-family:var(--font-mono); font-size:0.75rem; text-transform:uppercase; color:var(--paper-text); letter-spacing:0.04em;">📁 Vault (DigiLocker) Auto-Link Status</strong>
+          <p style="margin:4px 0 0; font-size:0.86rem; color:var(--paper-muted);">
             ${attachedCount === totalCount
-              ? `<span style="color:var(--mint-deep); font-weight:600;">✨ All ${totalCount} documents matched & auto-linked from your vault!</span>`
+              ? `<span style="color:var(--marigold-deep); font-weight:600;">✨ All ${totalCount} documents matched & auto-linked from your vault!</span>`
               : `<strong>${attachedCount} of ${totalCount}</strong> documents ready in your vault.`}
           </p>
         </div>
-        <a href="documents.html#vault" target="_blank" style="font-family:var(--font-mono); font-size:0.72rem; color:var(--crimson); text-decoration:underline; font-weight:600;">
+        <a href="documents.html#vault" target="_blank" style="font-family:var(--font-mono); font-size:0.72rem; color:var(--marigold-deep); text-decoration:underline; font-weight:600;">
           Open Vault / Upload ↗
         </a>
       </div>
 
       <div style="margin-top:14px; display:flex; flex-direction:column; gap:8px;">
         ${matchedDocs.map(m => `
-          <div style="display:flex; justify-content:space-between; align-items:center; background:#fff; border:1px solid var(--surface-border); border-radius:6px; padding:8px 12px; font-size:0.84rem;">
+          <div style="display:flex; justify-content:space-between; align-items:center; background:var(--paper); border:1px solid var(--line-paper); border-radius:6px; padding:8px 12px; font-size:0.84rem; color:var(--paper-text);">
             <span><strong>${escapeHtml(m.requirement)}</strong></span>
             ${m.file 
-              ? `<span style="font-family:var(--font-mono); font-size:0.72rem; color:var(--mint-deep); background:rgba(165,214,167,0.25); padding:3px 8px; border-radius:12px;">✓ Auto-Linked: ${escapeHtml(m.file.name)}</span>`
-              : `<span style="font-family:var(--font-mono); font-size:0.72rem; color:var(--amber-deep); background:rgba(230,162,60,0.15); padding:3px 8px; border-radius:12px;">⚠️ Not in Vault</span>`}
+              ? `<span style="font-family:var(--font-mono); font-size:0.72rem; color:var(--marigold-deep); background:rgba(63,191,182,0.18); padding:3px 8px; border-radius:12px;">✓ Auto-Linked: ${escapeHtml(m.file.name)}</span>`
+              : `<span style="font-family:var(--font-mono); font-size:0.72rem; color:var(--rose); background:rgba(228,103,91,0.15); padding:3px 8px; border-radius:12px;">⚠️ Not in Vault</span>`}
           </div>
         `).join("")}
       </div>
 
       <div style="margin-top:16px; display:flex; gap:10px; flex-wrap:wrap;">
-        <button id="exportDossierBtn" class="ledger-view-btn" style="background:var(--crimson); font-size:0.78rem; padding:10px 18px; border-radius:4px;">
+        <button id="exportDossierBtn" class="ledger-view-btn" style="background:var(--ink); color:var(--off-white); font-size:0.78rem; padding:10px 18px; border-radius:4px;">
           📦 Export Application Dossier (.json)
         </button>
-        <a href="documents.html" target="_blank" class="ledger-view-btn" style="background:transparent; border:1px solid var(--surface-border); color:var(--ink); font-size:0.78rem; padding:9px 16px; text-decoration:none; display:inline-block;">
+        <a href="documents.html" target="_blank" class="ledger-view-btn" style="background:transparent; border:1px solid var(--line-paper); color:var(--paper-text); font-size:0.78rem; padding:9px 16px; text-decoration:none; display:inline-block;">
           📖 View Document Steps Guide ↗
         </a>
       </div>
