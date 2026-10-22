@@ -72,7 +72,7 @@ button{ font-family: inherit; cursor: pointer; }
 /* ============ NAV ============ */
 .site-nav{ position: sticky; top: 0; z-index: 40; background: rgba(50,30,72,0.88); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line-dark); }
 .nav-wrap{ max-width: 1180px; margin: 0 auto; padding: 14px 32px; display: flex; align-items: center; gap: 28px; }
-.brand{ display: flex; align-items: center; gap: 10px; font-family: var(--font-display); font-weight: 600; font-size: 1.25rem; margin-right: auto; color: var(--off-white); }
+.brand{ display: flex; align-items: center; gap: 10px; font-family: var(--font-display); font-weight: 600; font-size: 1.25rem; margin-right: 24px; color: var(--off-white); } .nav-back{ margin-left: auto; }
 .brand-mark{ color: var(--marigold); display: flex; }
 .brand-sub{ font-family: var(--font-mono); font-size: 0.7rem; color: var(--muted-on-dark); letter-spacing: 0.04em; margin-left: 6px; }
 .nav-links{ display: flex; gap: 26px; }
@@ -80,7 +80,16 @@ button{ font-family: inherit; cursor: pointer; }
 .nav-links a:hover, .nav-links a.active{ color: var(--off-white); }
 .nav-back{ font-family: var(--font-mono); font-size: 0.76rem; background: none; border: 1px solid var(--line-dark); color: var(--muted-on-dark); padding: 8px 14px; border-radius: 3px; transition: border-color 0.15s, color 0.15s; }
 .nav-back:hover{ border-color: var(--marigold); color: var(--marigold); }
-@media(max-width:720px){ .nav-links{ display: none; } .nav-hamburger{ display: flex !important; } }
+@media(max-width:720px){
+  .brand{ margin-right: auto; }
+  .nav-links{ display: none; }
+  .nav-hamburger{ display: flex !important; }
+  .nav-mobile-pills{ display: flex !important; gap: 8px; padding: 0 16px 10px; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+  .nav-mobile-pills::-webkit-scrollbar{ display: none; }
+  .nav-pill{ display: inline-flex; align-items: center; gap: 5px; font-family: var(--font-mono); font-size: 0.74rem; padding: 6px 12px; border-radius: 20px; white-space: nowrap; background: var(--ink-2); color: var(--muted-on-dark); border: 1px solid var(--line-dark); text-decoration: none; transition: all 0.15s ease; }
+  .nav-pill-highlight{ background: rgba(101,220,213,0.14); border-color: var(--marigold); color: var(--marigold); font-weight: 600; }
+}
+.nav-mobile-pills{ display: none; }
 
 /* ============ HERO STRIP ============ */
 .page-hero{ background: transparent; border-bottom: 1px solid var(--line-dark); padding: 60px 0 44px; }
@@ -241,6 +250,11 @@ button{ font-family: inherit; cursor: pointer; }
       <span style="display:block;width:22px;height:2px;background:var(--off-white);border-radius:2px;transition:transform 0.25s ease, opacity 0.2s ease;"></span>
     </button>
   </div>
+  <div class="nav-mobile-pills" id="navMobilePills">
+    <a href="index.html#checker" class="nav-pill">🔍 Find Scholarships</a>
+    <a href="documents.html" class="nav-pill nav-pill-highlight">📄 Documents Guide</a>
+    <a href="index.html#saathi" class="nav-pill">💬 Ask Saathi</a>
+  </div>
   <div class="nav-mobile-menu" id="navMobileMenu" style="display:none;flex-direction:column;background:rgba(50,30,72,0.96);backdrop-filter:blur(12px);padding:12px 32px 18px;border-bottom:1px solid var(--line-dark);">
     <a href="index.html#checker" style="text-decoration:none;font-size:0.95rem;color:var(--muted-on-dark);padding:12px 0;border-bottom:1px solid var(--line-dark);transition:color 0.15s ease;">Find Scholarships</a>
     <a href="documents.html" style="text-decoration:none;font-size:0.95rem;color:var(--off-white);padding:12px 0;border-bottom:1px solid var(--line-dark);transition:color 0.15s ease;">Documents</a>
@@ -395,7 +409,7 @@ button{ font-family: inherit; cursor: pointer; }
   <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 15l7-7 7 7"/></svg>
 </button>
 
-<script src="documents.js?v=2"></script>
+<script src="documents.js?v=3"></script>
 <script>
 (function(){
   var hamburger = document.getElementById('navHamburger');

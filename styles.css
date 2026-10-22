@@ -133,7 +133,7 @@ button{ font-family: inherit; }
   gap: 10px;
   text-decoration:none;
   color: var(--off-white);
-  margin-right: auto;
+  margin-right: 28px;
 }
 .brand-mark{ color: var(--marigold); display:flex; }
 .brand-word{
@@ -236,7 +236,58 @@ button{ font-family: inherit; }
   .nav-hamburger{ display: flex; }
 }
 
+/* ============ NAV QUICK PILLS (MOBILE VIEW NEAR AVSAR HEADER) ============ */
+.nav-mobile-pills{
+  display: none;
+}
+@media (max-width: 780px){
+  .brand{
+    margin-right: auto;
+  }
+  .nav-wrap{
+    padding: 10px 16px 6px;
+    gap: 12px;
+  }
+  .nav-mobile-pills{
+    display: flex;
+    gap: 8px;
+    padding: 0 16px 10px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .nav-mobile-pills::-webkit-scrollbar{
+    display: none;
+  }
+  .nav-pill{
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-family: var(--font-mono);
+    font-size: 0.74rem;
+    padding: 6px 12px;
+    border-radius: 20px;
+    white-space: nowrap;
+    background: var(--ink-2);
+    color: var(--muted-on-dark);
+    border: 1px solid var(--line-dark);
+    text-decoration: none;
+    transition: all 0.15s ease;
+  }
+  .nav-pill:active, .nav-pill:hover{
+    color: var(--off-white);
+    border-color: var(--marigold);
+  }
+  .nav-pill-highlight{
+    background: rgba(101,220,213,0.14);
+    border-color: var(--marigold);
+    color: var(--marigold);
+    font-weight: 600;
+  }
+}
+
 .nav-account{
+  margin-left: auto;
   display:flex;
   align-items:center;
   gap: 12px;
