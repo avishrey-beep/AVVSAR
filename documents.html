@@ -427,6 +427,16 @@ button{ font-family: inherit; cursor: pointer; }
       spans[2].style.transform = '';
     });
   });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape' && mobileMenu.style.display === 'flex'){
+      mobileMenu.style.display = 'none';
+      hamburger.setAttribute('aria-expanded', 'false');
+      var spans = hamburger.querySelectorAll('span');
+      spans[0].style.transform = '';
+      spans[1].style.opacity = '';
+      spans[2].style.transform = '';
+    }
+  });
 })();
 </script>
 </body>
