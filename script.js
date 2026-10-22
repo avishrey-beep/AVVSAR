@@ -1266,3 +1266,28 @@ renderRadar();
     }
   });
 })();
+
+/* =========================================================
+   MOBILE QUICK-PILL SCROLL SPY
+   ========================================================= */
+(function(){
+  const pills = document.querySelectorAll('.nav-mobile-pills .nav-pill');
+  if (!pills.length) return;
+  const sections = ['checker', 'how', 'saathi'];
+  window.addEventListener('scroll', function(){
+    let current = '';
+    sections.forEach(function(id){
+      const el = document.getElementById(id);
+      if (el && el.getBoundingClientRect().top <= 120) {
+        current = id;
+      }
+    });
+    pills.forEach(function(pill){
+      const href = pill.getAttribute('href');
+      if (href && href.startsWith('#')) {
+        const targetId = href.replace('#', '');
+        pill.classList.toggle('nav-pill-active', targetId === current);
+      }
+    });
+  }, { passive: true });
+})();
