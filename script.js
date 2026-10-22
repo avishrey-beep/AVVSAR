@@ -1246,4 +1246,23 @@ renderRadar();
       hamburger.setAttribute('aria-expanded', 'false');
     });
   });
+
+  // Close menu on Escape key press
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape' && mobileMenu.classList.contains('open')){
+      mobileMenu.classList.remove('open');
+      hamburger.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+      hamburger.focus();
+    }
+  });
+
+  // Auto-close if screen resized to desktop viewport
+  window.addEventListener('resize', function(){
+    if (window.innerWidth > 780 && mobileMenu.classList.contains('open')){
+      mobileMenu.classList.remove('open');
+      hamburger.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+    }
+  });
 })();
