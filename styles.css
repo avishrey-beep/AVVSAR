@@ -280,6 +280,12 @@ button{ font-family: inherit; }
     color: var(--off-white);
     border-color: var(--marigold);
   }
+  .nav-pill.nav-pill-active{
+    background: rgba(101,220,213,0.22);
+    border-color: var(--marigold);
+    color: var(--marigold);
+    font-weight: 600;
+  }
   .nav-pill-highlight{
     background: rgba(101,220,213,0.14);
     border-color: var(--marigold);
