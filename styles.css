@@ -160,6 +160,7 @@ button{ font-family: inherit; }
   transition: color 0.15s ease;
 }
 .nav-links a:hover{ color: var(--off-white); }
+.nav-links a.active{ color: var(--marigold); font-weight: 600; border-bottom: 2px solid var(--marigold); padding-bottom: 4px; }
 .nav-cta{
   font-family: var(--font-mono);
   font-size: 0.8rem;
