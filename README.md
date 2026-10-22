@@ -50,6 +50,8 @@ Alongside the passbook sits **Saathi**, a bilingual (Hindi/English) conversation
 ## 🚀 Key Features
 
 ### 📱 Mobile-First Navigation & Document Visibility
+- **Upward-Direction Quick Navigation Bar**: Positioned immediately adjacent to the Avsar brand header on desktop, and rendered as a sticky horizontal quick-pill bar directly under the header on phones for instant one-tap access to the Document Centre and Scholarship Finder.
+- **Scrollspy Dynamic Indicator**: Active pills update in real-time as users scroll through the eligibility checker, how it works, and Saathi sections.
 - **Accessible Hamburger Drawer**: Seamlessly reveals Documents Guide, Saathi Assistant, and Scholarship Checker on mobile screens.
 - **Touch & Keyboard Compliant**: Supports escape key dismiss, ARIA states, and viewport auto-reset.
 ### 1. 🔐 Interactive Student Opportunity Passbook
