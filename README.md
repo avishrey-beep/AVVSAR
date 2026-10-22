@@ -49,6 +49,9 @@ Alongside the passbook sits **Saathi**, a bilingual (Hindi/English) conversation
 
 ## 🚀 Key Features
 
+### 📱 Mobile-First Navigation & Document Visibility
+- **Accessible Hamburger Drawer**: Seamlessly reveals Documents Guide, Saathi Assistant, and Scholarship Checker on mobile screens.
+- **Touch & Keyboard Compliant**: Supports escape key dismiss, ARIA states, and viewport auto-reset.
 ### 1. 🔐 Interactive Student Opportunity Passbook
 - Instant browser-based session initialization with personalized passbook UI.
 - Fast guest mode fallback without requiring registration.
