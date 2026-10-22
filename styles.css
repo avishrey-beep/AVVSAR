@@ -1147,3 +1147,12 @@ body.pre-login{ overflow: hidden; }
   .chat-widget{ right: 14px; bottom: 14px; }
   .chat-toggle-label{ display:none; }
 }
+
+/* ============ PRINT STYLESHEET ============ */
+@media print {
+  .site-nav, .chat-widget, .nav-mobile-pills,
+  .nav-hamburger, .login-screen, .modal-overlay,
+  .back-top { display: none !important; }
+  body { background: #fff !important; color: #000 !important; }
+  .hero, main, .site-footer { break-inside: avoid; }
+}
