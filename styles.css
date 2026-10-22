@@ -214,6 +214,11 @@ button{ font-family: inherit; }
 }
 .nav-mobile-menu.open{
   display: flex;
+  animation: mobileNavSlide 0.25s ease-out forwards;
+}
+@keyframes mobileNavSlide{
+  from{ opacity: 0; transform: translateY(-8px); }
+  to{ opacity: 1; transform: translateY(0); }
 }
 .nav-mobile-menu a{
   text-decoration: none;
