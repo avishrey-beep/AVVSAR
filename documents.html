@@ -80,7 +80,7 @@ button{ font-family: inherit; cursor: pointer; }
 .nav-links a:hover, .nav-links a.active{ color: var(--off-white); }
 .nav-back{ font-family: var(--font-mono); font-size: 0.76rem; background: none; border: 1px solid var(--line-dark); color: var(--muted-on-dark); padding: 8px 14px; border-radius: 3px; transition: border-color 0.15s, color 0.15s; }
 .nav-back:hover{ border-color: var(--marigold); color: var(--marigold); }
-@media(max-width:720px){ .nav-links{ display: none; } }
+@media(max-width:720px){ .nav-links{ display: none; } .nav-hamburger{ display: flex !important; } }
 
 /* ============ HERO STRIP ============ */
 .page-hero{ background: transparent; border-bottom: 1px solid var(--line-dark); padding: 60px 0 44px; }
@@ -235,6 +235,16 @@ button{ font-family: inherit; cursor: pointer; }
       <a href="index.html#saathi">Ask Saathi</a>
     </nav>
     <button class="nav-back" onclick="window.location.href='index.html'">← Back to Avsar</button>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false" style="display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:6px;z-index:50;">
+      <span style="display:block;width:22px;height:2px;background:var(--off-white);border-radius:2px;transition:transform 0.25s ease, opacity 0.2s ease;"></span>
+      <span style="display:block;width:22px;height:2px;background:var(--off-white);border-radius:2px;transition:transform 0.25s ease, opacity 0.2s ease;"></span>
+      <span style="display:block;width:22px;height:2px;background:var(--off-white);border-radius:2px;transition:transform 0.25s ease, opacity 0.2s ease;"></span>
+    </button>
+  </div>
+  <div class="nav-mobile-menu" id="navMobileMenu" style="display:none;flex-direction:column;background:rgba(50,30,72,0.96);backdrop-filter:blur(12px);padding:12px 32px 18px;border-bottom:1px solid var(--line-dark);">
+    <a href="index.html#checker" style="text-decoration:none;font-size:0.95rem;color:var(--muted-on-dark);padding:12px 0;border-bottom:1px solid var(--line-dark);transition:color 0.15s ease;">Find Scholarships</a>
+    <a href="documents.html" style="text-decoration:none;font-size:0.95rem;color:var(--off-white);padding:12px 0;border-bottom:1px solid var(--line-dark);transition:color 0.15s ease;">Documents</a>
+    <a href="index.html#saathi" style="text-decoration:none;font-size:0.95rem;color:var(--muted-on-dark);padding:12px 0;transition:color 0.15s ease;">Ask Saathi</a>
   </div>
 </header>
 
@@ -386,5 +396,38 @@ button{ font-family: inherit; cursor: pointer; }
 </button>
 
 <script src="documents.js"></script>
+<script>
+(function(){
+  var hamburger = document.getElementById('navHamburger');
+  var mobileMenu = document.getElementById('navMobileMenu');
+  if (!hamburger || !mobileMenu) return;
+  hamburger.addEventListener('click', function(){
+    var isOpen = mobileMenu.style.display === 'flex';
+    mobileMenu.style.display = isOpen ? 'none' : 'flex';
+    hamburger.setAttribute('aria-expanded', !isOpen);
+    // animate hamburger
+    var spans = hamburger.querySelectorAll('span');
+    if (!isOpen) {
+      spans[0].style.transform = 'translateY(7px) rotate(45deg)';
+      spans[1].style.opacity = '0';
+      spans[2].style.transform = 'translateY(-7px) rotate(-45deg)';
+    } else {
+      spans[0].style.transform = '';
+      spans[1].style.opacity = '';
+      spans[2].style.transform = '';
+    }
+  });
+  mobileMenu.querySelectorAll('a').forEach(function(link){
+    link.addEventListener('click', function(){
+      mobileMenu.style.display = 'none';
+      hamburger.setAttribute('aria-expanded', 'false');
+      var spans = hamburger.querySelectorAll('span');
+      spans[0].style.transform = '';
+      spans[1].style.opacity = '';
+      spans[2].style.transform = '';
+    });
+  });
+})();
+</script>
 </body>
 </html>
