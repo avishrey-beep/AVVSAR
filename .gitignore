@@ -14,8 +14,15 @@ yarn-error.log*
 dist/
 build/
 out/
+_site/
 .next/
 coverage/
+
+# Local databases and binary spreadsheets
+*.db
+*.sqlite
+*.xlsx
+*.xls
 
 # OS and Editor files
 .DS_Store
