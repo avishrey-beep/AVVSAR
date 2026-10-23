@@ -620,17 +620,6 @@ body.pre-login{ overflow: hidden; }
   gap: 26px 28px;
   position: relative;
 }
-.ledger-form::before{
-  content: "";
-  position: absolute;
-  left: 0; top: 0; bottom: 0;
-  width: 46px;
-  background-image: radial-gradient(circle at 8px 0, transparent 6px, var(--ink) 6.5px);
-  background-size: 100% 26px;
-  background-repeat: repeat-y;
-  transform: translateX(-24px);
-  opacity: 0.9;
-}
 .field{ display:flex; flex-direction: column; gap: 8px; }
 .field-wide{ grid-column: 1 / -1; }
 .field label{
