@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>404 — Page Not Found · Avsar</title>
+<meta name="description" content="The page or scholarship record you are looking for could not be found on Avsar.">
+<link rel="icon" type="image/svg+xml" href="icon.svg">
+<link rel="alternate icon" href="favicon.ico">
+<link rel="apple-touch-icon" href="icon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Work+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #321E48;
+  --ink-2: #3D2A57;
+  --ink-3: #43637E;
+  --paper: #D9FFF4;
+  --marigold: #65DCD5;
+  --marigold-deep: #3FBFB6;
+  --rose: #E4675B;
+  --line-dark: rgba(217, 255, 244, 0.16);
+  --off-white: #D9FFF4;
+  --muted-on-dark: #9FAFC2;
+  --font-display: "Fraunces", serif;
+  --font-body: "Work Sans", sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: var(--ink);
+  color: var(--off-white);
+  font-family: var(--font-body);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.header {
+  padding: 24px 32px;
+  border-bottom: 1px solid var(--line-dark);
+}
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--off-white);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.35rem;
+}
+.brand-mark { color: var(--marigold); }
+.brand-sub {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--muted-on-dark);
+  margin-left: 4px;
+}
+.container {
+  max-width: 680px;
+  margin: 60px auto;
+  padding: 0 24px;
+  text-align: center;
+}
+.badge {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  color: var(--marigold);
+  border: 1px solid var(--line-dark);
+  padding: 6px 14px;
+  border-radius: 20px;
+  background: rgba(101, 220, 213, 0.08);
+  margin-bottom: 24px;
+}
+h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 16px;
+  color: var(--off-white);
+}
+p.desc {
+  font-size: 1.1rem;
+  color: var(--muted-on-dark);
+  margin-bottom: 36px;
+  max-width: 540px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  margin-bottom: 36px;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all 0.15s ease;
+  cursor: pointer;
+}
+.btn-primary {
+  background: var(--marigold);
+  color: var(--ink);
+  border: 1px solid var(--marigold);
+}
+.btn-primary:hover {
+  background: var(--marigold-deep);
+  transform: translateY(-1px);
+}
+.btn-secondary {
+  background: var(--ink-2);
+  color: var(--off-white);
+  border: 1px solid var(--line-dark);
+}
+.btn-secondary:hover {
+  border-color: var(--marigold);
+  transform: translateY(-1px);
+}
+.redirect-notice {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--muted-on-dark);
+  background: rgba(255, 255, 255, 0.03);
+  padding: 12px 18px;
+  border-radius: 4px;
+  display: inline-block;
+  border: 1px dashed var(--line-dark);
+}
+.footer {
+  padding: 24px 32px;
+  border-top: 1px solid var(--line-dark);
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--muted-on-dark);
+}
+</style>
+</head>
+<body>
+<header class="header">
+  <a href="index.html" class="brand">
+    <span class="brand-mark" aria-hidden="true">
+      <svg viewBox="0 0 40 40" width="32" height="32">
+        <circle cx="20" cy="20" r="18.5" fill="none" stroke="currentColor" stroke-width="1.4"/>
+        <circle cx="20" cy="20" r="13.5" fill="none" stroke="currentColor" stroke-width="0.8" stroke-dasharray="1.5 3"/>
+        <text x="20" y="24.5" text-anchor="middle" font-family="IBM Plex Mono" font-size="11" fill="currentColor">अ</text>
+      </svg>
+    </span>
+    <span>Avsar<span class="brand-sub">अवसर</span></span>
+  </a>
+</header>
+
+<main class="container">
+  <span class="badge">HTTP 404 · OPPORTUNITY NOT FOUND</span>
+  <h1>This page is outside the passbook</h1>
+  <p class="desc">The scholarship page or file you are seeking may have been updated, relocated, or does not exist.</p>
+
+  <div class="card-actions">
+    <a href="index.html" class="btn btn-primary">Return to Homepage →</a>
+    <a href="documents.html" class="btn btn-secondary">Document Vault & Guide</a>
+    <a href="index.html#checker" class="btn btn-secondary">Eligibility Checker</a>
+  </div>
+
+  <div class="redirect-notice" id="redirectMsg">
+    Auto-navigating to homepage in <strong id="countdown">10</strong> seconds… <a href="javascript:void(0)" id="cancelRedirect" style="color:var(--marigold);margin-left:6px;text-decoration:underline;">Pause</a>
+  </div>
+</main>
+
+<footer class="footer">
+  Avsar — Precision scholarship eligibility engine for students across India.
+</footer>
+
+<script>
+(function() {
+  var count = 10;
+  var cdEl = document.getElementById('countdown');
+  var cancelBtn = document.getElementById('cancelRedirect');
+  var noticeEl = document.getElementById('redirectMsg');
+  var timer = setInterval(function() {
+    count--;
+    if (cdEl) cdEl.textContent = count;
+    if (count <= 0) {
+      clearInterval(timer);
+      window.location.href = 'index.html';
+    }
+  }, 1000);
+
+  if (cancelBtn) {
+    cancelBtn.addEventListener('click', function() {
+      clearInterval(timer);
+      noticeEl.textContent = 'Auto-redirect paused. Explore the links above whenever you are ready.';
+    });
+  }
+})();
+</script>
+</body>
+</html>
