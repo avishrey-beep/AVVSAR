@@ -7,6 +7,7 @@
 **एक अवसर, हज़ार संभावनाएं** — *one opportunity, a thousand possibilities*
 
 [![Live Demo](https://img.shields.io/badge/🔗_Live_Demo-avishrey--beep.github.io-6C5CE7?style=for-the-badge)](https://avishrey-beep.github.io/AVVSAR/)
+[![Deploy to GitHub Pages](https://github.com/avishrey-beep/AVVSAR/actions/workflows/deploy.yml/badge.svg)](https://github.com/avishrey-beep/AVVSAR/actions/workflows/deploy.yml)
 [![GitHub Pages](https://img.shields.io/badge/Hosted_on-GitHub_Pages-222222?style=for-the-badge&logo=github)](https://pages.github.com/)
 [![Status](https://img.shields.io/badge/Status-Active_Prototype-2ECC71?style=for-the-badge)]()
 [![Privacy](https://img.shields.io/badge/Privacy-100%25_Client--Side-blue?style=for-the-badge)]()
@@ -98,6 +99,20 @@ Alongside the passbook sits **Saathi**, a bilingual (Hindi/English) conversation
 | **Deployment** | GitHub Pages static continuous delivery |
 
 ---
+
+
+---
+
+## 🌐 Production Deployment Architecture
+
+Avsar is deployed as a high-reliability, zero-latency static single-page application and document intelligence vault on **GitHub Pages**:
+
+- **Continuous Deployment Pipeline**: Triggered on every push to `main` using GitHub Actions (`.github/workflows/deploy.yml`).
+- **Asset Isolation & Build Staging**: The workflow stages production-verified frontend assets (`index.html`, `documents.html`, `404.html`, `styles.css`, `script.js`, `documents.js`, `manifest.json`, `icon.svg`, `favicon.ico`, `robots.txt`, `sitemap.xml`, `.nojekyll`) into a sanitized `_site/` distribution bundle before artifact upload.
+- **Backend & Database Protection**: The staging workflow guarantees that SQLite databases (`avsar.db`), spreadsheets, and development server files remain strictly internal and are never exposed over the public Pages CDN.
+- **Sub-Route Resilience**: Custom `404.html` handles invalid paths and deep links with graceful countdown redirects and branded recovery navigation.
+- **Crawler & Indexing Support**: Configured with production `robots.txt` and XML `sitemap.xml` referencing canonical URLs.
+- **Favicon Integrity**: Multi-resolution `favicon.ico` and high-res vector `icon.svg` linked with standard alternate and touch-icon meta tags across all pages.
 
 ## 🏁 Quick Start & Local Development
 
