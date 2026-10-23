@@ -1048,7 +1048,7 @@ const SAATHI_RULES = [
   },
   {
     keywords: ["income certificate", "income proof", "tehsildar", "magistrate", "income tax certificate", "itr"],
-    reply: "Income Certificate vs ITR: Scholarships require an official 'Income Certificate' issued by revenue authorities (Tehsildar, Sub-Divisional Magistrate [SDM], or Revenue Officer), NOT merely an Income Tax Return (ITR). For salaried families, Form 16 / ITR acts as supporting evidence, but for agricultural/informal income, the Patwari or Lekhpal conducts a field inquiry. Timeline: 7–15 working days. Fee: ₹20–₹50 (e-District / CSC centers). Validity: 1 financial year. Visit our Documents page (/documents.html) for full official authority workflows."
+    reply: "Income Certificate vs ITR: Scholarships require an official 'Income Certificate' issued by revenue authorities (Tehsildar, Sub-Divisional Magistrate [SDM], or Revenue Officer), NOT merely an Income Tax Return (ITR). For salaried families, Form 16 / ITR acts as supporting evidence, but for agricultural/informal income, the Patwari or Lekhpal conducts a field inquiry. Timeline: 7–15 working days. Fee: ₹20–₹50 (e-District / CSC centers). Validity: 1 financial year. Visit our Documents page (documents.html) for full official authority workflows."
   },
   {
     keywords: ["recommendation", "lor", "letter of recommendation", "reference letter"],
