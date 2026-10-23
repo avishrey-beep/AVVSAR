@@ -1,12 +1,16 @@
 {
   "name": "Avsar — Student Opportunity Passbook",
   "short_name": "Avsar",
-  "description": "Find the scholarship that is already looking for you across India.",
+  "id": "./",
   "start_url": "./index.html",
+  "scope": "./",
   "display": "standalone",
   "orientation": "portrait-primary",
   "background_color": "#321E48",
   "theme_color": "#321E48",
+  "lang": "en-IN",
+  "dir": "ltr",
+  "description": "Find the scholarship that is already looking for you across India.",
   "icons": [
     {
       "src": "icon.svg",
@@ -18,5 +22,21 @@
   "categories": [
     "education",
     "productivity"
+  ],
+  "shortcuts": [
+    {
+      "name": "Find Scholarships",
+      "short_name": "Eligibility",
+      "description": "Check your personalized scholarship eligibility",
+      "url": "./index.html#checker",
+      "icons": [{ "src": "icon.svg", "sizes": "any" }]
+    },
+    {
+      "name": "Document Guide & Vault",
+      "short_name": "Documents",
+      "description": "Step-by-step government document requirements and vault",
+      "url": "./documents.html",
+      "icons": [{ "src": "icon.svg", "sizes": "any" }]
+    }
   ]
 }
