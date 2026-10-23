@@ -1,0 +1,7 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+Disallow: /test.html
+Disallow: /backend*/
+
+Sitemap: https://avishrey-beep.github.io/AVVSAR/sitemap.xml
