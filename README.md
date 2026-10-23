@@ -63,6 +63,7 @@ Alongside the passbook sits **Saathi**, a bilingual (Hindi/English) conversation
 - Evaluates scholarships across **6 education levels** (*Class 10 through PhD*).
 - Supports all demographic reservations (*General, OBC, SC, ST, EWS, Minority*).
 - Dynamic filtering across merit requirements, household income ceilings, gender, and state/UT quotas.
+- Balanced 3-column ledger layout grouping stage, category, and state with eligibility criteria without grid gaps.
 
 ### 3. ⏱️ Deadline Radar
 - Real-time urgency calculation for active application cycles.
