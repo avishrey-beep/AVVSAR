@@ -614,7 +614,7 @@ body.pre-login{ overflow: hidden; }
   color: var(--paper-text);
   border-radius: 6px;
   box-shadow: var(--shadow-page);
-  padding: 40px 40px 32px;
+  padding: 36px 36px 32px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 26px 28px;
@@ -661,10 +661,10 @@ body.pre-login{ overflow: hidden; }
 .field-note{ font-size: 0.8rem; color: var(--paper-muted); margin:0; max-width: 60ch; }
 
 @media (max-width: 860px){
-  .ledger-form{ grid-template-columns: 1fr 1fr; padding: 32px 24px; }
+  .ledger-form{ grid-template-columns: 1fr 1fr; padding: 28px 24px; }
 }
 @media (max-width: 560px){
-  .ledger-form{ grid-template-columns: 1fr; }
+  .ledger-form{ grid-template-columns: 1fr; padding: 24px 18px; }
 }
 
 /* ============ RESULTS / LEDGER LIST ============ */
