@@ -1510,6 +1510,11 @@ const SAATHI_RULES = [
     keywords: ["creamy layer","obc ncl","non creamy layer","obc validity"],
     reply: "For OBC category scholarships, you must provide an 'OBC Non-Creamy Layer (NCL)' certificate issued in the current financial year. Central portals like NSP strictly do not accept State-level backward certificates if they are not in Central OBC format or are older than 1 year."
   }
+  ,
+  {
+    keywords: ["pfms","payment pending","pfms status","under processing with agency"],
+    reply: "If your NSP status reads 'Payment Pending at PFMS' or 'Under Processing with Agency', your scholarship is sanctioned and at the treasury queue! The Public Financial Management System (PFMS) handles DBT bank transfers. You can track exact transfer UTR at pfms.nic.in using your NSP Application ID or Account Number."
+  }
 ];
 
 function saathiReply(userText){
