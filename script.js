@@ -1530,6 +1530,11 @@ const SAATHI_RULES = [
     keywords: ["hostel certificate","day scholar vs hosteller","hostel allowance"],
     reply: "Hosteller grants (like in Ishan Uday or Vidyasiri) are typically 2x higher than day scholar rates. To claim the hosteller amount, you must upload an official Hostel Certificate from your university or government-recognized hostel warden confirming room occupancy."
   }
+  ,
+  {
+    keywords: ["studying outside state","interstate admission","other state college"],
+    reply: "If you are studying in another state (e.g., student from Bihar studying in Karnataka), you can still claim your home state post-matric scholarship! Select 'Institute outside State' during NSP or state portal application and get the form countersigned by your college Nodal Officer."
+  }
 ];
 
 function saathiReply(userText){
