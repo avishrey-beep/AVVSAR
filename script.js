@@ -1515,6 +1515,11 @@ const SAATHI_RULES = [
     keywords: ["pfms","payment pending","pfms status","under processing with agency"],
     reply: "If your NSP status reads 'Payment Pending at PFMS' or 'Under Processing with Agency', your scholarship is sanctioned and at the treasury queue! The Public Financial Management System (PFMS) handles DBT bank transfers. You can track exact transfer UTR at pfms.nic.in using your NSP Application ID or Account Number."
   }
+  ,
+  {
+    keywords: ["single mother","single parent","fatherless","orphan"],
+    reply: "Several government and private scholarships offer dedicated income relaxation or reservation for children of single mothers, widows, or orphaned students. For these applications, attach an affidavit or death certificate of the deceased parent to qualify for 100% tuition waivers under priority quota."
+  }
 ];
 
 function saathiReply(userText){
