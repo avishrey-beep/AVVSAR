@@ -510,6 +510,27 @@ const SCHOLARSHIPS = [
       "Get institutional verification from college principal",
       "Track status and renewal on SVMCM portal"
     ]
+  ,
+  {
+    id: "mp-medhavi-scheme",
+    name: "Mukhyamantri Medhavi Vidyarthi Yojana (Madhya Pradesh)",
+    provider: "Madhya Pradesh Higher Education Department",
+    type: "merit",
+    levels: ["ug", "pg", "diploma"],
+    categories: ["general", "obc", "sc", "st", "ews"],
+    minScore: 70,
+    maxIncome: 150000,
+    gender: "any",
+    states: ["MP"],
+    amount: "Full tuition fee reimbursement",
+    deadline: "30 Nov",
+    documents: ["MP domicile certificate", "Class 12 marksheet (70%+ CBSE / 85%+ MP Board)", "Income certificate", "Bank passbook", "College fee receipt"],
+    steps: [
+      "Apply at scholarshipportal.mp.nic.in",
+      "Select Medhavi Vidyarthi Yojana scheme",
+      "Upload Class 12 marksheet and domicile proof",
+      "College verifies and MP Govt reimburses tuition fee"
+    ]
   }
 ];
 
@@ -533,6 +554,7 @@ const DEADLINE_INFO = {
   "pm-usp-higher-ed":         { date: "2027-01-15" },
   "dbt-jrf-biotech":          { date: "2027-02-28" },
   "pm-yasasvi-scheme":          { date: "2026-12-15" },
+  "mp-medhavi-scheme": { date: "2026-11-30" },
   "aicte-saksham-pwd":         { date: "2026-11-30" },
   "nsp-minority-postmatric":   { date: "2026-10-31" },
   "begum-hazrat-mahal":        { date: "2026-09-30" },
@@ -1343,6 +1365,27 @@ const SAATHI_RULES = [
   {
     keywords: ["who are you", "what can you do", "what is saathi"],
     reply: "I'm Saathi, a built-in guide for this scholarship list — ask me about eligibility rules, required documents, deadlines, match strength, or any specific scheme by name and I'll answer from what's on this page."
+  ,
+  {
+    id: "mp-medhavi-scheme",
+    name: "Mukhyamantri Medhavi Vidyarthi Yojana (Madhya Pradesh)",
+    provider: "Madhya Pradesh Higher Education Department",
+    type: "merit",
+    levels: ["ug", "pg", "diploma"],
+    categories: ["general", "obc", "sc", "st", "ews"],
+    minScore: 70,
+    maxIncome: 150000,
+    gender: "any",
+    states: ["MP"],
+    amount: "Full tuition fee reimbursement",
+    deadline: "30 Nov",
+    documents: ["MP domicile certificate", "Class 12 marksheet (70%+ CBSE / 85%+ MP Board)", "Income certificate", "Bank passbook", "College fee receipt"],
+    steps: [
+      "Apply at scholarshipportal.mp.nic.in",
+      "Select Medhavi Vidyarthi Yojana scheme",
+      "Upload Class 12 marksheet and domicile proof",
+      "College verifies and MP Govt reimburses tuition fee"
+    ]
   }
 ];
 
