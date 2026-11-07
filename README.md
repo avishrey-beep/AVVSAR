@@ -11,6 +11,7 @@
 [![GitHub Pages](https://img.shields.io/badge/Hosted_on-GitHub_Pages-222222?style=for-the-badge&logo=github)](https://pages.github.com/)
 [![Status](https://img.shields.io/badge/Status-Active_Prototype-2ECC71?style=for-the-badge)]()
 [![Privacy](https://img.shields.io/badge/Privacy-100%25_Client--Side-blue?style=for-the-badge)]()
+[![Tests](https://img.shields.io/badge/Tests-10%20Passing-brightgreen?style=for-the-badge)](test.html)
 
 </div>
 
@@ -129,6 +130,26 @@ start index.html
 
 # ...or run with a local static web server
 npx serve .
+```
+
+---
+
+## 🧪 Verification & Automated Testing
+
+Avsar includes an automated client-side test suite located at [test.html](test.html) verifying:
+- **Catalog Integrity**: Completeness of the `SCHOLARSHIPS` database schema and formatted amounts/deadlines.
+- **Identifier Collision Safety**: Global uniqueness of all scholarship identifiers.
+- **Boundary Condition Resilience**: Zero-score and zero-income edge case handling in `computeMatches()`.
+- **Saathi Intelligence**: Conversational fallback safety and keyword resolution for bonafide certificates, biometric authentication, and gap affidavits.
+- **Documentation Prerequisites**: Mandatory verification checklists and non-empty prerequisite lists across all listed schemes.
+
+To execute the test suite:
+```bash
+# Start local server
+node server.js
+
+# Open test runner in your browser:
+# http://localhost:3000/test.html
 ```
 
 ---
