@@ -1175,6 +1175,22 @@ const SAATHI_RULES = [
     reply: "All the best with your scholarships! Come back if you need help with documents or deadlines later."
   },
   {
+    keywords: ["bonafide", "bonafide certificate", "college certificate"],
+    reply: "A Bonafide Certificate is issued by your school or college registrar certifying that you are a currently enrolled student in a specific course and academic year. Most scholarship portals (including NSP and State portals) require a recent Bonafide certificate stamped and signed by the Head of Institution."
+  },
+  {
+    keywords: ["biometric", "biometric authentication", "nsp biometric", "face auth"],
+    reply: "NSP introduced mandatory biometric authentication (Aadhaar Face RD / fingerprint scan) for applicants and Institute Nodal Officers (INOs). Ensure your mobile number is linked to your Aadhaar card so you can complete e-KYC and biometric verification at your college camp or designated CSC centre."
+  },
+  {
+    keywords: ["gap year", "education gap", "gap affidavit", "study gap"],
+    reply: "If you have a gap of 1 or more years between your previous degree/class and current course, most government scholarship schemes require a 'Gap Year Affidavit' on stamp paper notarized by a notary public, declaring you were not enrolled elsewhere and did not receive concurrent scholarship funding."
+  },
+  {
+    keywords: ["issuing authority", "who issues income certificate", "tehsildar", "sdm"],
+    reply: "For national scholarships (NSP), income and caste certificates must be issued by a competent executive magistrate or revenue authority (such as Tehsildar, Sub-Divisional Magistrate SDM, or Revenue Officer). Certificates issued by private bodies, employers, or local corporators are usually rejected during institute scrutiny."
+  },
+  {
     keywords: ["who are you", "what can you do", "what is saathi"],
     reply: "I'm Saathi, a built-in guide for this scholarship list — ask me about eligibility rules, required documents, deadlines, match strength, or any specific scheme by name and I'll answer from what's on this page."
   }
