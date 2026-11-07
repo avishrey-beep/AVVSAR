@@ -1525,6 +1525,11 @@ const SAATHI_RULES = [
     keywords: ["fee receipt","tuition breakdown","fee waiver","non refundable fee"],
     reply: "When scholarship guidelines ask for a 'Fee Receipt', submit an official breakdown receipt signed by your college finance officer showing separate heads: Tuition Fee, Exam Fee, Library Fee, and Caution Deposit. Schemes usually reimburse non-refundable tuition fees only."
   }
+  ,
+  {
+    keywords: ["hostel certificate","day scholar vs hosteller","hostel allowance"],
+    reply: "Hosteller grants (like in Ishan Uday or Vidyasiri) are typically 2x higher than day scholar rates. To claim the hosteller amount, you must upload an official Hostel Certificate from your university or government-recognized hostel warden confirming room occupancy."
+  }
 ];
 
 function saathiReply(userText){
