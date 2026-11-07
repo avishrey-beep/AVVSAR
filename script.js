@@ -621,6 +621,28 @@ const SCHOLARSHIPS = [
       "Institutional verification followed by Treasury sanction"
     ]
   }
+  ,
+  {
+    id: "tn-uzhavar-pathukappu-scholarship",
+    name: "Tamil Nadu Chief Minister Uzhavar Pathukappu Thittam Education Assistance",
+    provider: "Revenue and Disaster Management Department, Government of Tamil Nadu",
+    type: "need",
+    levels: ["ug","pg","diploma"],
+    categories: ["general","obc","sc","st"],
+    minScore: 0,
+    maxIncome: 120000,
+    gender: "any",
+    states: ["TN"],
+    amount: "Rs. 2,000 – Rs. 6,000 / year based on course level",
+    deadline: "15 Jan",
+    documents: ["Farmers Social Security Scheme Member Card","Tamil Nadu Nativity Certificate","Bonafide Certificate from College","Aadhaar Card copy","Bank account passbook"],
+    steps: [
+      "Submit application at Taluk Special Tahsildar office or online e-Sevai portal",
+      "Enclose Uzhavar Pathukappu Thittam registration passbook copy",
+      "Attach Head of Institution bonafide certificate",
+      "Direct bank credit by Social Security Scheme wing"
+    ]
+  }
 ];
 
 /* deadline dates (ISO) for the urgency radar — kept separate from the
@@ -653,6 +675,7 @@ const DEADLINE_INFO = {
   "up-dashmottar-scholarship": { date: "2026-12-10" },
   "karnataka-vidyasiri-epass": { date: "2026-12-25" },
   "rajasthan-uttar-matric-scheme": { date: "2026-12-31" },
+  "tn-uzhavar-pathukappu-scholarship": { date: "2027-01-15" },
 };
 SCHOLARSHIPS.forEach(s => {
   const info = DEADLINE_INFO[s.id] || {};
