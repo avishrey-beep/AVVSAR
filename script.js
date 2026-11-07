@@ -445,6 +445,28 @@ const SCHOLARSHIPS = [
       "Submit and track via NSP Student Dashboard"
     ]
   }
+  ,
+  {
+    id: "begum-hazrat-mahal",
+    name: "Begum Hazrat Mahal National Scholarship for Minority Girls",
+    provider: "Maulana Azad Education Foundation (Ministry of Minority Affairs)",
+    type: "need",
+    levels: ["class10", "class12"],
+    categories: ["minority"],
+    minScore: 50,
+    maxIncome: 200000,
+    gender: "female",
+    states: "all",
+    amount: "Rs. 5,000 – Rs. 6,000 / year",
+    deadline: "30 Sep",
+    documents: ["Minority community certificate", "Income certificate", "Marksheet (Class 9/11)", "School bonafide", "Bank passbook"],
+    steps: [
+      "Apply via National Scholarship Portal (scholarships.gov.in)",
+      "Select Begum Hazrat Mahal National Scholarship",
+      "Upload minority certificate verified by district minority officer",
+      "Track status on NSP student dashboard"
+    ]
+  }
 ];
 
 /* deadline dates (ISO) for the urgency radar — kept separate from the
@@ -469,6 +491,7 @@ const DEADLINE_INFO = {
   "pm-yasasvi-scheme":          { date: "2026-12-15" },
   "aicte-saksham-pwd":         { date: "2026-11-30" },
   "nsp-minority-postmatric":   { date: "2026-10-31" },
+  "begum-hazrat-mahal":        { date: "2026-09-30" },
 };
 SCHOLARSHIPS.forEach(s => {
   const info = DEADLINE_INFO[s.id] || {};
