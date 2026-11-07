@@ -1520,6 +1520,11 @@ const SAATHI_RULES = [
     keywords: ["single mother","single parent","fatherless","orphan"],
     reply: "Several government and private scholarships offer dedicated income relaxation or reservation for children of single mothers, widows, or orphaned students. For these applications, attach an affidavit or death certificate of the deceased parent to qualify for 100% tuition waivers under priority quota."
   }
+  ,
+  {
+    keywords: ["fee receipt","tuition breakdown","fee waiver","non refundable fee"],
+    reply: "When scholarship guidelines ask for a 'Fee Receipt', submit an official breakdown receipt signed by your college finance officer showing separate heads: Tuition Fee, Exam Fee, Library Fee, and Caution Deposit. Schemes usually reimburse non-refundable tuition fees only."
+  }
 ];
 
 function saathiReply(userText){
