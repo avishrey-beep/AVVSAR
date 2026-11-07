@@ -467,6 +467,28 @@ const SCHOLARSHIPS = [
       "Track status on NSP student dashboard"
     ]
   }
+  ,
+  {
+    id: "ishan-uday-ner",
+    name: "Ishan Uday Special Scholarship Scheme for North-East Region",
+    provider: "University Grants Commission (UGC)",
+    type: "need",
+    levels: ["ug"],
+    categories: ["general", "obc", "sc", "st", "ews"],
+    minScore: 60,
+    maxIncome: 450000,
+    gender: "any",
+    states: ["AR", "AS", "MN", "ML", "MZ", "NL", "SK", "TR"],
+    amount: "Rs. 54,000 / year (Day Scholar) or Rs. 1,00,000 / year (Hosteller)",
+    deadline: "30 Sep",
+    documents: ["State domicile certificate", "Income certificate", "Class 12 marksheet (60%+)", "Bank passbook", "Bonafide certificate from UGC-recognized institution"],
+    steps: [
+      "Apply at ugc.ac.in/ishan-uday during the annual cycle",
+      "Upload Class 12 marksheet and state domicile proof",
+      "Get verification from head of institution",
+      "UGC disburses directly to bank account via DBT"
+    ]
+  }
 ];
 
 /* deadline dates (ISO) for the urgency radar — kept separate from the
@@ -492,6 +514,7 @@ const DEADLINE_INFO = {
   "aicte-saksham-pwd":         { date: "2026-11-30" },
   "nsp-minority-postmatric":   { date: "2026-10-31" },
   "begum-hazrat-mahal":        { date: "2026-09-30" },
+  "ishan-uday-ner":            { date: "2026-09-30" },
 };
 SCHOLARSHIPS.forEach(s => {
   const info = DEADLINE_INFO[s.id] || {};
