@@ -1,7 +1,25 @@
 # https://www.robotstxt.org/robotstxt.html
+# Avsar — Student Opportunity Passbook
+# Deployment: https://avishrey-beep.github.io/AVVSAR/
+
 User-agent: *
 Allow: /
+Allow: /index.html
+Allow: /documents.html
+Allow: /404.html
+Allow: /styles.css
+Allow: /script.js
+Allow: /documents.js
+Allow: /manifest.json
+Allow: /sitemap.xml
+Allow: /robots.txt
+Allow: /icon.svg
+Allow: /favicon.ico
 Disallow: /test.html
 Disallow: /backend*/
+Disallow: /*.json$
+Disallow: /_site/
+Crawl-delay: 2
 
+# Sitemap reference
 Sitemap: https://avishrey-beep.github.io/AVVSAR/sitemap.xml
