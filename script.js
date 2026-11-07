@@ -1505,6 +1505,11 @@ const SAATHI_RULES = [
     keywords: ["who are you", "what can you do", "what is saathi"],
     reply: "I'm Saathi, a built-in guide for this scholarship list — ask me about eligibility rules, required documents, deadlines, match strength, or any specific scheme by name and I'll answer from what's on this page."
   }
+  ,
+  {
+    keywords: ["creamy layer","obc ncl","non creamy layer","obc validity"],
+    reply: "For OBC category scholarships, you must provide an 'OBC Non-Creamy Layer (NCL)' certificate issued in the current financial year. Central portals like NSP strictly do not accept State-level backward certificates if they are not in Central OBC format or are older than 1 year."
+  }
 ];
 
 function saathiReply(userText){
