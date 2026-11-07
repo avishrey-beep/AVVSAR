@@ -12,6 +12,8 @@
 [![Status](https://img.shields.io/badge/Status-Active_Prototype-2ECC71?style=for-the-badge)]()
 [![Privacy](https://img.shields.io/badge/Privacy-100%25_Client--Side-blue?style=for-the-badge)]()
 [![Tests](https://img.shields.io/badge/Tests-10%20Passing-brightgreen?style=for-the-badge)](test.html)
+[![Scholarships](https://img.shields.io/badge/Scholarships-17%20Schemes-orange?style=for-the-badge)](script.js)
+[![CONTRIBUTING](https://img.shields.io/badge/Contributing-Welcome-9B59B6?style=for-the-badge)](CONTRIBUTING.md)
 
 </div>
 
@@ -106,7 +108,7 @@ Alongside the passbook sits **Saathi**, a bilingual (Hindi/English) conversation
 
 ## 🌐 Production Deployment Architecture
 
-Avsar is deployed as a high-reliability, zero-latency static single-page application and document intelligence vault on **GitHub Pages**:
+Avsar **v2.1.0** is deployed as a high-reliability, zero-latency static single-page application and document intelligence vault on **GitHub Pages**:
 
 - **Continuous Deployment Pipeline**: Triggered on every push to `main` using GitHub Actions (`.github/workflows/deploy.yml`).
 - **Asset Isolation & Build Staging**: The workflow stages production-verified frontend assets (`index.html`, `documents.html`, `404.html`, `styles.css`, `script.js`, `documents.js`, `manifest.json`, `icon.svg`, `favicon.ico`, `robots.txt`, `sitemap.xml`, `.nojekyll`) into a sanitized `_site/` distribution bundle before artifact upload.
@@ -115,6 +117,11 @@ Avsar is deployed as a high-reliability, zero-latency static single-page applica
 - **Crawler & Indexing Support**: Configured with production `robots.txt` and XML `sitemap.xml` referencing canonical URLs.
 - **Favicon Integrity**: Multi-resolution `favicon.ico` and high-res vector `icon.svg` linked with standard alternate and touch-icon meta tags across all pages.
 
+## 🤝 Contributing
+
+Contributions are welcome — especially verified scholarship additions or Saathi knowledge improvements. See [CONTRIBUTING.md](CONTRIBUTING.md) for data standards, schema format, and PR process.
+
+---
 ## 🏁 Quick Start & Local Development
 
 ```bash
