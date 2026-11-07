@@ -401,6 +401,50 @@ const SCHOLARSHIPS = [
       "Verification by Institute Nodal Officer and District Officer"
     ]
   }
+  ,
+  {
+    id: "aicte-saksham-pwd",
+    name: "AICTE Saksham Scholarship for Specially-Abled Students",
+    provider: "All India Council for Technical Education (AICTE)",
+    type: "need",
+    levels: ["ug", "pg", "diploma"],
+    categories: ["general", "obc", "sc", "st", "ews"],
+    minScore: 0,
+    maxIncome: 800000,
+    gender: "any",
+    states: "all",
+    amount: "Rs. 50,000 / year",
+    deadline: "30 Nov",
+    documents: ["Disability certificate (40%+)", "AADHAR card", "Income certificate", "Previous year marksheet", "Institute bonafide certificate"],
+    steps: [
+      "Register on the AICTE Scholarship portal (aicte-india.org)",
+      "Upload valid disability certificate from competent authority",
+      "Complete AICTE Saksham application and submit",
+      "Track verification status via AICTE Student Scholarship Dashboard"
+    ]
+  }
+  ,
+  {
+    id: "nsp-minority-postmatric",
+    name: "Post-Matric Scholarship for Minority Students",
+    provider: "Ministry of Minority Affairs (National Scholarship Portal)",
+    type: "need",
+    levels: ["class12", "ug", "pg", "diploma"],
+    categories: ["minority"],
+    minScore: 50,
+    maxIncome: 200000,
+    gender: "any",
+    states: "all",
+    amount: "Maintenance allowance + course fees",
+    deadline: "31 Oct",
+    documents: ["Minority community certificate", "Income certificate", "Previous year marksheet", "Fee receipt from institution", "Aadhaar card"],
+    steps: [
+      "Register on National Scholarship Portal (scholarships.gov.in)",
+      "Select Post-Matric Scholarship for Minority Scheme",
+      "Upload minority community and income certificate",
+      "Submit and track via NSP Student Dashboard"
+    ]
+  }
 ];
 
 /* deadline dates (ISO) for the urgency radar — kept separate from the
@@ -423,6 +467,8 @@ const DEADLINE_INFO = {
   "pm-usp-higher-ed":         { date: "2027-01-15" },
   "dbt-jrf-biotech":          { date: "2027-02-28" },
   "pm-yasasvi-scheme":          { date: "2026-12-15" },
+  "aicte-saksham-pwd":         { date: "2026-11-30" },
+  "nsp-minority-postmatric":   { date: "2026-10-31" },
 };
 SCHOLARSHIPS.forEach(s => {
   const info = DEADLINE_INFO[s.id] || {};
