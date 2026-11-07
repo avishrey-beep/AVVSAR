@@ -1260,6 +1260,18 @@ const SAATHI_RULES = [
     reply: "For national scholarships (NSP), income and caste certificates must be issued by a competent executive magistrate or revenue authority (such as Tehsildar, Sub-Divisional Magistrate SDM, or Revenue Officer). Certificates issued by private bodies, employers, or local corporators are usually rejected during institute scrutiny."
   },
   {
+    keywords: ["disability", "specially abled", "pwd", "differently abled", "saksham"],
+    reply: "Students with 40% or more benchmark disability can apply for the AICTE Saksham Scholarship (Rs. 50,000/year) for technical education courses. You will need a Disability Certificate issued by a Government Medical Board, your Aadhaar card, and income certificate. Apply via aicte-india.org before the November deadline."
+  },
+  {
+    keywords: ["minority", "muslim", "christian", "sikh", "jain", "parsi", "buddhist"],
+    reply: "Students from minority communities (Muslim, Christian, Sikh, Buddhist, Jain, Zoroastrian/Parsi) can apply for the Post-Matric Scholarship for Minorities through the National Scholarship Portal. Family income must be under Rs. 2 lakh/year. You need a Minority Community certificate from the appropriate religious body or SDM."
+  },
+  {
+    keywords: ["disability certificate", "udid", "unique disability id"],
+    reply: "Get your Disability Certificate from the nearest District Hospital's Medical Board or government hospital. For a permanent digital certificate, apply for UDID (Unique Disability ID) at swavlambancard.gov.in — this is now accepted by most scholarship portals and is easier to verify online."
+  },
+  {
     keywords: ["who are you", "what can you do", "what is saathi"],
     reply: "I'm Saathi, a built-in guide for this scholarship list — ask me about eligibility rules, required documents, deadlines, match strength, or any specific scheme by name and I'll answer from what's on this page."
   }
