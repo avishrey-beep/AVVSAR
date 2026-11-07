@@ -30,6 +30,21 @@ jobs:
           node --check script.js documents.js server.js
           echo "JavaScript syntax check passed."
 
+      - name: Verify critical files exist
+        run: |
+          test -f index.html    && echo "index.html OK"
+          test -f documents.html && echo "documents.html OK"
+          test -f 404.html      && echo "404.html OK"
+          test -f styles.css    && echo "styles.css OK"
+          test -f script.js     && echo "script.js OK"
+          test -f documents.js  && echo "documents.js OK"
+          test -f manifest.json && echo "manifest.json OK"
+          test -f icon.svg      && echo "icon.svg OK"
+          test -f favicon.ico   && echo "favicon.ico OK"
+          test -f robots.txt    && echo "robots.txt OK"
+          test -f sitemap.xml   && echo "sitemap.xml OK"
+          echo "All required production assets verified."
+
       - name: Prepare production static distribution
         run: |
           mkdir -p _site
