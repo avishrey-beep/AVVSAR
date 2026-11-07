@@ -1156,3 +1156,23 @@ body.pre-login{ overflow: hidden; }
   body { background: #fff !important; color: #000 !important; }
   .hero, main, .site-footer { break-inside: avoid; }
 }
+
+/* ============ ACCESSIBILITY FOCUS RING & PRINT OPTIMIZATIONS ============ */
+:focus-visible {
+  outline: 2px solid var(--marigold);
+  outline-offset: 3px;
+}
+
+button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible {
+  outline: 2px solid var(--marigold);
+  outline-offset: 2px;
+}
+
+@media print {
+  .results-card {
+    border: 1px solid #ccc !important;
+    break-inside: avoid;
+    box-shadow: none !important;
+    page-break-inside: avoid;
+  }
+}
