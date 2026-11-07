@@ -533,6 +533,28 @@ const SCHOLARSHIPS = [
       "College verifies and MP Govt reimburses tuition fee"
     ]
   }
+  ,
+  {
+    id: "bihar-post-matric-bc-ebc",
+    name: "Bihar Post-Matric Scholarship for BC & EBC Students",
+    provider: "Bihar Backward Classes & Extremely Backward Classes Welfare Department",
+    type: "need",
+    levels: ["ug","pg","diploma"],
+    categories: ["obc"],
+    minScore: 0,
+    maxIncome: 300000,
+    gender: "any",
+    states: ["BR"],
+    amount: "Course fees reimbursement + monthly maintenance allowance",
+    deadline: "30 Nov",
+    documents: ["Bihar Residential Certificate","Caste Certificate (BC/EBC)","Income Certificate (revenue officer)","Fee structure receipt","College Bonafide Certificate"],
+    steps: [
+      "Register on Bihar Post Matric Scholarship Portal (pmsonline.bih.nic.in)",
+      "Fill student profile with bank account details linked to Aadhaar",
+      "Upload institutional bonafide and fee structure certificate",
+      "District Welfare Officer verifies and releases DBT payment"
+    ]
+  }
 ];
 
 /* deadline dates (ISO) for the urgency radar — kept separate from the
@@ -561,6 +583,7 @@ const DEADLINE_INFO = {
   "begum-hazrat-mahal":        { date: "2026-09-30" },
   "ishan-uday-ner":            { date: "2026-09-30" },
   "swami-vivekananda-wb":      { date: "2026-10-31" },
+  "bihar-post-matric-bc-ebc": { date: "2026-11-30" },
 };
 SCHOLARSHIPS.forEach(s => {
   const info = DEADLINE_INFO[s.id] || {};
