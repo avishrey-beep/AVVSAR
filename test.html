@@ -5,16 +5,18 @@
   <title>Avsar Logic Test Suite</title>
   <meta name="robots" content="noindex, nofollow">
   <style>
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; padding: 24px; max-width: 720px; margin: 0 auto; line-height: 1.5; }
-    h1 { font-size: 1.5rem; margin-bottom: 12px; }
-    .test-pass { color: #2e7d32; font-weight: 600; margin: 4px 0; }
-    .test-fail { color: #d32f2f; font-weight: 600; margin: 4px 0; }
-    .summary { margin-top: 16px; padding: 12px; border-radius: 6px; background: #f5f5f5; font-family: monospace; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; padding: 24px; max-width: 760px; margin: 0 auto; line-height: 1.5; color: #1f2937; }
+    h1 { font-size: 1.5rem; margin-bottom: 8px; color: #111827; }
+    p.subtitle { color: #6b7280; margin-bottom: 20px; font-size: 0.95rem; }
+    .test-pass { color: #15803d; font-weight: 600; margin: 6px 0; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.9rem; }
+    .test-fail { color: #b91c1c; font-weight: 600; margin: 6px 0; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.9rem; }
+    .summary { margin-top: 24px; padding: 16px; border-radius: 8px; background: #f3f4f6; font-family: ui-monospace, monospace; border: 1px solid #e5e7eb; font-weight: 600; }
   </style>
 </head>
 <body>
   <h1>Avsar Automated Verification Tests</h1>
-  <div id="results">Running tests...</div>
+  <p class="subtitle">Client-side logic, dataset integrity, and conversational engine verification suite</p>
+  <div id="results">Running verification suite...</div>
 
   <script src="script.js"></script>
   <script>
@@ -53,6 +55,35 @@
         });
         assert("computeMatches returns array of matching scholarships", Array.isArray(sampleMatches));
       }
+
+      // Test 6: Scholarship IDs are unique without collisions
+      const idSet = new Set();
+      let hasDuplicates = false;
+      SCHOLARSHIPS.forEach(s => {
+        if (idSet.has(s.id)) hasDuplicates = true;
+        idSet.add(s.id);
+      });
+      assert("Scholarship IDs are globally unique without duplicates", !hasDuplicates && idSet.size === SCHOLARSHIPS.length);
+
+      // Test 7: Verify all amounts and deadlines are formatted strings
+      const validAmountsAndDeadlines = SCHOLARSHIPS.every(s => typeof s.amount === "string" && s.amount.length > 0 && typeof s.deadline === "string" && s.deadline.length > 0);
+      assert("All scholarships define non-empty amounts and deadlines", validAmountsAndDeadlines);
+
+      // Test 8: Saathi companion response fallback
+      if (typeof saathiReply === "function") {
+        const reply = saathiReply("xyzunknownrandomquery123");
+        assert("Saathi returns a helpful fallback response for unindexed queries", typeof reply === "string" && reply.length > 10);
+      }
+
+      // Test 9: Match engine resilience with boundary edge cases
+      if (typeof computeMatches === "function") {
+        const zeroScoreMatches = computeMatches({ level: "class10", category: "all", type: "any", score: 0, income: 0, gender: "any", state: "all" });
+        assert("computeMatches gracefully evaluates zero income/score boundaries", Array.isArray(zeroScoreMatches));
+      }
+
+      // Test 10: Document prerequisites schema verification
+      const validDocs = SCHOLARSHIPS.every(s => Array.isArray(s.documents) && s.documents.length > 0 && s.documents.every(d => typeof d === "string" && d.trim().length > 0));
+      assert("All scholarships specify a structured list of required documents", validDocs);
 
       // Render summary
       let passCount = 0;
