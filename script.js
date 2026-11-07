@@ -577,6 +577,28 @@ const SCHOLARSHIPS = [
       "Verify online status until District Social Welfare Officer sanction"
     ]
   }
+  ,
+  {
+    id: "karnataka-vidyasiri-epass",
+    name: "Karnataka Vidyasiri (ePASS) Food and Accommodation Scholarship",
+    provider: "Backward Classes Welfare Department, Government of Karnataka",
+    type: "need",
+    levels: ["ug","pg","diploma"],
+    categories: ["obc","sc","st"],
+    minScore: 0,
+    maxIncome: 250000,
+    gender: "any",
+    states: ["KA"],
+    amount: "Rs. 1,500 / month hostel & food allowance (Rs. 15,000 / year)",
+    deadline: "25 Dec",
+    documents: ["Karnataka Domicile Proof","RD Number verified Income & Caste Certificate","Aadhaar Card","College Bonafide with student USN","Hostel distance verification declaration"],
+    steps: [
+      "Apply through State Scholarship Portal Karnataka (ssp.postmatric.karnataka.gov.in)",
+      "Authenticate with student e-Attestation and Seva Sindhu certificates",
+      "Institute Nodal Officer e-attests admission and attendance records",
+      "Monthly stipend credited directly to bank account via DBT"
+    ]
+  }
 ];
 
 /* deadline dates (ISO) for the urgency radar — kept separate from the
@@ -607,6 +629,7 @@ const DEADLINE_INFO = {
   "swami-vivekananda-wb":      { date: "2026-10-31" },
   "bihar-post-matric-bc-ebc": { date: "2026-11-30" },
   "up-dashmottar-scholarship": { date: "2026-12-10" },
+  "karnataka-vidyasiri-epass": { date: "2026-12-25" },
 };
 SCHOLARSHIPS.forEach(s => {
   const info = DEADLINE_INFO[s.id] || {};
