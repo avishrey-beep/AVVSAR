@@ -27,7 +27,7 @@ jobs:
 
       - name: Verify JavaScript syntax & assets
         run: |
-          node --check script.js documents.js
+          node --check script.js documents.js server.js
           echo "JavaScript syntax check passed."
 
       - name: Prepare production static distribution
