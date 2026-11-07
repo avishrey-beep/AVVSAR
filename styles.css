@@ -1176,3 +1176,29 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
     page-break-inside: avoid;
   }
 }
+
+/* ============ PAGE LOAD FADE-IN ANIMATION ============ */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.app-shell {
+  animation: fadeInUp 0.4s ease both;
+}
+
+/* ============ ENHANCED CARD HOVER INTERACTIONS ============ */
+.result-card {
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.result-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+}
+
+/* ============ CUSTOM SCROLLBAR (Webkit) ============ */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.15); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.28); }
