@@ -379,6 +379,28 @@ const SCHOLARSHIPS = [
       "Activate monthly DBT research stipend"
     ]
   }
+  ,
+  {
+    id: "pm-yasasvi-scheme",
+    name: "PM Young Achievers Scholarship Award Scheme (PM-YASASVI)",
+    provider: "Ministry of Social Justice and Empowerment (MSJE)",
+    type: "need",
+    levels: ["class10", "class12"],
+    categories: ["obc", "ebc", "nomadic"],
+    minScore: 60,
+    maxIncome: 250000,
+    gender: "any",
+    states: "all",
+    amount: "₹75,000 – ₹1,25,000 / year",
+    deadline: "15 Dec",
+    documents: ["Previous year marksheet", "OBC/EBC caste certificate", "Family income certificate", "Aadhaar card", "Bank passbook"],
+    steps: [
+      "Register through the National Scholarship Portal (scholarships.gov.in)",
+      "Select PM-YASASVI Top-Class / Pre-Matric school scheme",
+      "Upload attested school bonafide and income proof",
+      "Verification by Institute Nodal Officer and District Officer"
+    ]
+  }
 ];
 
 /* deadline dates (ISO) for the urgency radar — kept separate from the
@@ -399,7 +421,8 @@ const DEADLINE_INFO = {
   "girl-child-diploma":       { date: "2026-10-20" },
   "phd-jrf-ugc":              { rolling: true },
   "pm-usp-higher-ed":         { date: "2027-01-15" },
-  "dbt-jrf-biotech":          { date: "2027-02-28" }
+  "dbt-jrf-biotech":          { date: "2027-02-28" },
+  "pm-yasasvi-scheme":          { date: "2026-12-15" },
 };
 SCHOLARSHIPS.forEach(s => {
   const info = DEADLINE_INFO[s.id] || {};
