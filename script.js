@@ -599,6 +599,28 @@ const SCHOLARSHIPS = [
       "Monthly stipend credited directly to bank account via DBT"
     ]
   }
+  ,
+  {
+    id: "rajasthan-uttar-matric-scheme",
+    name: "Rajasthan Uttar Matric Scholarship Scheme",
+    provider: "Social Justice and Empowerment Department, Government of Rajasthan",
+    type: "need",
+    levels: ["class12","ug","pg","diploma"],
+    categories: ["sc","st","obc","ews"],
+    minScore: 50,
+    maxIncome: 250000,
+    gender: "any",
+    states: ["RJ"],
+    amount: "100% course tuition fees + monthly stipend",
+    deadline: "31 Dec",
+    documents: ["Jan Aadhaar Card","Rajasthan Mool Niwas Domicile Certificate","Valid Income Certificate","Previous educational marksheets","Fee receipt from university"],
+    steps: [
+      "Login using SSO ID on SSO Rajasthan Portal (sso.rajasthan.gov.in)",
+      "Select SJMS Scholarship application module",
+      "Fetch verified certificates automatically using Jan Aadhaar ID",
+      "Institutional verification followed by Treasury sanction"
+    ]
+  }
 ];
 
 /* deadline dates (ISO) for the urgency radar — kept separate from the
@@ -630,6 +652,7 @@ const DEADLINE_INFO = {
   "bihar-post-matric-bc-ebc": { date: "2026-11-30" },
   "up-dashmottar-scholarship": { date: "2026-12-10" },
   "karnataka-vidyasiri-epass": { date: "2026-12-25" },
+  "rajasthan-uttar-matric-scheme": { date: "2026-12-31" },
 };
 SCHOLARSHIPS.forEach(s => {
   const info = DEADLINE_INFO[s.id] || {};
