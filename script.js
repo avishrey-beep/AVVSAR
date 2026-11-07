@@ -555,6 +555,28 @@ const SCHOLARSHIPS = [
       "District Welfare Officer verifies and releases DBT payment"
     ]
   }
+  ,
+  {
+    id: "up-dashmottar-scholarship",
+    name: "Uttar Pradesh Dashmottar Scholarship and Fee Reimbursement",
+    provider: "Social Welfare Department, Government of Uttar Pradesh",
+    type: "need",
+    levels: ["ug","pg","diploma"],
+    categories: ["general","obc","sc","st","minority"],
+    minScore: 50,
+    maxIncome: 250000,
+    gender: "any",
+    states: ["UP"],
+    amount: "Full non-refundable tuition fee reimbursement + annual maintenance allowance",
+    deadline: "10 Dec",
+    documents: ["UP Domicile Certificate","Annual Income Certificate","Category/Caste Certificate","High school & Intermediate marksheets","Aadhaar authenticated bank passbook"],
+    steps: [
+      "Register on UP Scholarship Portal (scholarship.up.gov.in)",
+      "Complete online registration and link DigiLocker certificate data",
+      "Submit printout with self-attested documents to college scholarship desk",
+      "Verify online status until District Social Welfare Officer sanction"
+    ]
+  }
 ];
 
 /* deadline dates (ISO) for the urgency radar — kept separate from the
@@ -584,6 +606,7 @@ const DEADLINE_INFO = {
   "ishan-uday-ner":            { date: "2026-09-30" },
   "swami-vivekananda-wb":      { date: "2026-10-31" },
   "bihar-post-matric-bc-ebc": { date: "2026-11-30" },
+  "up-dashmottar-scholarship": { date: "2026-12-10" },
 };
 SCHOLARSHIPS.forEach(s => {
   const info = DEADLINE_INFO[s.id] || {};
