@@ -643,6 +643,28 @@ const SCHOLARSHIPS = [
       "Direct bank credit by Social Security Scheme wing"
     ]
   }
+  ,
+  {
+    id: "kerala-vidyakiranam-differently-abled",
+    name: "Kerala Vidyakiranam Educational Assistance for Children of PWD Parents",
+    provider: "Social Justice Department, Government of Kerala",
+    type: "need",
+    levels: ["class10","class12","ug","pg"],
+    categories: ["general","obc","sc","st"],
+    minScore: 0,
+    maxIncome: 100000,
+    gender: "any",
+    states: ["KL"],
+    amount: "Rs. 3,500 – Rs. 10,000 / year",
+    deadline: "20 Jan",
+    documents: ["Parent Disability Certificate (40%+)","BPL Ration Card or Revenue Income Certificate","Kerala Domicile Certificate","Study Certificate from school/college","Student Aadhaar linked bank passbook"],
+    steps: [
+      "Apply online through SUNEETHI portal (suneethi.sjd.kerala.gov.in)",
+      "Upload parent Medical Board disability card and BPL certificate",
+      "Submit printout with institution head sign to District Social Justice Officer",
+      "Fund disbursement through e-Treasury DBT"
+    ]
+  }
 ];
 
 /* deadline dates (ISO) for the urgency radar — kept separate from the
@@ -676,6 +698,7 @@ const DEADLINE_INFO = {
   "karnataka-vidyasiri-epass": { date: "2026-12-25" },
   "rajasthan-uttar-matric-scheme": { date: "2026-12-31" },
   "tn-uzhavar-pathukappu-scholarship": { date: "2027-01-15" },
+  "kerala-vidyakiranam-differently-abled": { date: "2027-01-20" },
 };
 SCHOLARSHIPS.forEach(s => {
   const info = DEADLINE_INFO[s.id] || {};
