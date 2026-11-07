@@ -489,6 +489,28 @@ const SCHOLARSHIPS = [
       "UGC disburses directly to bank account via DBT"
     ]
   }
+  ,
+  {
+    id: "swami-vivekananda-wb",
+    name: "Swami Vivekananda Merit-cum-Means Scholarship (West Bengal)",
+    provider: "West Bengal Government (Higher Education Department)",
+    type: "both",
+    levels: ["ug", "pg"],
+    categories: ["general", "obc", "sc", "st"],
+    minScore: 75,
+    maxIncome: 250000,
+    gender: "any",
+    states: ["WB"],
+    amount: "Rs. 1,000 – Rs. 5,000 / month",
+    deadline: "31 Oct",
+    documents: ["WB domicile certificate", "Income certificate", "Previous marksheet (75%+)", "College bonafide", "Bank passbook (nationalized bank)"],
+    steps: [
+      "Apply at svmcm.wbhed.gov.in",
+      "Fill merit-cum-means form with income and marksheet details",
+      "Get institutional verification from college principal",
+      "Track status and renewal on SVMCM portal"
+    ]
+  }
 ];
 
 /* deadline dates (ISO) for the urgency radar — kept separate from the
@@ -515,6 +537,7 @@ const DEADLINE_INFO = {
   "nsp-minority-postmatric":   { date: "2026-10-31" },
   "begum-hazrat-mahal":        { date: "2026-09-30" },
   "ishan-uday-ner":            { date: "2026-09-30" },
+  "swami-vivekananda-wb":      { date: "2026-10-31" },
 };
 SCHOLARSHIPS.forEach(s => {
   const info = DEADLINE_INFO[s.id] || {};
