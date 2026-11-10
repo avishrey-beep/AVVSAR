@@ -665,6 +665,28 @@ const SCHOLARSHIPS = [
       "Fund disbursement through e-Treasury DBT"
     ]
   }
+  ,
+  {
+    id: "nmms-national-means-merit",
+    name: "National Means-cum-Merit Scholarship (NMMSS)",
+    provider: "Department of School Education and Literacy (Ministry of Education)",
+    type: "both",
+    levels: ["class10"],
+    categories: ["general","obc","sc","st","ews"],
+    minScore: 55,
+    maxIncome: 350000,
+    gender: "any",
+    states: "all",
+    amount: "₹12,000 / year (₹1,000 / month)",
+    deadline: "15 Dec",
+    documents: ["Class 8 marksheet (55%+ marks)","Income certificate from revenue authority","Government school study certificate","Aadhaar linked bank passbook"],
+    steps: [
+      "Qualify state-level NMMS selection exam in Class 8",
+      "Register on National Scholarship Portal under NMMSS scheme",
+      "Get school verification from principal and district nodal officer",
+      "Direct Benefit Transfer of ₹12,000 annually through Class 9 to 12"
+    ]
+  }
 ];
 
 /* deadline dates (ISO) for the urgency radar — kept separate from the
@@ -699,6 +721,7 @@ const DEADLINE_INFO = {
   "rajasthan-uttar-matric-scheme": { date: "2026-12-31" },
   "tn-uzhavar-pathukappu-scholarship": { date: "2027-01-15" },
   "kerala-vidyakiranam-differently-abled": { date: "2027-01-20" },
+  "nmms-national-means-merit": { date: "2026-12-15" },
 };
 SCHOLARSHIPS.forEach(s => {
   const info = DEADLINE_INFO[s.id] || {};
