@@ -753,6 +753,28 @@ const SCHOLARSHIPS = [
       "Annual grant of ₹50,000 credited via DBT"
     ]
   }
+  ,
+  {
+    id: "reliance-foundation-ug-scholarship",
+    name: "Reliance Foundation Undergraduate Scholarship",
+    provider: "Reliance Foundation",
+    type: "both",
+    levels: ["ug"],
+    categories: ["general","obc","sc","st","ews"],
+    minScore: 60,
+    maxIncome: 1500000,
+    gender: "any",
+    states: "all",
+    amount: "Up to ₹2,00,000 grant across full undergraduate degree",
+    deadline: "15 Oct",
+    documents: ["Class 12 marksheet (60%+ marks)","Household income certificate (<₹15 Lakh; preference <₹2.5 Lakh)","College enrollment verification","Aadhaar card"],
+    steps: [
+      "Complete online registration at scholarships.reliancefoundation.org",
+      "Take online aptitude assessment (verbal, analytical, and numerical reasoning)",
+      "Submit academic transcripts and income declaration",
+      "5,000 meritorious scholars selected annually for financial support and mentorship"
+    ]
+  }
 ];
 
 /* deadline dates (ISO) for the urgency radar — kept separate from the
@@ -791,6 +813,7 @@ const DEADLINE_INFO = {
   "top-class-sc-education": { date: "2026-12-31" },
   "top-class-st-education": { date: "2026-12-31" },
   "aicte-swanath-scheme": { date: "2026-11-30" },
+  "reliance-foundation-ug-scholarship": { date: "2026-10-15" },
 };
 SCHOLARSHIPS.forEach(s => {
   const info = DEADLINE_INFO[s.id] || {};
