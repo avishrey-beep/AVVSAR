@@ -731,6 +731,28 @@ const SCHOLARSHIPS = [
       "Disbursed directly into student account under MoTA Top Class scheme"
     ]
   }
+  ,
+  {
+    id: "aicte-swanath-scheme",
+    name: "AICTE Swanath Scholarship Scheme",
+    provider: "All India Council for Technical Education (AICTE)",
+    type: "need",
+    levels: ["ug","diploma"],
+    categories: ["general","obc","sc","st","ews"],
+    minScore: 0,
+    maxIncome: 800000,
+    gender: "any",
+    states: "all",
+    amount: "₹50,000 / year for every year of study",
+    deadline: "30 Nov",
+    documents: ["Death certificate of parents (for orphans) or COVID death proof","Income certificate (<₹8 Lakh)","AICTE approved college bonafide","Marksheet of qualifying exam"],
+    steps: [
+      "Open for orphans, wards of parents who died of COVID-19, and wards of Armed Forces martyrs",
+      "Apply on the National Scholarship Portal under AICTE Swanath scheme",
+      "Submit valid documentary proof of orphan status or martyrdom certificate",
+      "Annual grant of ₹50,000 credited via DBT"
+    ]
+  }
 ];
 
 /* deadline dates (ISO) for the urgency radar — kept separate from the
@@ -768,6 +790,7 @@ const DEADLINE_INFO = {
   "nmms-national-means-merit": { date: "2026-12-15" },
   "top-class-sc-education": { date: "2026-12-31" },
   "top-class-st-education": { date: "2026-12-31" },
+  "aicte-swanath-scheme": { date: "2026-11-30" },
 };
 SCHOLARSHIPS.forEach(s => {
   const info = DEADLINE_INFO[s.id] || {};
