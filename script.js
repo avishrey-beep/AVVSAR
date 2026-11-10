@@ -709,6 +709,28 @@ const SCHOLARSHIPS = [
       "Full fee and maintenance allowance credited by Ministry"
     ]
   }
+  ,
+  {
+    id: "top-class-st-education",
+    name: "National Fellowship and Scholarship for Higher Education of ST Students",
+    provider: "Ministry of Tribal Affairs (MoTA)",
+    type: "need",
+    levels: ["ug","pg","phd"],
+    categories: ["st"],
+    minScore: 0,
+    maxIncome: 600000,
+    gender: "any",
+    states: "all",
+    amount: "Full tuition fee reimbursement + ₹3,000/month living + ₹2,200 book grant",
+    deadline: "31 Dec",
+    documents: ["ST Tribe Certificate","Annual income certificate (<₹6 Lakh)","Admission offer from top-class institution","Student bank account passbook"],
+    steps: [
+      "Obtain admission into notified premier central/state universities",
+      "Submit application on National Scholarship Portal",
+      "Institute Nodal Officer completes electronic verification",
+      "Disbursed directly into student account under MoTA Top Class scheme"
+    ]
+  }
 ];
 
 /* deadline dates (ISO) for the urgency radar — kept separate from the
@@ -745,6 +767,7 @@ const DEADLINE_INFO = {
   "kerala-vidyakiranam-differently-abled": { date: "2027-01-20" },
   "nmms-national-means-merit": { date: "2026-12-15" },
   "top-class-sc-education": { date: "2026-12-31" },
+  "top-class-st-education": { date: "2026-12-31" },
 };
 SCHOLARSHIPS.forEach(s => {
   const info = DEADLINE_INFO[s.id] || {};
