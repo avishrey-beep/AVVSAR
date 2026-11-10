@@ -687,6 +687,28 @@ const SCHOLARSHIPS = [
       "Direct Benefit Transfer of ₹12,000 annually through Class 9 to 12"
     ]
   }
+  ,
+  {
+    id: "top-class-sc-education",
+    name: "Top Class Education Scheme for SC Students",
+    provider: "Ministry of Social Justice and Empowerment (MSJE)",
+    type: "need",
+    levels: ["ug","pg"],
+    categories: ["sc"],
+    minScore: 0,
+    maxIncome: 800000,
+    gender: "any",
+    states: "all",
+    amount: "Full tuition fee + ₹86,000 annual living expenses + ₹45,000 computer grant",
+    deadline: "31 Dec",
+    documents: ["SC Caste certificate","Family income certificate (<₹8 Lakh)","Admission letter to notified top-class institute (IIT/IIM/NIT/AIIMS)","Fee structure receipt"],
+    steps: [
+      "Secure admission in one of the 260+ notified premier institutes",
+      "Apply through National Scholarship Portal (NSP)",
+      "Institute Nodal Officer verifies admission and category credentials",
+      "Full fee and maintenance allowance credited by Ministry"
+    ]
+  }
 ];
 
 /* deadline dates (ISO) for the urgency radar — kept separate from the
@@ -722,6 +744,7 @@ const DEADLINE_INFO = {
   "tn-uzhavar-pathukappu-scholarship": { date: "2027-01-15" },
   "kerala-vidyakiranam-differently-abled": { date: "2027-01-20" },
   "nmms-national-means-merit": { date: "2026-12-15" },
+  "top-class-sc-education": { date: "2026-12-31" },
 };
 SCHOLARSHIPS.forEach(s => {
   const info = DEADLINE_INFO[s.id] || {};
