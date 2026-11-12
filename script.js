@@ -885,6 +885,28 @@ const SCHOLARSHIPS = [
       "Principal verification followed by Treasury sanction for RTF/MTF credit"
     ]
   }
+  ,
+  {
+    id: "maharashtra-rajarshi-shahu-fee",
+    name: "Maharashtra Rajarshi Chhatrapati Shahu Maharaj Fee Reimbursement Scheme",
+    provider: "Directorate of Higher Education (DHE), Government of Maharashtra",
+    type: "need",
+    levels: ["ug","pg","diploma"],
+    categories: ["general","ews"],
+    minScore: 0,
+    maxIncome: 800000,
+    gender: "any",
+    states: ["MH"],
+    amount: "50% tuition fee and 50% exam fee reimbursement across higher education",
+    deadline: "31 Jan",
+    documents: ["Maharashtra Domicile Certificate","Tahsildar certified Annual Family Income Certificate (<₹8 Lakh)","CAP Admission Allotment Letter","Ration Card (up to first two children benefit)","Fee receipt of current academic year"],
+    steps: [
+      "Register on MahaDBT Portal (mahadbt.maharashtra.gov.in)",
+      "Authenticate profile with Aadhaar and select Higher Education department",
+      "Submit application under Rajarshi Chhatrapati Shahu Maharaj Scheme",
+      "College scrutiny and Joint Director sanction for DBT fee reimbursement"
+    ]
+  }
 ];
 
 /* deadline dates (ISO) for the urgency radar — kept separate from the
@@ -929,6 +951,7 @@ const DEADLINE_INFO = {
   "odisha-post-matric-scholarship": { date: "2027-01-31" },
   "wb-aikyashree-scholarship": { date: "2027-01-15" },
   "telangana-epass-postmatric": { date: "2027-01-31" },
+  "maharashtra-rajarshi-shahu-fee": { date: "2027-01-31" },
 };
 SCHOLARSHIPS.forEach(s => {
   const info = DEADLINE_INFO[s.id] || {};
