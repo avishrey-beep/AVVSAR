@@ -841,6 +841,28 @@ const SCHOLARSHIPS = [
       "Scrutiny by District Welfare Officer (DWO) and direct DBT disbursement"
     ]
   }
+  ,
+  {
+    id: "wb-aikyashree-scholarship",
+    name: "West Bengal Aikyashree Minority Scholarship Scheme",
+    provider: "West Bengal Minorities Development and Finance Corporation (WBMDFC)",
+    type: "need",
+    levels: ["class10","class12","ug","pg","diploma"],
+    categories: ["minority"],
+    minScore: 50,
+    maxIncome: 250000,
+    gender: "any",
+    states: ["WB"],
+    amount: "Up to ₹33,000 / year (hosteller & day scholar maintenance + course fee grant)",
+    deadline: "15 Jan",
+    documents: ["West Bengal Domicile Certificate","Income Certificate issued by Block Development Officer or Gazetted Officer","Minority Community Self-Declaration","Previous qualifying examination marksheet (min 50% marks)","Aadhaar linked bank account passbook"],
+    steps: [
+      "Apply through WBMDFC Aikyashree portal (wbmdfcscholarship.in)",
+      "Fill student registration profile and course enrollment details",
+      "Submit application printout and original copies to college nodal desk",
+      "Institutional level verification followed by district clearance for DBT credit"
+    ]
+  }
 ];
 
 /* deadline dates (ISO) for the urgency radar — kept separate from the
@@ -883,6 +905,7 @@ const DEADLINE_INFO = {
   "hdfc-parivartan-ecss": { date: "2026-12-31" },
   "pmss-capf-assam-rifles": { date: "2026-12-31" },
   "odisha-post-matric-scholarship": { date: "2027-01-31" },
+  "wb-aikyashree-scholarship": { date: "2027-01-15" },
 };
 SCHOLARSHIPS.forEach(s => {
   const info = DEADLINE_INFO[s.id] || {};
