@@ -797,6 +797,28 @@ const SCHOLARSHIPS = [
       "Shortlisted candidates undergo telephonic interview followed by DBT disbursement"
     ]
   }
+  ,
+  {
+    id: "pmss-capf-assam-rifles",
+    name: "Prime Minister's Scholarship Scheme for CAPF and Assam Rifles",
+    provider: "Welfare and Rehabilitation Board (WARB), Ministry of Home Affairs",
+    type: "merit",
+    levels: ["ug","pg"],
+    categories: ["general","obc","sc","st","ews"],
+    minScore: 60,
+    maxIncome: 0,
+    gender: "any",
+    states: "all",
+    amount: "₹3,000/month for girls and ₹2,500/month for boys (₹30,000–₹36,000/year)",
+    deadline: "31 Dec",
+    documents: ["Discharge Certificate / Service Certificate of CAPF or Assam Rifles personnel","MEP / Gallantry award or martyrdom certificate (as applicable)","Class 12 / Diploma marksheet (minimum 60% marks)","College Bonafide Certificate and fee receipt","Aadhaar seeded bank account passbook"],
+    steps: [
+      "Register on National Scholarship Portal (scholarships.gov.in)",
+      "Apply under Ministry of Home Affairs PMSS CAPF & AR scheme",
+      "Upload WARB endorsement certificate and institutional bonafide",
+      "Verification by Head of Institution followed by Ministry sanction for DBT"
+    ]
+  }
 ];
 
 /* deadline dates (ISO) for the urgency radar — kept separate from the
@@ -837,6 +859,7 @@ const DEADLINE_INFO = {
   "aicte-swanath-scheme": { date: "2026-11-30" },
   "reliance-foundation-ug-scholarship": { date: "2026-10-15" },
   "hdfc-parivartan-ecss": { date: "2026-12-31" },
+  "pmss-capf-assam-rifles": { date: "2026-12-31" },
 };
 SCHOLARSHIPS.forEach(s => {
   const info = DEADLINE_INFO[s.id] || {};
