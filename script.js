@@ -973,6 +973,28 @@ const SCHOLARSHIPS = [
       "Monthly fellowship disbursed directly through Canara Bank UGC DBT portal"
     ]
   }
+  ,
+  {
+    id: "tata-scholarship-cornell",
+    name: "Tata Scholarship for Cornell University",
+    provider: "Tata Education and Development Trust / Cornell University",
+    type: "both",
+    levels: ["ug"],
+    categories: ["general","obc","sc","st","ews"],
+    minScore: 85,
+    maxIncome: 2500000,
+    gender: "any",
+    states: "all",
+    amount: "Full undergraduate tuition and living expenses (Full Ride for 4 years)",
+    deadline: "01 Nov",
+    documents: ["Proof of Indian citizenship and Indian secondary schooling","Cornell University undergraduate application (Common App)","College Scholarship Service (CSS) Profile for financial need assessment","Parent Income Tax returns, salary slips, and asset statements","Official high school transcripts and recommendation letters"],
+    steps: [
+      "Submit undergraduate application for admission to Cornell University via Common Application",
+      "File College Scholarship Service (CSS) Profile indicating requirement for financial assistance",
+      "Cornell University Financial Aid Office identifies eligible Indian admitted candidates",
+      "Tata Scholarship endowment awards full financial need support for up to 8 semesters"
+    ]
+  }
 ];
 
 /* deadline dates (ISO) for the urgency radar — kept separate from the
@@ -1021,6 +1043,7 @@ const DEADLINE_INFO = {
   "pmsss-jk-ladakh": { date: "2026-12-15" },
   "nec-merit-scholarship-ner": { date: "2026-12-31" },
   "ugc-national-pg-scholarship": { date: "2026-12-31" },
+  "tata-scholarship-cornell": { date: "2026-11-01" },
 };
 SCHOLARSHIPS.forEach(s => {
   const info = DEADLINE_INFO[s.id] || {};
