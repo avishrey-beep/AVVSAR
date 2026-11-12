@@ -775,6 +775,28 @@ const SCHOLARSHIPS = [
       "5,000 meritorious scholars selected annually for financial support and mentorship"
     ]
   }
+  ,
+  {
+    id: "hdfc-parivartan-ecss",
+    name: "HDFC Bank Parivartan's ECSS Programme",
+    provider: "HDFC Bank CSR",
+    type: "need",
+    levels: ["class10","class12","ug","pg","diploma"],
+    categories: ["general","obc","sc","st","ews"],
+    minScore: 55,
+    maxIncome: 600000,
+    gender: "any",
+    states: "all",
+    amount: "Up to ₹75,000 / year (School: ₹35,000 | Higher Ed: ₹75,000)",
+    deadline: "31 Dec",
+    documents: ["Previous year academic marksheet (min 55% marks)","Government-issued identity proof (Aadhaar Card)","Current year admission proof (fee receipt/bonafide)","Family income certificate or crisis proof (job loss/medical emergency)","Bank account passbook"],
+    steps: [
+      "Register on HDFC Bank Parivartan scholarship portal",
+      "Select scholarship category matching current course of study",
+      "Fill educational background and upload verified income or crisis documents",
+      "Shortlisted candidates undergo telephonic interview followed by DBT disbursement"
+    ]
+  }
 ];
 
 /* deadline dates (ISO) for the urgency radar — kept separate from the
@@ -814,6 +836,7 @@ const DEADLINE_INFO = {
   "top-class-st-education": { date: "2026-12-31" },
   "aicte-swanath-scheme": { date: "2026-11-30" },
   "reliance-foundation-ug-scholarship": { date: "2026-10-15" },
+  "hdfc-parivartan-ecss": { date: "2026-12-31" },
 };
 SCHOLARSHIPS.forEach(s => {
   const info = DEADLINE_INFO[s.id] || {};
