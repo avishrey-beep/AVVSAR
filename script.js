@@ -819,6 +819,28 @@ const SCHOLARSHIPS = [
       "Verification by Head of Institution followed by Ministry sanction for DBT"
     ]
   }
+  ,
+  {
+    id: "odisha-post-matric-scholarship",
+    name: "Odisha Post-Matric Scholarship Scheme for SC, ST, and SEBC Students",
+    provider: "ST & SC Development, Minorities & Backward Classes Welfare Department, Government of Odisha",
+    type: "need",
+    levels: ["class12","ug","pg","diploma"],
+    categories: ["sc","st","obc"],
+    minScore: 0,
+    maxIncome: 250000,
+    gender: "any",
+    states: ["OD"],
+    amount: "100% compulsory non-refundable fees reimbursement + monthly maintenance allowance",
+    deadline: "31 Jan",
+    documents: ["Odisha Resident / Domicile Certificate","Valid Caste Certificate (SC/ST/SEBC/OBC)","Income Certificate from competent Revenue Authority (<₹2.5 Lakh)","Matriculation (10th) and Plus-Two (12th) certificates","Aadhaar authenticated student bank passbook"],
+    steps: [
+      "Register on Odisha State Scholarship Portal (scholarship.odisha.gov.in)",
+      "Complete e-KYC authentication using student Aadhaar",
+      "Provide academic course and institution details with bonafide certificate",
+      "Scrutiny by District Welfare Officer (DWO) and direct DBT disbursement"
+    ]
+  }
 ];
 
 /* deadline dates (ISO) for the urgency radar — kept separate from the
@@ -860,6 +882,7 @@ const DEADLINE_INFO = {
   "reliance-foundation-ug-scholarship": { date: "2026-10-15" },
   "hdfc-parivartan-ecss": { date: "2026-12-31" },
   "pmss-capf-assam-rifles": { date: "2026-12-31" },
+  "odisha-post-matric-scholarship": { date: "2027-01-31" },
 };
 SCHOLARSHIPS.forEach(s => {
   const info = DEADLINE_INFO[s.id] || {};
