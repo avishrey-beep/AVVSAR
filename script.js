@@ -863,6 +863,28 @@ const SCHOLARSHIPS = [
       "Institutional level verification followed by district clearance for DBT credit"
     ]
   }
+  ,
+  {
+    id: "telangana-epass-postmatric",
+    name: "Telangana ePASS Post-Matric Scholarship and Fee Reimbursement",
+    provider: "Scheduled Caste Development Department, Government of Telangana",
+    type: "need",
+    levels: ["ug","pg","diploma"],
+    categories: ["sc","st","obc","ews"],
+    minScore: 0,
+    maxIncome: 200000,
+    gender: "any",
+    states: ["TS"],
+    amount: "Full Reimbursement of Tuition Fee (RTF) + Monthly Maintenance Fee (MTF)",
+    deadline: "31 Jan",
+    documents: ["MeeSeva Caste and Income Certificate","Telangana Nativity / Residential Proof","SSC Hall Ticket Number and Intermediate Marksheet","CET Allotment Order and College Bonafide","Aadhaar seeded bank passbook"],
+    steps: [
+      "Register on Telangana ePASS Portal (telanganaepass.cgg.gov.in)",
+      "Complete Aadhaar biometric e-KYC and enter CET admission hall ticket",
+      "Upload MeeSeva digital income and caste certificates",
+      "Principal verification followed by Treasury sanction for RTF/MTF credit"
+    ]
+  }
 ];
 
 /* deadline dates (ISO) for the urgency radar — kept separate from the
@@ -906,6 +928,7 @@ const DEADLINE_INFO = {
   "pmss-capf-assam-rifles": { date: "2026-12-31" },
   "odisha-post-matric-scholarship": { date: "2027-01-31" },
   "wb-aikyashree-scholarship": { date: "2027-01-15" },
+  "telangana-epass-postmatric": { date: "2027-01-31" },
 };
 SCHOLARSHIPS.forEach(s => {
   const info = DEADLINE_INFO[s.id] || {};
