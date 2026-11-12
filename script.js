@@ -951,6 +951,28 @@ const SCHOLARSHIPS = [
       "North Eastern Council Secretariat approves merit allowance via DBT"
     ]
   }
+  ,
+  {
+    id: "ugc-national-pg-scholarship",
+    name: "National Scholarship for Post Graduate Studies (NSPGS)",
+    provider: "University Grants Commission (UGC) / Ministry of Education",
+    type: "merit",
+    levels: ["pg"],
+    categories: ["general","obc","sc","st","ews"],
+    minScore: 60,
+    maxIncome: 0,
+    gender: "any",
+    states: "all",
+    amount: "₹15,000 / month for 10 months each year (₹1,50,000 / year for 2 years)",
+    deadline: "31 Dec",
+    documents: ["Undergraduate degree certificate and final transcript (min 60% marks)","Admission verification letter in regular full-time PG program","Aadhaar Card","Joint undertaking confirming no other government scholarship is drawn","College Bonafide Certificate"],
+    steps: [
+      "Apply online through National Scholarship Portal under UGC Schemes",
+      "Enter postgraduate course registration and undergraduate GPA records",
+      "Institute Nodal Officer verifies enrollment and admission legitimacy",
+      "Monthly fellowship disbursed directly through Canara Bank UGC DBT portal"
+    ]
+  }
 ];
 
 /* deadline dates (ISO) for the urgency radar — kept separate from the
@@ -998,6 +1020,7 @@ const DEADLINE_INFO = {
   "maharashtra-rajarshi-shahu-fee": { date: "2027-01-31" },
   "pmsss-jk-ladakh": { date: "2026-12-15" },
   "nec-merit-scholarship-ner": { date: "2026-12-31" },
+  "ugc-national-pg-scholarship": { date: "2026-12-31" },
 };
 SCHOLARSHIPS.forEach(s => {
   const info = DEADLINE_INFO[s.id] || {};
