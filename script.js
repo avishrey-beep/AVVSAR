@@ -907,6 +907,28 @@ const SCHOLARSHIPS = [
       "College scrutiny and Joint Director sanction for DBT fee reimbursement"
     ]
   }
+  ,
+  {
+    id: "pmsss-jk-ladakh",
+    name: "Prime Minister's Special Scholarship Scheme for J&K and Ladakh (PMSSS)",
+    provider: "All India Council for Technical Education (AICTE)",
+    type: "both",
+    levels: ["ug"],
+    categories: ["general","obc","sc","st","ews"],
+    minScore: 50,
+    maxIncome: 800000,
+    gender: "any",
+    states: ["JK","LA"],
+    amount: "Full academic fee (up to ₹1.25L–₹4.0L) + ₹1,00,000/year maintenance allowance",
+    deadline: "15 Dec",
+    documents: ["Domicile Certificate of UT of J&K or UT of Ladakh","Family Income Certificate from Tehsildar (<₹8 Lakh)","Class 10 and Class 12 marksheets","Aadhaar Card","Certificate of disability or reserved category (if applicable)"],
+    steps: [
+      "Register on AICTE PMSSS portal (aicte-jk-scholarship-gov.in)",
+      "Attend physical document verification at designated facilitation centers in J&K/Ladakh",
+      "Participate in online centralized choice filling and seat allotment",
+      "Seat allotment confirmation for direct DBT grant to student and college"
+    ]
+  }
 ];
 
 /* deadline dates (ISO) for the urgency radar — kept separate from the
@@ -952,6 +974,7 @@ const DEADLINE_INFO = {
   "wb-aikyashree-scholarship": { date: "2027-01-15" },
   "telangana-epass-postmatric": { date: "2027-01-31" },
   "maharashtra-rajarshi-shahu-fee": { date: "2027-01-31" },
+  "pmsss-jk-ladakh": { date: "2026-12-15" },
 };
 SCHOLARSHIPS.forEach(s => {
   const info = DEADLINE_INFO[s.id] || {};
