@@ -929,6 +929,28 @@ const SCHOLARSHIPS = [
       "Seat allotment confirmation for direct DBT grant to student and college"
     ]
   }
+  ,
+  {
+    id: "nec-merit-scholarship-ner",
+    name: "North Eastern Council (NEC) Merit Scholarship for Professional Courses",
+    provider: "Ministry of Development of North Eastern Region (MDoNER)",
+    type: "merit",
+    levels: ["ug","pg","phd","diploma"],
+    categories: ["general","obc","sc","st","ews"],
+    minScore: 60,
+    maxIncome: 800000,
+    gender: "any",
+    states: ["AR","AS","MN","ML","MZ","NL","SK","TR"],
+    amount: "₹20,000 to ₹30,000 / year (Diploma: ₹20k | UG: ₹22k | PG: ₹25k | PhD: ₹30k)",
+    deadline: "31 Dec",
+    documents: ["Permanent Resident Certificate (PRC) from designated authority in NE state","Qualifying examination marksheet (minimum 60% marks)","Family Income Certificate (<₹8.0 Lakh)","College bonafide and enrollment verification","Aadhaar seeded bank account passbook"],
+    steps: [
+      "Apply through National Scholarship Portal under NEC Schemes section",
+      "Complete biometric authentication and upload verified domicile credentials",
+      "Head of Institution verifies admission and minimum 60% academic score",
+      "North Eastern Council Secretariat approves merit allowance via DBT"
+    ]
+  }
 ];
 
 /* deadline dates (ISO) for the urgency radar — kept separate from the
@@ -975,6 +997,7 @@ const DEADLINE_INFO = {
   "telangana-epass-postmatric": { date: "2027-01-31" },
   "maharashtra-rajarshi-shahu-fee": { date: "2027-01-31" },
   "pmsss-jk-ladakh": { date: "2026-12-15" },
+  "nec-merit-scholarship-ner": { date: "2026-12-31" },
 };
 SCHOLARSHIPS.forEach(s => {
   const info = DEADLINE_INFO[s.id] || {};
