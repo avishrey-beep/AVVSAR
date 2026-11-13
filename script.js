@@ -1039,6 +1039,28 @@ const SCHOLARSHIPS = [
       "Shortlisted candidates attend in-person interview at British High Commission followed by full scholarship award"
     ]
   }
+  ,
+  {
+    id: "maharashtra-eklavya-scholarship",
+    name: "Maharashtra Eklavya Scholarship for Post-Graduate Students",
+    provider: "Directorate of Higher Education (DHE), Government of Maharashtra",
+    type: "both",
+    levels: ["pg"],
+    categories: ["general","obc","sc","st","ews"],
+    minScore: 60,
+    maxIncome: 75000,
+    gender: "any",
+    states: ["MH"],
+    amount: "₹5,000 annual scholarship grant for post-graduate degree studies",
+    deadline: "31 Jan",
+    documents: ["Maharashtra State Domicile Certificate","Undergraduate degree final marksheet (min 60% in Arts/Commerce/Law, 70% in Science)","Tahsildar issued family income certificate (annual income ≤ ₹75,000)","Post-graduate admission bonafide certificate from recognized college/university in Maharashtra","Aadhaar seeded bank account passbook"],
+    steps: [
+      "Log in to MahaDBT portal (mahadbt.maharashtra.gov.in) and complete profile registration",
+      "Select Directorate of Higher Education (DHE) schemes and choose Eklavya Scholarship",
+      "Upload undergraduate transcripts, verified income certificate, and domicile certificate",
+      "Institute principal verifies credentials and Joint Director sanctions direct bank transfer"
+    ]
+  }
 ];
 
 /* deadline dates (ISO) for the urgency radar — kept separate from the
@@ -1090,6 +1112,7 @@ const DEADLINE_INFO = {
   "tata-scholarship-cornell": { date: "2026-11-01" },
   "pmss-railways-scheme": { date: "2026-12-31" },
   "chevening-uk-scholarship": { date: "2026-11-05" },
+  "maharashtra-eklavya-scholarship": { date: "2027-01-31" },
 };
 SCHOLARSHIPS.forEach(s => {
   const info = DEADLINE_INFO[s.id] || {};
