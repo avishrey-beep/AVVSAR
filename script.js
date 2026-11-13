@@ -1061,6 +1061,28 @@ const SCHOLARSHIPS = [
       "Institute principal verifies credentials and Joint Director sanctions direct bank transfer"
     ]
   }
+  ,
+  {
+    id: "next-genius-ug-scholarship",
+    name: "Next Genius Scholarship Program for Undergraduate Studies Abroad",
+    provider: "The Next Genius Foundation",
+    type: "merit",
+    levels: ["ug"],
+    categories: ["general","obc","sc","st","ews"],
+    minScore: 70,
+    maxIncome: 0,
+    gender: "any",
+    states: "all",
+    amount: "Full tuition and partial scholarships up to $50,000/year across partner universities",
+    deadline: "15 Oct",
+    documents: ["Class 10, 11, and predicted Class 12 board marksheets","Valid Indian passport or proof of Indian nationality","Extracurricular leadership profile and portfolio","Letter of recommendation from high school principal or counselor","Financial aid profile for institutional partner consideration"],
+    steps: [
+      "Register on Next Genius portal (next-genius.com) and take online critical thinking assessment",
+      "Complete advanced video profile and rank preferred partner universities in US and Europe",
+      "Participate in weekend intensive selection interviews with university admission deans",
+      "Selected scholars receive undergraduate tuition scholarship awards directly from partner colleges"
+    ]
+  }
 ];
 
 /* deadline dates (ISO) for the urgency radar — kept separate from the
@@ -1113,6 +1135,7 @@ const DEADLINE_INFO = {
   "pmss-railways-scheme": { date: "2026-12-31" },
   "chevening-uk-scholarship": { date: "2026-11-05" },
   "maharashtra-eklavya-scholarship": { date: "2027-01-31" },
+  "next-genius-ug-scholarship": { date: "2026-10-15" },
 };
 SCHOLARSHIPS.forEach(s => {
   const info = DEADLINE_INFO[s.id] || {};
