@@ -1017,6 +1017,28 @@ const SCHOLARSHIPS = [
       "Zonal Railway nodal officer validates application followed by direct DBT credit to student"
     ]
   }
+  ,
+  {
+    id: "chevening-uk-scholarship",
+    name: "Chevening Scholarship for Post-Graduate Study in the UK",
+    provider: "Foreign, Commonwealth & Development Office (UK Government)",
+    type: "both",
+    levels: ["pg"],
+    categories: ["general","obc","sc","st","ews"],
+    minScore: 60,
+    maxIncome: 0,
+    gender: "any",
+    states: "all",
+    amount: "Full tuition fee coverage, monthly living stipend, return airfare, and visa fees (Full Ride)",
+    deadline: "05 Nov",
+    documents: ["Undergraduate degree certificate with strong academic track record","Minimum 2 years of verifiable work experience (2,800 hours)","Unconditional offer letter from at least one eligible UK master's course","Valid Indian passport","Two comprehensive professional / academic letters of recommendation"],
+    steps: [
+      "Submit online application through Chevening portal (chevening.org/apply)",
+      "Select three eligible full-time master's degree courses at UK universities",
+      "Draft and upload four structured essays on leadership, networking, studying in UK, and career goals",
+      "Shortlisted candidates attend in-person interview at British High Commission followed by full scholarship award"
+    ]
+  }
 ];
 
 /* deadline dates (ISO) for the urgency radar — kept separate from the
@@ -1067,6 +1089,7 @@ const DEADLINE_INFO = {
   "ugc-national-pg-scholarship": { date: "2026-12-31" },
   "tata-scholarship-cornell": { date: "2026-11-01" },
   "pmss-railways-scheme": { date: "2026-12-31" },
+  "chevening-uk-scholarship": { date: "2026-11-05" },
 };
 SCHOLARSHIPS.forEach(s => {
   const info = DEADLINE_INFO[s.id] || {};
