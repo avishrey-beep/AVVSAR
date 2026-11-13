@@ -1083,6 +1083,28 @@ const SCHOLARSHIPS = [
       "Selected scholars receive undergraduate tuition scholarship awards directly from partner colleges"
     ]
   }
+  ,
+  {
+    id: "fulbright-nehru-masters-fellowship",
+    name: "Fulbright-Nehru Master's Fellowships for Indian Citizens",
+    provider: "United States-India Educational Foundation (USIEF)",
+    type: "merit",
+    levels: ["pg"],
+    categories: ["general","obc","sc","st","ews"],
+    minScore: 65,
+    maxIncome: 0,
+    gender: "any",
+    states: "all",
+    amount: "Full tuition coverage, living stipend, J-1 visa, health coverage, and round-trip airfare",
+    deadline: "15 May",
+    documents: ["Bachelor's degree transcript equivalent to US 4-year degree (minimum 55% aggregate)","Minimum 3 years of substantial full-time professional work experience","Statement of Purpose and personal study objectives essay","Three confidential letters of reference from professional / academic evaluators","Valid Indian passport"],
+    steps: [
+      "Submit online fellowship application via USIEF portal (usief.org.in)",
+      "Upload detailed academic transcripts, work experience documentation, and study objective statement",
+      "National screening committee shortlists candidates for comprehensive panel interview in New Delhi",
+      "USIEF assists selected fellows with placement into top-tier accredited US master's programs"
+    ]
+  }
 ];
 
 /* deadline dates (ISO) for the urgency radar — kept separate from the
@@ -1136,6 +1158,7 @@ const DEADLINE_INFO = {
   "chevening-uk-scholarship": { date: "2026-11-05" },
   "maharashtra-eklavya-scholarship": { date: "2027-01-31" },
   "next-genius-ug-scholarship": { date: "2026-10-15" },
+  "fulbright-nehru-masters-fellowship": { date: "2027-05-15" },
 };
 SCHOLARSHIPS.forEach(s => {
   const info = DEADLINE_INFO[s.id] || {};
