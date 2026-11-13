@@ -995,6 +995,28 @@ const SCHOLARSHIPS = [
       "Tata Scholarship endowment awards full financial need support for up to 8 semesters"
     ]
   }
+  ,
+  {
+    id: "pmss-railways-scheme",
+    name: "Prime Minister's Scholarship Scheme for Ministry of Railways",
+    provider: "Ministry of Railways, Government of India",
+    type: "merit",
+    levels: ["ug","pg","diploma"],
+    categories: ["general","obc","sc","st","ews"],
+    minScore: 60,
+    maxIncome: 0,
+    gender: "any",
+    states: "all",
+    amount: "₹3,000/month for girls and ₹2,500/month for boys (₹30,000–₹36,000/year)",
+    deadline: "31 Dec",
+    documents: ["Service certificate / PPO of railway employee (Grade pay up to Level 7)","Class 12 or Polytechnic Diploma marksheet (minimum 60% aggregate)","Bonafide certificate issued by registrar or dean of college","Aadhaar card linked with active bank savings account","Proof of admission under recognized technical/professional degree"],
+    steps: [
+      "Register on National Scholarship Portal (scholarships.gov.in) under Ministry of Railways section",
+      "Enter parent railway employee service details and designated division / zonal headquarters",
+      "Submit college admission fee receipt and head of institution verified bonafide certificate",
+      "Zonal Railway nodal officer validates application followed by direct DBT credit to student"
+    ]
+  }
 ];
 
 /* deadline dates (ISO) for the urgency radar — kept separate from the
@@ -1044,6 +1066,7 @@ const DEADLINE_INFO = {
   "nec-merit-scholarship-ner": { date: "2026-12-31" },
   "ugc-national-pg-scholarship": { date: "2026-12-31" },
   "tata-scholarship-cornell": { date: "2026-11-01" },
+  "pmss-railways-scheme": { date: "2026-12-31" },
 };
 SCHOLARSHIPS.forEach(s => {
   const info = DEADLINE_INFO[s.id] || {};
