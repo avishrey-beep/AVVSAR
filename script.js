@@ -1127,6 +1127,28 @@ const SCHOLARSHIPS = [
       "Shortlisted candidates undergo interview at Embassy of Japan in New Delhi followed by final MEXT selection"
     ]
   }
+  ,
+  {
+    id: "erasmus-mundus-joint-masters",
+    name: "Erasmus Mundus Joint Masters Scholarship (EMJM)",
+    provider: "European Commission (European Union)",
+    type: "merit",
+    levels: ["pg"],
+    categories: ["general","obc","sc","st","ews"],
+    minScore: 65,
+    maxIncome: 0,
+    gender: "any",
+    states: "all",
+    amount: "Full tuition fee coverage + €1,400 / month living stipend + travel grant (Full Ride)",
+    deadline: "15 Jan",
+    documents: ["Bachelor's degree certificate and official academic transcripts with ECTS grading","Proof of English proficiency (IELTS, TOEFL, or official institutional medium of instruction certificate)","Detailed Curriculum Vitae (Europass format recommended)","Motivation letter explaining program choice and research interests","Two letters of academic or professional reference"],
+    steps: [
+      "Browse the Erasmus Mundus Joint Masters Catalogue on the European Commission portal and select program",
+      "Submit online application directly to the university consortium coordinating the chosen EMJM program",
+      "Undergo academic evaluation and online interview conducted by the joint selection board",
+      "Awarded scholars receive full institutional funding and mobility grant across at least two European countries"
+    ]
+  }
 ];
 
 /* deadline dates (ISO) for the urgency radar — kept separate from the
@@ -1182,6 +1204,7 @@ const DEADLINE_INFO = {
   "next-genius-ug-scholarship": { date: "2026-10-15" },
   "fulbright-nehru-masters-fellowship": { date: "2027-05-15" },
   "mext-japan-government-scholarship": { date: "2027-05-25" },
+  "erasmus-mundus-joint-masters": { date: "2027-01-15" },
 };
 SCHOLARSHIPS.forEach(s => {
   const info = DEADLINE_INFO[s.id] || {};
