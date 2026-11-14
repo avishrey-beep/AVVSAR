@@ -1171,6 +1171,28 @@ const SCHOLARSHIPS = [
       "Taluk Welfare Officer sanctions fee reimbursement and maintenance grant directly through e-Kalyana DBT"
     ]
   }
+  ,
+  {
+    id: "commonwealth-shared-scholarship",
+    name: "Commonwealth Shared Scholarship for Master's Studies in the UK",
+    provider: "Commonwealth Scholarship Commission (CSC) / UK Government",
+    type: "both",
+    levels: ["pg"],
+    categories: ["general","obc","sc","st","ews"],
+    minScore: 60,
+    maxIncome: 0,
+    gender: "any",
+    states: "all",
+    amount: "Full approved tuition fees, return airfare, and monthly living allowance (£1,347–£1,652/mo)",
+    deadline: "12 Dec",
+    documents: ["Undergraduate degree honors certificate (upper second class 2:1 equivalent or above)","Proof of Indian citizenship / permanent residency (Indian Passport)","Unconditional offer letter for an eligible development-focused course at a UK partner university","Personal development statement and development impact plan","Two references submitted online via the CSC electronic application system"],
+    steps: [
+      "Apply simultaneously for admission to an eligible master's program at a participating UK university",
+      "Submit scholarship application via Commonwealth Scholarship Commission Electronic Application System (EAS)",
+      "Participating UK university shortlists and nominates outstanding candidates to the CSC",
+      "CSC selects final scholars who receive joint funding from UK Government and host university"
+    ]
+  }
 ];
 
 /* deadline dates (ISO) for the urgency radar — kept separate from the
@@ -1228,6 +1250,7 @@ const DEADLINE_INFO = {
   "mext-japan-government-scholarship": { date: "2027-05-25" },
   "erasmus-mundus-joint-masters": { date: "2027-01-15" },
   "karnataka-ssp-postmatric": { date: "2027-01-15" },
+  "commonwealth-shared-scholarship": { date: "2026-12-12" },
 };
 SCHOLARSHIPS.forEach(s => {
   const info = DEADLINE_INFO[s.id] || {};
