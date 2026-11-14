@@ -1149,6 +1149,28 @@ const SCHOLARSHIPS = [
       "Awarded scholars receive full institutional funding and mobility grant across at least two European countries"
     ]
   }
+  ,
+  {
+    id: "karnataka-ssp-postmatric",
+    name: "Karnataka State Scholarship Portal (SSP) Post-Matric Scholarship",
+    provider: "Social Welfare and Backward Classes Welfare Departments, Government of Karnataka",
+    type: "need",
+    levels: ["class12","ug","pg","diploma"],
+    categories: ["sc","st","obc"],
+    minScore: 0,
+    maxIncome: 250000,
+    gender: "any",
+    states: ["KA"],
+    amount: "100% tuition and laboratory fee reimbursement + monthly maintenance allowance",
+    deadline: "15 Jan",
+    documents: ["Karnataka Domicile Proof and Student Aadhaar Card","Revenue Department issued RD Number for Caste and Income Certificates (<₹2.5 Lakh)","College admission fee receipt and Bonafide Certificate with University Seat Number (USN)","Hostel stay certificate (for hosteller grant tier)","Aadhaar-seeded NPCI mapped savings bank account passbook"],
+    steps: [
+      "Create student account on Karnataka SSP portal (ssp.postmatric.karnataka.gov.in) using Aadhaar credentials",
+      "Complete e-Attestation of academic documents and RD certificate numbers through Kutumba portal",
+      "College Nodal Officer completes institutional scrutiny and attendance verification",
+      "Taluk Welfare Officer sanctions fee reimbursement and maintenance grant directly through e-Kalyana DBT"
+    ]
+  }
 ];
 
 /* deadline dates (ISO) for the urgency radar — kept separate from the
@@ -1205,6 +1227,7 @@ const DEADLINE_INFO = {
   "fulbright-nehru-masters-fellowship": { date: "2027-05-15" },
   "mext-japan-government-scholarship": { date: "2027-05-25" },
   "erasmus-mundus-joint-masters": { date: "2027-01-15" },
+  "karnataka-ssp-postmatric": { date: "2027-01-15" },
 };
 SCHOLARSHIPS.forEach(s => {
   const info = DEADLINE_INFO[s.id] || {};
