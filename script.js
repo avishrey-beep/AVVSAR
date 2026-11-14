@@ -1105,6 +1105,28 @@ const SCHOLARSHIPS = [
       "USIEF assists selected fellows with placement into top-tier accredited US master's programs"
     ]
   }
+  ,
+  {
+    id: "mext-japan-government-scholarship",
+    name: "Japanese Government (MEXT) Scholarship for Indian Students",
+    provider: "Ministry of Education, Culture, Sports, Science and Technology (MEXT), Japan",
+    type: "merit",
+    levels: ["ug","pg","phd"],
+    categories: ["general","obc","sc","st","ews"],
+    minScore: 65,
+    maxIncome: 0,
+    gender: "any",
+    states: "all",
+    amount: "100% tuition waiver + monthly stipend (¥117,000–¥145,000) + roundtrip airfare",
+    deadline: "25 May",
+    documents: ["Certified academic transcripts and marksheets of all previous qualifications","Graduation certificate or degree diploma","Recommendation letter from the president, dean, or academic supervisor","Medical health examination certificate on prescribed MEXT format","Field of Study and Research Plan (for postgraduate and research applicants)"],
+    steps: [
+      "Download and complete prescribed MEXT application forms from the Embassy of Japan in India website",
+      "Submit hard copy dossiers to the Ministry of Education (MoE) / Embassy of Japan within specified deadline",
+      "Attend preliminary screening including written examinations (English, Japanese, Mathematics/Science)",
+      "Shortlisted candidates undergo interview at Embassy of Japan in New Delhi followed by final MEXT selection"
+    ]
+  }
 ];
 
 /* deadline dates (ISO) for the urgency radar — kept separate from the
@@ -1159,6 +1181,7 @@ const DEADLINE_INFO = {
   "maharashtra-eklavya-scholarship": { date: "2027-01-31" },
   "next-genius-ug-scholarship": { date: "2026-10-15" },
   "fulbright-nehru-masters-fellowship": { date: "2027-05-15" },
+  "mext-japan-government-scholarship": { date: "2027-05-25" },
 };
 SCHOLARSHIPS.forEach(s => {
   const info = DEADLINE_INFO[s.id] || {};
