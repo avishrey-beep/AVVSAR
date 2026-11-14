@@ -1193,6 +1193,28 @@ const SCHOLARSHIPS = [
       "CSC selects final scholars who receive joint funding from UK Government and host university"
     ]
   }
+  ,
+  {
+    id: "mpower-global-citizen-scholarship",
+    name: "MPOWER Global Citizen Scholarship for International Students",
+    provider: "MPOWER Financing",
+    type: "both",
+    levels: ["ug","pg"],
+    categories: ["general","obc","sc","st","ews"],
+    minScore: 60,
+    maxIncome: 0,
+    gender: "any",
+    states: "all",
+    amount: "Grants up to $10,000 (Grand prize: $10,000 | Honorable mentions: $2,000)",
+    deadline: "31 Jan",
+    documents: ["Proof of full-time enrollment or letter of acceptance at an MPOWER-supported US or Canadian university","Valid student visa (F-1 / Study Permit) or proof of legal status","Resume or CV detailing academic achievements, leadership, and community service","Competitive personal essay on global citizenship, professional vision, and community impact","Valid Indian passport"],
+    steps: [
+      "Verify that your university is an eligible MPOWER partner institution in the United States or Canada",
+      "Complete online application form on the MPOWER Financing Global Citizen Scholarship portal",
+      "Submit short essay reflecting on how your education will create positive global impact",
+      "Selection committee evaluates applications and awards direct non-repayable grants to selected scholars"
+    ]
+  }
 ];
 
 /* deadline dates (ISO) for the urgency radar — kept separate from the
@@ -1251,6 +1273,7 @@ const DEADLINE_INFO = {
   "erasmus-mundus-joint-masters": { date: "2027-01-15" },
   "karnataka-ssp-postmatric": { date: "2027-01-15" },
   "commonwealth-shared-scholarship": { date: "2026-12-12" },
+  "mpower-global-citizen-scholarship": { date: "2027-01-31" },
 };
 SCHOLARSHIPS.forEach(s => {
   const info = DEADLINE_INFO[s.id] || {};
