@@ -1325,6 +1325,116 @@ const SCHOLARSHIPS = [
       "Scholars attend both universities with dual campus privileges and summer funding"
     ]
   }
+  ,
+  {
+    id: "morehead-cain-scholarship",
+    name: "Morehead-Cain Scholarship Program",
+    provider: "Morehead-Cain Foundation (UNC Chapel Hill)",
+    type: "merit",
+    levels: ["ug"],
+    categories: ["general","obc","sc","st","ews"],
+    minScore: 90,
+    maxIncome: 0,
+    gender: "any",
+    states: "all",
+    amount: "Full cost of attendance + 4-summer enrichment discovery fund + laptop grant",
+    deadline: "15 Oct",
+    documents: ["Early Action application to UNC Chapel Hill","Morehead-Cain nomination or independent application","Leadership profile and activities portfolio","School counselor endorsement"],
+    steps: [
+      "Apply to UNC Chapel Hill by Early Action (October 15)",
+      "Submit Morehead-Cain application by October 1 deadline",
+      "Participate in regional and final round selection interviews",
+      "Four years of fully funded tuition, room, board, and global summer experiences"
+    ]
+  }
+  ,
+  {
+    id: "wells-scholars-program-iu",
+    name: "Wells Scholars Program at Indiana University Bloomington",
+    provider: "Herman B Wells Center, Indiana University Bloomington",
+    type: "merit",
+    levels: ["ug"],
+    categories: ["general","obc","sc","st","ews"],
+    minScore: 88,
+    maxIncome: 0,
+    gender: "any",
+    states: "all",
+    amount: "Full tuition + living stipend + summer grant ($60,000–$70,000 / year value for international students)",
+    deadline: "01 Nov",
+    documents: ["School nomination form (up to 2 nominees per secondary school)","IU Bloomington admissions application","Nomination essays and academic CV","Official school transcripts"],
+    steps: [
+      "Get nominated by your high school counselor by November 1",
+      "Submit complete application for undergraduate admission to IU Bloomington",
+      "Selected finalists participate in Wells Scholars Weekend interviews",
+      "Covers four years of tuition, mandatory fees, and living costs"
+    ]
+  }
+  ,
+  {
+    id: "regents-chancellor-scholarship-berkeley",
+    name: "Regents' and Chancellor's Scholarship at UC Berkeley",
+    provider: "University of California, Berkeley",
+    type: "both",
+    levels: ["ug"],
+    categories: ["general","obc","sc","st","ews"],
+    minScore: 90,
+    maxIncome: 0,
+    gender: "any",
+    states: "all",
+    amount: "Merit honorarium + full demonstrated financial need support + guaranteed housing + priority enrollment",
+    deadline: "30 Nov",
+    documents: ["University of California application (submitted by Nov 30)","Academic transcripts and extracurricular portfolio","Scholarship interview invitation response"],
+    steps: [
+      "Submit regular UC application selecting UC Berkeley by November 30",
+      "Top 1-2% of applicants receive priority invitation to interview in February",
+      "Faculty interview committee evaluates academic leadership",
+      "Includes faculty mentorship, research fellowship grant, and housing guarantee"
+    ]
+  }
+  ,
+  {
+    id: "cornelius-vanderbilt-scholarship",
+    name: "Cornelius Vanderbilt Scholarship Program",
+    provider: "Vanderbilt University",
+    type: "merit",
+    levels: ["ug"],
+    categories: ["general","obc","sc","st","ews"],
+    minScore: 88,
+    maxIncome: 0,
+    gender: "any",
+    states: "all",
+    amount: "Full tuition + summer stipend for one study abroad or research experience",
+    deadline: "01 Dec",
+    documents: ["Vanderbilt undergraduate admission application (Common App/Coalition)","Cornelius Vanderbilt scholarship online submission","Secondary school academic record","Letters of recommendation"],
+    steps: [
+      "Apply for admission to Vanderbilt University",
+      "Access MyAppVU portal and complete Cornelius Vanderbilt application by Dec 1",
+      "Submit response to the Cornelius Vanderbilt creative prompt",
+      "Renewable for 4 years of undergraduate study"
+    ]
+  }
+  ,
+  {
+    id: "usc-trustee-scholarship",
+    name: "USC Trustee Scholarship (Full Tuition)",
+    provider: "University of Southern California",
+    type: "merit",
+    levels: ["ug"],
+    categories: ["general","obc","sc","st","ews"],
+    minScore: 90,
+    maxIncome: 0,
+    gender: "any",
+    states: "all",
+    amount: "Full undergraduate tuition (~$66,000 / year value)",
+    deadline: "01 Dec",
+    documents: ["Common Application with USC Writing Supplement","High school transcripts and test scores","Two teacher recommendations","School report"],
+    steps: [
+      "Submit Common Application to USC by December 1 scholarship priority deadline",
+      "All early applicants automatically considered without extra application",
+      "Finalists invited to on-campus or virtual interviews in February/March",
+      "Awarded to top 100 incoming freshmen based on intellectual vigor"
+    ]
+  }
 ];
 
 /* deadline dates (ISO) for the urgency radar — kept separate from the
@@ -1389,6 +1499,11 @@ const DEADLINE_INFO = {
   "ubc-karen-mckellin-award": { date: "2026-11-15" },
   "ucd-global-excellence-ireland": { date: "2027-02-28" },
   "robertson-scholars-leadership": { date: "2026-11-15" },
+  "morehead-cain-scholarship": { date: "2026-10-15" },
+  "wells-scholars-program-iu": { date: "2026-11-01" },
+  "regents-chancellor-scholarship-berkeley": { date: "2026-11-30" },
+  "cornelius-vanderbilt-scholarship": { date: "2026-12-01" },
+  "usc-trustee-scholarship": { date: "2026-12-01" },
 };
 SCHOLARSHIPS.forEach(s => {
   const info = DEADLINE_INFO[s.id] || {};
