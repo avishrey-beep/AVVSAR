@@ -1435,6 +1435,116 @@ const SCHOLARSHIPS = [
       "Awarded to top 100 incoming freshmen based on intellectual vigor"
     ]
   }
+  ,
+  {
+    id: "provost-scholarship-uiuc",
+    name: "Provost Scholarship at University of Illinois Urbana-Champaign",
+    provider: "University of Illinois Urbana-Champaign (UIUC)",
+    type: "merit",
+    levels: ["ug"],
+    categories: ["general","obc","sc","st","ews"],
+    minScore: 88,
+    maxIncome: 0,
+    gender: "any",
+    states: "all",
+    amount: "Full tuition and campus fees for four years",
+    deadline: "01 Nov",
+    documents: ["UIUC application submitted by Early Action deadline","Official academic records","English proficiency scores","Extracurricular profile"],
+    steps: [
+      "Submit freshman application to UIUC by November 1 Early Action deadline",
+      "Automatic consideration based on comprehensive admissions review",
+      "Awarded to highest-achieving international and domestic undergraduate students",
+      "Maintained across four years with satisfactory academic progress"
+    ]
+  }
+  ,
+  {
+    id: "belk-scholar-davidson",
+    name: "John M. Belk Scholarship at Davidson College",
+    provider: "Davidson College",
+    type: "merit",
+    levels: ["ug"],
+    categories: ["general","obc","sc","st","ews"],
+    minScore: 88,
+    maxIncome: 0,
+    gender: "any",
+    states: "all",
+    amount: "Comprehensive funding (tuition + fees + room + board) + two $3,000 special opportunity stipends",
+    deadline: "15 Nov",
+    documents: ["School counselor nomination by Nov 1","Davidson College admission application by Nov 15","Counselor recommendation and school report","Academic transcripts"],
+    steps: [
+      "Secondary school counselor nominates student by November 1",
+      "Submit Davidson College admission application by November 15",
+      "Committee selects 60 semifinalists and invites 30 finalists to Davidson",
+      "Up to 8 scholars selected each year for full cost of attendance"
+    ]
+  }
+  ,
+  {
+    id: "jefferson-scholars-uva",
+    name: "Jefferson Scholars Foundation Scholarship at University of Virginia",
+    provider: "Jefferson Scholars Foundation (UVA)",
+    type: "merit",
+    levels: ["ug"],
+    categories: ["general","obc","sc","st","ews"],
+    minScore: 90,
+    maxIncome: 0,
+    gender: "any",
+    states: "all",
+    amount: "Total cost of attendance (tuition + room + board + books + enrichment stipend)",
+    deadline: "15 Nov",
+    documents: ["Nomination by secondary school or international at-large nomination","UVA undergraduate application","Leadership and citizenship achievements resume"],
+    steps: [
+      "Secured via high school nomination or International At-Large nomination process",
+      "Submit application materials by mid-November",
+      "Participate in virtual regional selection interviews",
+      "Finalists attend Jefferson Scholars Selection Weekend in Charlottesville"
+    ]
+  }
+  ,
+  {
+    id: "stamps-scholar-notre-dame",
+    name: "Stamps Scholars Program at University of Notre Dame",
+    provider: "University of Notre Dame & Stamps Scholars",
+    type: "merit",
+    levels: ["ug"],
+    categories: ["general","obc","sc","st","ews"],
+    minScore: 88,
+    maxIncome: 0,
+    gender: "any",
+    states: "all",
+    amount: "Full tuition and mandatory fees + $12,000 enrichment fund for research/travel",
+    deadline: "01 Nov",
+    documents: ["Notre Dame application submitted by Nov 1 (Restrictive Early Action)","Academic transcripts","Counselor and teacher recommendations","Stamps scholarship interview response"],
+    steps: [
+      "Apply to Notre Dame by Restrictive Early Action (November 1)",
+      "Admissions committee selects candidates for the Stamps Scholars Program",
+      "Participate in on-campus or virtual interview with faculty and Stamps Foundation",
+      "Top scholars receive full tuition and $12,000 personal enrichment fund"
+    ]
+  }
+  ,
+  {
+    id: "bu-trustee-scholarship",
+    name: "Boston University Trustee Scholarship",
+    provider: "Boston University",
+    type: "merit",
+    levels: ["ug"],
+    categories: ["general","obc","sc","st","ews"],
+    minScore: 90,
+    maxIncome: 0,
+    gender: "any",
+    states: "all",
+    amount: "Full undergraduate tuition and mandatory undergraduate student fees",
+    deadline: "01 Dec",
+    documents: ["Common Application for Boston University by Dec 1","Trustee Scholarship essay answering one of BU's prompts","Secondary school credentials"],
+    steps: [
+      "Submit Common Application to Boston University by December 1",
+      "Complete the Trustee Scholarship essay within the BU writing supplement",
+      "Awarded to 20 exceptional international and US students each year",
+      "Renewable for 4 years with minimum 3.00 GPA"
+    ]
+  }
 ];
 
 /* deadline dates (ISO) for the urgency radar — kept separate from the
@@ -1504,6 +1614,11 @@ const DEADLINE_INFO = {
   "regents-chancellor-scholarship-berkeley": { date: "2026-11-30" },
   "cornelius-vanderbilt-scholarship": { date: "2026-12-01" },
   "usc-trustee-scholarship": { date: "2026-12-01" },
+  "provost-scholarship-uiuc": { date: "2026-11-01" },
+  "belk-scholar-davidson": { date: "2026-11-15" },
+  "jefferson-scholars-uva": { date: "2026-11-15" },
+  "stamps-scholar-notre-dame": { date: "2026-11-01" },
+  "bu-trustee-scholarship": { date: "2026-12-01" },
 };
 SCHOLARSHIPS.forEach(s => {
   const info = DEADLINE_INFO[s.id] || {};
