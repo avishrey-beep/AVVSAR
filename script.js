@@ -1215,6 +1215,116 @@ const SCHOLARSHIPS = [
       "Selection committee evaluates applications and awards direct non-repayable grants to selected scholars"
     ]
   }
+  ,
+  {
+    id: "turkiye-burslari-scholarship",
+    name: "Türkiye Scholarships (Full-Time Undergraduate, Master's and PhD)",
+    provider: "Presidency for Turks Abroad and Related Communities (Government of Türkiye)",
+    type: "merit",
+    levels: ["ug","pg","phd"],
+    categories: ["general","obc","sc","st","ews"],
+    minScore: 70,
+    maxIncome: 0,
+    gender: "any",
+    states: "all",
+    amount: "Full university tuition + free accommodation + monthly stipend + health insurance + flights",
+    deadline: "20 Feb",
+    documents: ["National ID / Passport","Academic diplomas and transcripts","Statement of purpose and research proposal","Letters of recommendation","Extracurricular certificates"],
+    steps: [
+      "Apply through Türkiye Bursları online application portal (turkiyeburslari.gov.tr)",
+      "Select degree program and university preferences",
+      "Shortlisted candidates undergo interview at Turkish Embassy/Consulate in India",
+      "Includes 1-year Turkish language course and comprehensive university placement"
+    ]
+  }
+  ,
+  {
+    id: "pearson-scholarship-utoronto",
+    name: "Lester B. Pearson International Scholarship Program",
+    provider: "University of Toronto (Canada)",
+    type: "both",
+    levels: ["ug"],
+    categories: ["general","obc","sc","st","ews"],
+    minScore: 85,
+    maxIncome: 0,
+    gender: "any",
+    states: "all",
+    amount: "Full tuition + books + incidental fees + 4-year full residence support",
+    deadline: "15 Jan",
+    documents: ["School nomination by secondary school principal/counselor","University of Toronto undergraduate application","Pearson scholarship online essay and video response","High school transcripts"],
+    steps: [
+      "Get nominated by your high school (each school can nominate one student)",
+      "Apply for undergraduate admission to the University of Toronto by Nov 30",
+      "Complete the personalized Pearson Scholarship online application by mid-January",
+      "Awarded to 37 exceptional international students annually demonstrating leadership"
+    ]
+  }
+  ,
+  {
+    id: "ubc-karen-mckellin-award",
+    name: "Karen McKellin International Leader of Tomorrow Award",
+    provider: "University of British Columbia (Canada)",
+    type: "both",
+    levels: ["ug"],
+    categories: ["general","obc","sc","st","ews"],
+    minScore: 85,
+    maxIncome: 0,
+    gender: "any",
+    states: "all",
+    amount: "Full demonstrated financial need (up to full tuition and living costs for 4 years)",
+    deadline: "15 Nov",
+    documents: ["UBC undergraduate application","Secondary school nomination form","Demonstrated financial need assessment form","Academic transcripts and reference letters"],
+    steps: [
+      "Submit undergraduate application to University of British Columbia by Nov 15",
+      "Complete International Scholars Program (ISP) application and financial worksheet",
+      "Demonstrate high academic achievement, leadership skills, and community service",
+      "Renewable for up to four years of undergraduate study"
+    ]
+  }
+  ,
+  {
+    id: "ucd-global-excellence-ireland",
+    name: "UCD Global Excellence Scholarship (India & South Asia)",
+    provider: "University College Dublin (Ireland)",
+    type: "merit",
+    levels: ["ug","pg"],
+    categories: ["general","obc","sc","st","ews"],
+    minScore: 80,
+    maxIncome: 0,
+    gender: "any",
+    states: "all",
+    amount: "50% or 100% full tuition waiver (up to €27,720 / year)",
+    deadline: "28 Feb",
+    documents: ["Offer letter of admission from UCD","Academic transcripts","Two reference letters","Personal statement answering Global Excellence scholarship prompt"],
+    steps: [
+      "Apply for eligible undergraduate or postgraduate course at University College Dublin",
+      "Receive formal conditional or unconditional offer letter",
+      "Submit Global Excellence Scholarship online application before February 28 deadline",
+      "Selected Indian scholars receive full or 50% tuition reduction"
+    ]
+  }
+  ,
+  {
+    id: "robertson-scholars-leadership",
+    name: "Robertson Scholars Leadership Program",
+    provider: "Duke University and UNC Chapel Hill",
+    type: "merit",
+    levels: ["ug"],
+    categories: ["general","obc","sc","st","ews"],
+    minScore: 90,
+    maxIncome: 0,
+    gender: "any",
+    states: "all",
+    amount: "Full tuition + room + board + mandatory fees + 3 fully funded summer enrichment programs",
+    deadline: "15 Nov",
+    documents: ["Admission application to Duke or UNC","Robertson Scholars supplemental application","Two recommendation letters","Secondary school academic transcript"],
+    steps: [
+      "Apply for undergraduate admission to Duke University or UNC Chapel Hill",
+      "Submit separate Robertson Scholars application by mid-November",
+      "Shortlisted international candidates complete virtual finalist interviews",
+      "Scholars attend both universities with dual campus privileges and summer funding"
+    ]
+  }
 ];
 
 /* deadline dates (ISO) for the urgency radar — kept separate from the
@@ -1274,6 +1384,11 @@ const DEADLINE_INFO = {
   "karnataka-ssp-postmatric": { date: "2027-01-15" },
   "commonwealth-shared-scholarship": { date: "2026-12-12" },
   "mpower-global-citizen-scholarship": { date: "2027-01-31" },
+  "turkiye-burslari-scholarship": { date: "2027-02-20" },
+  "pearson-scholarship-utoronto": { date: "2027-01-15" },
+  "ubc-karen-mckellin-award": { date: "2026-11-15" },
+  "ucd-global-excellence-ireland": { date: "2027-02-28" },
+  "robertson-scholars-leadership": { date: "2026-11-15" },
 };
 SCHOLARSHIPS.forEach(s => {
   const info = DEADLINE_INFO[s.id] || {};
