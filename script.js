@@ -1655,6 +1655,116 @@ const SCHOLARSHIPS = [
       "Submit leadership essay, community service CV, and two recommendation letters before deadline"
     ]
   }
+  ,
+  {
+    id: "stamps-scholar-miami",
+    name: "Stamps Scholarship at University of Miami",
+    provider: "University of Miami & Stamps Family Foundation",
+    type: "merit",
+    levels: ["ug"],
+    categories: ["general","obc","sc","st","ews"],
+    minScore: 88,
+    maxIncome: 0,
+    gender: "any",
+    states: "all",
+    amount: "Full tuition + room + meal plan + health insurance + laptop + $12,000 enrichment fund",
+    deadline: "01 Nov",
+    documents: ["Common Application submitted to University of Miami by Nov 1","School report and official grades","Standardized test scores or test-optional materials","Recommendations"],
+    steps: [
+      "Submit undergraduate application by Early Decision I or Early Action (November 1)",
+      "Semifinalists invited to write short essay and attend finalist interview",
+      "Covers complete cost of attendance for 4 years of undergraduate study",
+      "Enrichment fund supports study abroad, internships, and research"
+    ]
+  }
+  ,
+  {
+    id: "emory-scholars-program",
+    name: "Emory University Scholars Program",
+    provider: "Emory University",
+    type: "merit",
+    levels: ["ug"],
+    categories: ["general","obc","sc","st","ews"],
+    minScore: 88,
+    maxIncome: 0,
+    gender: "any",
+    states: "all",
+    amount: "Full tuition, room, and board or partial tuition awards + enrichment grants",
+    deadline: "15 Nov",
+    documents: ["Common Application for Emory University by Nov 15 scholarship deadline","Secondary school report and high school transcripts","Two teacher evaluations"],
+    steps: [
+      "Select 'Emory University Scholar Programs' on Common App and submit by Nov 15",
+      "No additional forms or nominations required",
+      "Finalists invited to Emory Scholars Finalists Weekend in Atlanta (or virtual)",
+      "Recipients join close-knit cohort with faculty mentoring and research funding"
+    ]
+  }
+  ,
+  {
+    id: "mcdermott-scholar-ut-dallas",
+    name: "Eugene McDermott Scholars Program at UT Dallas",
+    provider: "University of Texas at Dallas",
+    type: "merit",
+    levels: ["ug"],
+    categories: ["general","obc","sc","st","ews"],
+    minScore: 90,
+    maxIncome: 0,
+    gender: "any",
+    states: "all",
+    amount: "Full tuition + $1,400 monthly living stipend + study abroad fund + travel allowance",
+    deadline: "01 Dec",
+    documents: ["UT Dallas admission application","McDermott Scholars supplemental application","Resume of leadership & service","Two letters of recommendation"],
+    steps: [
+      "Apply for admission to UT Dallas by December 1",
+      "Complete separate Eugene McDermott Scholars application online",
+      "Finalists invited to McDermott Finalists Weekend for interviews and presentations",
+      "Four years of complete financial support and individualized cultural travel"
+    ]
+  }
+  ,
+  {
+    id: "fordham-presidential-scholarship",
+    name: "Fordham University Presidential Scholarship",
+    provider: "Fordham University",
+    type: "merit",
+    levels: ["ug"],
+    categories: ["general","obc","sc","st","ews"],
+    minScore: 88,
+    maxIncome: 0,
+    gender: "any",
+    states: "all",
+    amount: "Full tuition + room fees (up to full ride) renewable for four years",
+    deadline: "01 Nov",
+    documents: ["Common Application for Fordham University","Early Action submission by November 1","Secondary school report and high school transcripts"],
+    steps: [
+      "Apply to Fordham University by November 1 Early Action deadline",
+      "Top candidates automatically evaluated based on academic GPA and rank",
+      "Awarded to top entering freshmen in the incoming class",
+      "Covers four years of undergraduate tuition and on-campus room"
+    ]
+  }
+  ,
+  {
+    id: "stamps-scholar-virginia-tech",
+    name: "Stamps Scholars Program at Virginia Tech",
+    provider: "Virginia Tech Honors College & Stamps Scholars",
+    type: "merit",
+    levels: ["ug"],
+    categories: ["general","obc","sc","st","ews"],
+    minScore: 88,
+    maxIncome: 0,
+    gender: "any",
+    states: "all",
+    amount: "Full tuition, comprehensive fees, room, board, and multi-year enrichment funding",
+    deadline: "10 Jan",
+    documents: ["Virginia Tech undergraduate admission application submitted by Early Action deadline","Official secondary school transcripts and academic records","Honors College and Stamps supplemental application essays","Two teacher or counselor academic evaluations","Valid Indian passport"],
+    steps: [
+      "Submit undergraduate admission application to Virginia Tech by Early Action deadline (Nov 15)",
+      "Complete and submit the Virginia Tech Honors College application",
+      "Submit the Stamps Scholarship supplemental application and essays by January 10",
+      "Participate in finalist interviews conducted by the Honors College selection committee"
+    ]
+  }
 ];
 
 /* deadline dates (ISO) for the urgency radar — kept separate from the
@@ -1734,6 +1844,11 @@ const DEADLINE_INFO = {
   "stantec-future-leaders": { date: "2026-10-15" },
   "hult-global-scholar-grant": { date: "2027-05-01" },
   "nyit-international-leadership": { date: "2027-04-17" },
+  "stamps-scholar-miami": { date: "2026-11-01" },
+  "emory-scholars-program": { date: "2026-11-15" },
+  "mcdermott-scholar-ut-dallas": { date: "2026-12-01" },
+  "fordham-presidential-scholarship": { date: "2026-11-01" },
+  "stamps-scholar-virginia-tech": { date: "2027-01-10" },
 };
 SCHOLARSHIPS.forEach(s => {
   const info = DEADLINE_INFO[s.id] || {};
