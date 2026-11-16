@@ -1765,6 +1765,116 @@ const SCHOLARSHIPS = [
       "Participate in finalist interviews conducted by the Honors College selection committee"
     ]
   }
+  ,
+  {
+    id: "ub-presidential-scholarship",
+    name: "University at Buffalo (SUNY) Presidential Scholarship",
+    provider: "University at Buffalo (SUNY) Honors College",
+    type: "merit",
+    levels: ["ug"],
+    categories: ["general","obc","sc","st","ews"],
+    minScore: 90,
+    maxIncome: 0,
+    gender: "any",
+    states: "all",
+    amount: "Up to $22,000 per year ($88,000 total over four years of undergraduate study)",
+    deadline: "09 Jan",
+    documents: ["Undergraduate application to University at Buffalo via Common App or SUNY Application","Official high school transcripts demonstrating top-tier academic standing (90%+ unweighted)","Honors College and Presidential Scholarship supplemental essay","Resume highlighting leadership, creative endeavors, and research interest","Letter of academic recommendation","Valid Indian passport"],
+    steps: [
+      "Submit UB undergraduate application by the November 1 priority deadline",
+      "Activate UB student account and access the Honors College portal",
+      "Complete the Presidential Scholarship application including supplemental essay and resume by January 9",
+      "Finalist candidates complete video or virtual interviews with the selection committee"
+    ]
+  }
+  ,
+  {
+    id: "ugc-single-girl-child-pg",
+    name: "National Scholarship for Post Graduate Studies (Single Girl Child / Meritorious)",
+    provider: "University Grants Commission (UGC)",
+    type: "merit",
+    levels: ["pg"],
+    categories: ["general","obc","sc","st","ews"],
+    minScore: 60,
+    maxIncome: 0,
+    gender: "female",
+    states: "all",
+    amount: "₹15,000 / month for 2 years (total ₹3.6 Lakh)",
+    deadline: "31 Dec",
+    documents: ["Single Girl Child affidavit on stamp paper attested by SDM","Graduation marksheet (60%+)","PG regular admission verification letter","Aadhaar card copy"],
+    steps: [
+      "Open to only girl child of parents enrolled in regular master's course",
+      "Submit application on National Scholarship Portal",
+      "University registrar verifies enrolment in recognized PG program",
+      "Monthly DBT stipend disbursed through Canara Bank UGC portal"
+    ]
+  }
+  ,
+  {
+    id: "odisha-ebc-sebc-state",
+    name: "Odisha SEBC and EBC Post-Matric State Scholarship",
+    provider: "Socially and Educationally Backward Classes Welfare Dept, Government of Odisha",
+    type: "need",
+    levels: ["ug","pg","diploma"],
+    categories: ["obc","ews"],
+    minScore: 0,
+    maxIncome: 250000,
+    gender: "any",
+    states: ["OD"],
+    amount: "Course fees support + annual maintenance stipend up to ₹10,000",
+    deadline: "15 Jan",
+    documents: ["Odisha SEBC / EBC certificate","Annual family income certificate","Marksheet of previous qualification","Bank account passbook copy","College admission receipt"],
+    steps: [
+      "Apply online on Odisha State Scholarship Portal (scholarship.odisha.gov.in)",
+      "Fill online registration under SEBC / EBC Post-Matric scheme",
+      "Principal verifies documents online through college portal login",
+      "Disbursement via direct credit to student bank account"
+    ]
+  }
+  ,
+  {
+    id: "maharashtra-open-merit-ug",
+    name: "Maharashtra State Government Open Merit Scholarship",
+    provider: "Directorate of Higher Education, Government of Maharashtra",
+    type: "merit",
+    levels: ["ug"],
+    categories: ["general","obc","sc","st","ews"],
+    minScore: 60,
+    maxIncome: 0,
+    gender: "any",
+    states: ["MH"],
+    amount: "₹1,000 / year merit grant",
+    deadline: "31 Dec",
+    documents: ["HSC (Class 12) marksheet with minimum 60% marks","Maharashtra Domicile Certificate","College admission fee receipt","Aadhaar linked bank account"],
+    steps: [
+      "Apply through MahaDBT under State Government Open Merit Scheme",
+      "Upload Class 12 passing certificate and enrollment proof in BA/BSc/BCom",
+      "College principal verifies academic merit record",
+      "State treasury releases annual merit stipend"
+    ]
+  }
+  ,
+  {
+    id: "pre-matric-minority-scheme",
+    name: "Pre-Matric Scholarship Scheme for Minorities",
+    provider: "Ministry of Minority Affairs (National Scholarship Portal)",
+    type: "need",
+    levels: ["class10"],
+    categories: ["minority"],
+    minScore: 50,
+    maxIncome: 100000,
+    gender: "any",
+    states: "all",
+    amount: "Admission & tuition fees + maintenance allowance up to ₹6,000/year",
+    deadline: "30 Nov",
+    documents: ["Self-declaration of minority community","Income certificate (<₹1 Lakh)","Previous class marksheet (50%+)","School verification form","Bank passbook"],
+    steps: [
+      "Apply online on National Scholarship Portal (scholarships.gov.in)",
+      "Submit minority community self-declaration",
+      "School Headmaster completes online biometric verification",
+      "DBT release to student or parent joint bank account"
+    ]
+  }
 ];
 
 /* deadline dates (ISO) for the urgency radar — kept separate from the
@@ -1849,6 +1959,11 @@ const DEADLINE_INFO = {
   "mcdermott-scholar-ut-dallas": { date: "2026-12-01" },
   "fordham-presidential-scholarship": { date: "2026-11-01" },
   "stamps-scholar-virginia-tech": { date: "2027-01-10" },
+  "ub-presidential-scholarship": { date: "2027-01-09" },
+  "ugc-single-girl-child-pg": { date: "2026-12-31" },
+  "odisha-ebc-sebc-state": { date: "2027-01-15" },
+  "maharashtra-open-merit-ug": { date: "2026-12-31" },
+  "pre-matric-minority-scheme": { date: "2026-11-30" },
 };
 SCHOLARSHIPS.forEach(s => {
   const info = DEADLINE_INFO[s.id] || {};
