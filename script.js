@@ -1545,6 +1545,116 @@ const SCHOLARSHIPS = [
       "Renewable for 4 years with minimum 3.00 GPA"
     ]
   }
+  ,
+  {
+    id: "vv-giri-global-scholarship",
+    name: "V.V. Giri Global Excellence Scholarship for Indian Students",
+    provider: "University College Dublin (UCD, Ireland)",
+    type: "merit",
+    levels: ["ug","pg"],
+    categories: ["general","obc","sc","st","ews"],
+    minScore: 80,
+    maxIncome: 0,
+    gender: "any",
+    states: "all",
+    amount: "100% full tuition fee waiver commemorating India's 4th President V.V. Giri (UCD alumnus)",
+    deadline: "28 Feb",
+    documents: ["Indian passport","UCD course admission offer","Academic grade sheets (80%+)","Statement on leadership and Indo-Irish academic ties"],
+    steps: [
+      "Apply to undergraduate or master's program at UCD",
+      "Submit scholarship motivation statement highlighting academic excellence",
+      "Panel evaluates top Indian applicants across STEM, Business, and Humanities",
+      "Full tuition fee covered for the degree program duration"
+    ]
+  }
+  ,
+  {
+    id: "mpower-women-in-stem",
+    name: "MPOWER Women in STEM Scholarship",
+    provider: "MPOWER Financing",
+    type: "merit",
+    levels: ["ug","pg","phd"],
+    categories: ["general","obc","sc","st","ews"],
+    minScore: 60,
+    maxIncome: 0,
+    gender: "female",
+    states: "all",
+    amount: "Grand Prize: $5,000; Honorable Mentions: $1,000 – $2,000",
+    deadline: "31 Aug",
+    documents: ["Acceptance letter or enrollment proof in US or Canadian partner university","Valid student visa (F-1 / Study Permit)","Short essay on STEM goals and impact"],
+    steps: [
+      "Open to female international students enrolled in STEM degree programs in US/Canada",
+      "Submit application on mpowerfinancing.com",
+      "Provide essay detailing how you will use your STEM degree to benefit society",
+      "Winners awarded direct educational grants"
+    ]
+  }
+  ,
+  {
+    id: "stantec-future-leaders",
+    name: "Stantec Future Leaders STEAM Scholarship",
+    provider: "Stantec & AISES / International Partners",
+    type: "both",
+    levels: ["ug","pg"],
+    categories: ["general","obc","sc","st","ews"],
+    minScore: 60,
+    maxIncome: 0,
+    gender: "any",
+    states: "all",
+    amount: "$1,500 – $10,000 grant per student ($200,000 annual pool)",
+    deadline: "15 Oct",
+    documents: ["Enrollment verification in STEAM program (Architecture, Engineering, Environmental Sciences)","Academic transcripts","Statement of passion for sustainable design"],
+    steps: [
+      "Apply through Stantec Education Grants online application portal",
+      "Demonstrate commitment to sustainable technology, community impact, and STEAM",
+      "Selection committee assesses essay and academic record",
+      "Grant disbursed directly to assist tuition and study resources"
+    ]
+  }
+  ,
+  {
+    id: "hult-global-scholar-grant",
+    name: "Hult Global Scholar Grant",
+    provider: "Hult International Business School (Boston, London, Dubai)",
+    type: "merit",
+    levels: ["ug"],
+    categories: ["general","obc","sc","st","ews"],
+    minScore: 75,
+    maxIncome: 0,
+    gender: "any",
+    states: "all",
+    amount: "Full tuition fee waiver for undergraduate business degree",
+    deadline: "01 May",
+    documents: ["Hult undergraduate application","High school transcripts (75%+)","Social impact / entrepreneurial essay","Admissions interview evaluation"],
+    steps: [
+      "Apply for undergraduate admission at Hult International Business School",
+      "Complete the Global Scholar application essay detailing an entrepreneurial social impact initiative",
+      "Interview with admissions dean and scholarship committee",
+      "Awarded to top 10% of incoming undergraduate cohort"
+    ]
+  }
+  ,
+  {
+    id: "nyit-international-leadership",
+    name: "NYIT International Leadership Scholarship",
+    provider: "New York Institute of Technology",
+    type: "merit",
+    levels: ["ug"],
+    categories: ["general","obc","sc","st","ews"],
+    minScore: 85,
+    maxIncome: 0,
+    gender: "any",
+    states: "all",
+    amount: "Full undergraduate tuition renewable for up to four years",
+    deadline: "17 Apr",
+    documents: ["Admissions acceptance letter to New York Tech undergraduate degree program","High school academic transcripts showing 3.5+ GPA or 85%+ aggregate","One-page competitive essay on demonstrated leadership and career aspirations","CV or resume documenting 25–50+ hours of community service and extracurricular activities","Two letters of recommendation (one community supervisor, one teacher/counselor)","Valid Indian passport and English proficiency test scores (IELTS/TOEFL)"],
+    steps: [
+      "Apply for full-time undergraduate admission to NYIT via Common App or institutional portal",
+      "Receive official acceptance letter and applicant portal credentials",
+      "Complete the separate International Leadership Scholarship Application form",
+      "Submit leadership essay, community service CV, and two recommendation letters before deadline"
+    ]
+  }
 ];
 
 /* deadline dates (ISO) for the urgency radar — kept separate from the
@@ -1619,6 +1729,11 @@ const DEADLINE_INFO = {
   "jefferson-scholars-uva": { date: "2026-11-15" },
   "stamps-scholar-notre-dame": { date: "2026-11-01" },
   "bu-trustee-scholarship": { date: "2026-12-01" },
+  "vv-giri-global-scholarship": { date: "2027-02-28" },
+  "mpower-women-in-stem": { date: "2026-08-31" },
+  "stantec-future-leaders": { date: "2026-10-15" },
+  "hult-global-scholar-grant": { date: "2027-05-01" },
+  "nyit-international-leadership": { date: "2027-04-17" },
 };
 SCHOLARSHIPS.forEach(s => {
   const info = DEADLINE_INFO[s.id] || {};
