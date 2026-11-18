@@ -2073,6 +2073,50 @@ const SCHOLARSHIPS = [
       "Final merit list released and financial grant transferred to beneficiary account"
     ]
   }
+  ,
+  {
+    id: "siemens-engineering-scholarship",
+    name: "Siemens Scholarship Program for Government Engineering Students",
+    provider: "Siemens India",
+    type: "both",
+    levels: ["ug"],
+    categories: ["general","obc","sc","st","ews"],
+    minScore: 60,
+    maxIncome: 200000,
+    gender: "any",
+    states: "all",
+    amount: "Full tuition reimbursement + book allowance + laptop grant + holistic internship & mentorship",
+    deadline: "20 Oct",
+    documents: ["SSC (10th) mark sheet with minimum 60% and HSC (12th) with minimum 50% aggregate","First year admission confirmation in government engineering college (Electrical, Mechanical, CS, IT)","Family income certificate issued by competent government authority (< ₹2,00,000)","College fee structure and tuition receipt","Aadhaar card copy"],
+    steps: [
+      "Complete online application form on the Siemens Scholarship Program portal",
+      "Submit academic records, government college enrollment details, and family financial papers",
+      "Shortlisted applicants participate in online cognitive assessment and video interview",
+      "Selected scholars receive 4 years of financial support and structured Siemens industrial training"
+    ]
+  }
+  ,
+  {
+    id: "legrand-empowering-scholarship",
+    name: "Legrand Empowering Scholarship Program for Girls in STEM",
+    provider: "Legrand India CSR",
+    type: "both",
+    levels: ["ug"],
+    categories: ["general","obc","sc","st","ews"],
+    minScore: 70,
+    maxIncome: 500000,
+    gender: "female",
+    states: "all",
+    amount: "60% of annual course tuition fee up to ₹60,000 per year (or ₹1,00,000 for special categories)",
+    deadline: "31 Aug",
+    documents: ["Class 10 and 12 mark sheets demonstrating minimum 70% marks","Proof of admission in B.Tech, B.E., B.Arch, or B.Sc in STEM disciplines","Valid annual income certificate showing earnings below ₹5 Lakhs","Aadhaar card and bank account details of applicant","College bonafide certificate"],
+    steps: [
+      "Submit online application form with verified personal and academic credentials",
+      "Upload self-attested copies of 12th scorecards and college admission fee slips",
+      "Shortlisting based on merit-cum-need criteria followed by telephonic verification interview",
+      "Final selection announcement and grant disbursement to college fee account"
+    ]
+  }
 ];
 
 /* deadline dates (ISO) for the urgency radar — kept separate from the
@@ -2171,6 +2215,8 @@ const DEADLINE_INFO = {
   "ongc-merit-scholarship-sc-st": { date: "2027-01-15" },
   "lic-golden-jubilee-scholarship": { date: "2026-12-22" },
   "sbif-asha-scholarship": { date: "2026-11-30" },
+  "siemens-engineering-scholarship": { date: "2026-10-20" },
+  "legrand-empowering-scholarship": { date: "2027-08-31" },
 };
 SCHOLARSHIPS.forEach(s => {
   const info = DEADLINE_INFO[s.id] || {};
