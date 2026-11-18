@@ -2293,6 +2293,50 @@ const SCHOLARSHIPS = [
       "UCD India scholarship committee reviews submissions and awards tuition waivers"
     ]
   }
+  ,
+  {
+    id: "pedro-zamora-young-leaders",
+    name: "Pedro Zamora Young Leaders Scholarship Program",
+    provider: "National AIDS Memorial",
+    type: "merit",
+    levels: ["ug"],
+    categories: ["general","obc","sc","st","ews"],
+    minScore: 70,
+    maxIncome: 0,
+    gender: "any",
+    states: "all",
+    amount: "Up to $5,000 scholarship grant towards higher education tuition and academic supplies",
+    deadline: "15 Jul",
+    documents: ["Proof of enrollment or acceptance into an accredited undergraduate university or college","Essay detailing community leadership, advocacy, social justice, or public health initiative","At least one letter of recommendation from an educator or community mentor","Official secondary or university academic transcripts","Valid photo identification"],
+    steps: [
+      "Complete online application on the National AIDS Memorial scholarship portal",
+      "Upload personal statement detailing your community service, public health leadership, or advocacy work",
+      "Provide academic references and official institutional transcripts",
+      "Selection committee interviews finalists and distributes non-repayable education grants"
+    ]
+  }
+  ,
+  {
+    id: "educations-com-study-bachelor-usa",
+    name: "Study a Bachelor's in the USA Scholarship",
+    provider: "educations.com",
+    type: "merit",
+    levels: ["ug"],
+    categories: ["general","obc","sc","st","ews"],
+    minScore: 75,
+    maxIncome: 0,
+    gender: "any",
+    states: "all",
+    amount: "$5,000 tuition grant awarded directly to student's host college or university",
+    deadline: "30 Jun",
+    documents: ["Valid acceptance letter to an accredited undergraduate degree program in the United States","Valid student visa (F-1) or proof of study authorization upon admission","Short essay describing why you chose the US and how you plan to foster global perspective","High school graduation transcript","Valid Indian passport"],
+    steps: [
+      "Submit online application form via educations.com international portal",
+      "Submit the required reflective essay on international student leadership",
+      "Finalists contacted to provide formal proof of university acceptance and visa eligibility",
+      "Winner announced in August and funding remitted directly to the university bursar"
+    ]
+  }
 ];
 
 /* deadline dates (ISO) for the urgency radar — kept separate from the
@@ -2401,6 +2445,8 @@ const DEADLINE_INFO = {
   "marquette-global-scholar": { date: "2027-02-01" },
   "utoronto-international-scholar": { date: "2027-01-15" },
   "aryabhata-science-ucd": { date: "2027-02-28" },
+  "pedro-zamora-young-leaders": { date: "2027-07-15" },
+  "educations-com-study-bachelor-usa": { date: "2027-06-30" },
 };
 SCHOLARSHIPS.forEach(s => {
   const info = DEADLINE_INFO[s.id] || {};
