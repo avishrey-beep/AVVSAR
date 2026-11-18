@@ -2337,6 +2337,50 @@ const SCHOLARSHIPS = [
       "Winner announced in August and funding remitted directly to the university bursar"
     ]
   }
+  ,
+  {
+    id: "teach-for-india-fellowship",
+    name: "Teach For India 2-Year Leadership Fellowship",
+    provider: "Teach For India",
+    type: "merit",
+    levels: ["ug","pg"],
+    categories: ["general","obc","sc","st","ews"],
+    minScore: 60,
+    maxIncome: 0,
+    gender: "any",
+    states: "all",
+    amount: "Monthly stipend of ₹23,040 + housing allowance (HRA) up to ₹10,000/mo + school resources",
+    deadline: "15 Mar",
+    documents: ["Undergraduate degree completion certificate or final year bonafide from recognized university","Detailed resume showcasing extracurricular leadership and communication skills","Government photo ID (Aadhaar / Voter ID / Passport)","Two professional or academic references"],
+    steps: [
+      "Submit initial online application form and an essay on educational equity in India",
+      "Complete online analytical, verbal, and situational judgment test (AMCAT)",
+      "Participate in phone interview assessing core values and problem-solving grit",
+      "Attend full-day assessment center featuring sample teaching lesson, group activity, and personal interview"
+    ]
+  }
+  ,
+  {
+    id: "tata-trusts-medical-healthcare",
+    name: "Tata Trusts Medical and Healthcare Higher Education Scholarship",
+    provider: "Tata Trusts",
+    type: "both",
+    levels: ["ug","pg"],
+    categories: ["general","obc","sc","st","ews"],
+    minScore: 70,
+    maxIncome: 450000,
+    gender: "any",
+    states: "all",
+    amount: "Up to ₹1,00,000 per year towards tuition and lab fees for MBBS, BDS, and PG Medical disciplines",
+    deadline: "31 Oct",
+    documents: ["NEET score card and state/all-India counseling allocation letter","First year or ongoing year tuition fee receipts from recognized government/private medical college","Family income certificate issued by competent authority (< ₹4.5 Lakhs)","Previous academic year mark sheets (minimum 70% aggregate)","Aadhaar card and cancelled cheque/bank passbook copy"],
+    steps: [
+      "Register on the Tata Trusts scholarship application portal during open window",
+      "Select Medical & Healthcare stream and enter academic score and family earnings",
+      "Upload self-attested documents, fee structures, and verified bonafide certificate",
+      "Trust committee reviews applications and disburses tuition aid directly to bank account"
+    ]
+  }
 ];
 
 /* deadline dates (ISO) for the urgency radar — kept separate from the
@@ -2447,6 +2491,8 @@ const DEADLINE_INFO = {
   "aryabhata-science-ucd": { date: "2027-02-28" },
   "pedro-zamora-young-leaders": { date: "2027-07-15" },
   "educations-com-study-bachelor-usa": { date: "2027-06-30" },
+  "teach-for-india-fellowship": { date: "2027-03-15" },
+  "tata-trusts-medical-healthcare": { date: "2026-10-31" },
 };
 SCHOLARSHIPS.forEach(s => {
   const info = DEADLINE_INFO[s.id] || {};
