@@ -1941,6 +1941,72 @@ const SCHOLARSHIPS = [
       "Selected fellows receive orientation and placement with partner grassroots NGOs across India"
     ]
   }
+  ,
+  {
+    id: "loreal-india-women-in-science",
+    name: "L'Oréal India For Young Women In Science Scholarship",
+    provider: "L'Oréal India Foundation",
+    type: "both",
+    levels: ["ug"],
+    categories: ["general","obc","sc","st","ews"],
+    minScore: 85,
+    maxIncome: 600000,
+    gender: "female",
+    states: "all",
+    amount: "Up to ₹2,50,000 granted across 4 years for undergraduate STEM education",
+    deadline: "07 Jan",
+    documents: ["Class 12 board mark sheet with minimum 85% aggregate in PCB/PCM/PCMB","Proof of full-time admission to a recognized college/university in science or engineering","Family income certificate issued by competent revenue authority","Bank passbook copy linked to student's savings account","Aadhaar card copy"],
+    steps: [
+      "Submit online application form on Buddy4Study / L'Oréal portal",
+      "Upload self-attested academic mark sheets, admission confirmation, and income proof",
+      "Shortlisted candidates undergo telephonic interview round",
+      "Final round interview conducted by distinguished panel of scientists and educators"
+    ]
+  }
+  ,
+  {
+    id: "kotak-kanya-scholarship",
+    name: "Kotak Kanya Scholarship for Girl Students",
+    provider: "Kotak Education Foundation",
+    type: "both",
+    levels: ["ug"],
+    categories: ["general","obc","sc","st","ews"],
+    minScore: 75,
+    maxIncome: 600000,
+    gender: "female",
+    states: "all",
+    amount: "₹1,50,000 per academic year until graduation (covers tuition, hostel, and academic materials)",
+    deadline: "30 Sep",
+    documents: ["Class 12 mark sheet showing 75%+ marks or equivalent CGPA","Proof of admission in 1st year professional graduation (Engineering, MBBS, Law, Architecture)","Annual family income certificate (< ₹6,00,000)","Aadhaar card and bank account details of applicant","College fee structure breakdown"],
+    steps: [
+      "Register on Kotak Kanya online application portal",
+      "Complete personal, academic, and household socio-economic questionnaire",
+      "Document verification by Kotak Education Foundation scrutiny team",
+      "Virtual or in-person panel interview followed by scholarship grant release"
+    ]
+  }
+  ,
+  {
+    id: "rolls-royce-unnati-stem",
+    name: "Rolls-Royce Unnati Scholarship for Women Engineering Students",
+    provider: "Rolls-Royce India",
+    type: "both",
+    levels: ["ug"],
+    categories: ["general","obc","sc","st","ews"],
+    minScore: 60,
+    maxIncome: 400000,
+    gender: "female",
+    states: "all",
+    amount: "Fixed grant of ₹35,000 towards engineering tuition, lab resources, and course books",
+    deadline: "31 Aug",
+    documents: ["Class 10 and 12 mark sheets demonstrating academic proficiency","Enrollment receipt/ID card in 1st/2nd/3rd year of B.E./B.Tech program at AICTE recognized college","Valid family income certificate proving household income below ₹4,00,000","Government photo ID (Aadhaar card)","Applicant bank passbook details"],
+    steps: [
+      "Apply online through Rolls-Royce Unnati CSR scholarship portal",
+      "Submit verified enrollment certificate from the college registrar",
+      "Telephonic verification and profile shortlisting based on need and merit",
+      "Direct bank transfer (DBT) of scholarship funds to selected scholars"
+    ]
+  }
 ];
 
 /* deadline dates (ISO) for the urgency radar — kept separate from the
@@ -2033,6 +2099,9 @@ const DEADLINE_INFO = {
   "jn-tata-endowment-loan-scholarship": { date: "2027-03-21" },
   "narotam-sekhsaria-pg-scholarship": { date: "2027-03-15" },
   "sbi-youth-for-india-fellowship": { date: "2027-04-30" },
+  "loreal-india-women-in-science": { date: "2027-01-07" },
+  "kotak-kanya-scholarship": { date: "2027-09-30" },
+  "rolls-royce-unnati-stem": { date: "2027-08-31" },
 };
 SCHOLARSHIPS.forEach(s => {
   const info = DEADLINE_INFO[s.id] || {};
