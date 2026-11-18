@@ -2205,6 +2205,50 @@ const SCHOLARSHIPS = [
       "Award letters issued and annual scholarship amount credited directly via DBT"
     ]
   }
+  ,
+  {
+    id: "miami-presidential-fellows",
+    name: "Presidential Fellows Program at Miami University Ohio",
+    provider: "Miami University (Ohio, USA)",
+    type: "merit",
+    levels: ["ug"],
+    categories: ["general","obc","sc","st","ews"],
+    minScore: 90,
+    maxIncome: 0,
+    gender: "any",
+    states: "all",
+    amount: "Full tuition, comprehensive fees, on-campus housing, meal plan + $5,000 academic enrichment fund",
+    deadline: "01 Dec",
+    documents: ["Common Application submitted by December 1 with interest indicated in Honors College","Official secondary school transcripts showing top-percentile academic achievement","Two letters of academic recommendation","English proficiency exam scores (TOEFL / IELTS / Duolingo)","Valid Indian passport"],
+    steps: [
+      "Submit Common App to Miami University by December 1 priority deadline",
+      "Indicate interest in Honors College and the Presidential Fellows Program",
+      "Top finalists invited to participate in virtual interview day in February",
+      "Selection committee announces full-ride Presidential Fellows awardees"
+    ]
+  }
+  ,
+  {
+    id: "marquette-global-scholar",
+    name: "Global Scholar Award at Marquette University",
+    provider: "Marquette University (Milwaukee, USA)",
+    type: "merit",
+    levels: ["ug"],
+    categories: ["general","obc","sc","st","ews"],
+    minScore: 88,
+    maxIncome: 0,
+    gender: "any",
+    states: "all",
+    amount: "Full undergraduate tuition scholarship renewable for up to four years",
+    deadline: "01 Feb",
+    documents: ["Undergraduate application for admission to Marquette University","Official high school transcripts and academic records","Global Scholar supplemental application essay reflecting leadership and cross-cultural commitment","Teacher or counselor recommendation letter","Valid Indian passport"],
+    steps: [
+      "Apply for undergraduate admission to Marquette University before regular decision deadline",
+      "Receive student portal credentials and access the Global Scholar scholarship application",
+      "Submit competitive essay demonstrating global perspective and community service",
+      "Scholarship committee selects and notifies recipients in late March"
+    ]
+  }
 ];
 
 /* deadline dates (ISO) for the urgency radar — kept separate from the
@@ -2309,6 +2353,8 @@ const DEADLINE_INFO = {
   "federal-bank-hormis-memorial": { date: "2026-12-15" },
   "keep-india-smiling-foundational": { date: "2027-01-31" },
   "santoor-scholarship-girls": { date: "2026-10-15" },
+  "miami-presidential-fellows": { date: "2026-12-01" },
+  "marquette-global-scholar": { date: "2027-02-01" },
 };
 SCHOLARSHIPS.forEach(s => {
   const info = DEADLINE_INFO[s.id] || {};
