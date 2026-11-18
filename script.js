@@ -1875,6 +1875,72 @@ const SCHOLARSHIPS = [
       "DBT release to student or parent joint bank account"
     ]
   }
+  ,
+  {
+    id: "jn-tata-endowment-loan-scholarship",
+    name: "JN Tata Endowment Loan Scholarship for Higher Education Abroad",
+    provider: "JN Tata Endowment (Tata Trusts)",
+    type: "both",
+    levels: ["pg","phd"],
+    categories: ["general","obc","sc","st","ews"],
+    minScore: 60,
+    maxIncome: 0,
+    gender: "any",
+    states: "all",
+    amount: "Loan scholarship up to ₹10,00,000 + gift scholarships up to ₹7,500,000 for top scholars",
+    deadline: "21 Mar",
+    documents: ["Official statement of purpose detailing international study plans and career roadmap","Proof of application or unconditional/conditional admission letter to recognized overseas university","Undergraduate and postgraduate mark sheets/degree transcripts","Letters of recommendation from professors or employers","Valid Indian passport and Aadhaar card"],
+    steps: [
+      "Complete online registration on the JN Tata Endowment portal during spring cycle",
+      "Fill comprehensive application profile and upload academic dossier and statement of purpose",
+      "Shortlisted applicants undergo an online diagnostic test evaluating analytical thinking",
+      "Top finalists attend personal interview with expert panel in Mumbai or virtually"
+    ]
+  }
+  ,
+  {
+    id: "narotam-sekhsaria-pg-scholarship",
+    name: "Narotam Sekhsaria Post Graduate Scholarship",
+    provider: "Narotam Sekhsaria Foundation",
+    type: "merit",
+    levels: ["pg"],
+    categories: ["general","obc","sc","st","ews"],
+    minScore: 75,
+    maxIncome: 0,
+    gender: "any",
+    states: "all",
+    amount: "Interest-free loan scholarship up to ₹20,00,000 for premier Indian and global institutions",
+    deadline: "15 Mar",
+    documents: ["Bachelor's degree transcripts with first-class distinction or equivalent GPA","Formal letter of admission to top-ranked graduate institution in India or abroad","Statement of purpose explaining scholarly purpose and social responsibility vision","Attested copies of 10th and 12th standard mark sheets","Two letters of recommendation from academic department heads or mentors"],
+    steps: [
+      "Submit online application form via Narotam Sekhsaria Foundation official portal",
+      "Upload verified academic records, admission offer, and personal statement",
+      "Undergo preliminary screening by the academic review committee",
+      "Attend rigorous face-to-face interview session with domain experts and board trustees"
+    ]
+  }
+  ,
+  {
+    id: "sbi-youth-for-india-fellowship",
+    name: "SBI Youth for India Rural Development Fellowship",
+    provider: "State Bank of India (SBI Foundation)",
+    type: "merit",
+    levels: ["ug","pg"],
+    categories: ["general","obc","sc","st","ews"],
+    minScore: 60,
+    maxIncome: 0,
+    gender: "any",
+    states: "all",
+    amount: "Monthly allowance of ₹16,000 + local travel stipend of ₹2,000 + readjustment grant of ₹70,000",
+    deadline: "30 Apr",
+    documents: ["Bachelor's degree completion certificate or final year graduation bonafide","Resume highlighting leadership initiatives, extracurriculars, or volunteering work","Government identity proof (Aadhaar / Voter ID / Passport)","Self-declaration of full-time 13-month commitment to grassroot rural immersion"],
+    steps: [
+      "Fill online registration and preliminary questionnaire on Youth for India portal",
+      "Submit detailed essay outlining grassroot problem-solving approach and motivation",
+      "Participate in online behavioral interview and situational judgment assessment",
+      "Selected fellows receive orientation and placement with partner grassroots NGOs across India"
+    ]
+  }
 ];
 
 /* deadline dates (ISO) for the urgency radar — kept separate from the
@@ -1964,6 +2030,9 @@ const DEADLINE_INFO = {
   "odisha-ebc-sebc-state": { date: "2027-01-15" },
   "maharashtra-open-merit-ug": { date: "2026-12-31" },
   "pre-matric-minority-scheme": { date: "2026-11-30" },
+  "jn-tata-endowment-loan-scholarship": { date: "2027-03-21" },
+  "narotam-sekhsaria-pg-scholarship": { date: "2027-03-15" },
+  "sbi-youth-for-india-fellowship": { date: "2027-04-30" },
 };
 SCHOLARSHIPS.forEach(s => {
   const info = DEADLINE_INFO[s.id] || {};
