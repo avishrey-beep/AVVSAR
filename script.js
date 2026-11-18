@@ -2117,6 +2117,50 @@ const SCHOLARSHIPS = [
       "Final selection announcement and grant disbursement to college fee account"
     ]
   }
+  ,
+  {
+    id: "sitaram-jindal-foundation-scheme",
+    name: "Sitaram Jindal Foundation Merit-cum-Means Scholarship Scheme",
+    provider: "Sitaram Jindal Foundation",
+    type: "both",
+    levels: ["ug","pg","diploma"],
+    categories: ["general","obc","sc","st","ews"],
+    minScore: 65,
+    maxIncome: 400000,
+    gender: "any",
+    states: "all",
+    amount: "Monthly stipend from ₹1,100 to ₹3,200 per month (plus ₹1,000/mo extra for hostellers)",
+    deadline: "31 Dec",
+    documents: ["Attested copy of marks card of the previous qualifying examination","Income certificate issued by competent authority (< ₹4 Lakhs for non-salaried / ₹2.5L salaried)","College bonafide certificate and fee breakdown endorsed by Principal","Hostel warden certificate if claiming hosteller allowance","Aadhaar card copy"],
+    steps: [
+      "Download and print the official Sitaram Jindal scholarship application form",
+      "Get the completed form attested and recommended by the college Principal or Head of Institution",
+      "Attach certified mark sheets and income proof and mail to the Jindal Foundation trust office",
+      "Foundation evaluates applications continuously and disburses scholarship cheques directly"
+    ]
+  }
+  ,
+  {
+    id: "federal-bank-hormis-memorial",
+    name: "Federal Bank Hormis Memorial Foundation Scholarship Scheme",
+    provider: "Federal Bank Hormis Memorial Foundation",
+    type: "both",
+    levels: ["ug"],
+    categories: ["general","obc","sc","st","ews"],
+    minScore: 60,
+    maxIncome: 300000,
+    gender: "any",
+    states: ["KL","TN","KA","MH","GJ","DL"],
+    amount: "100% reimbursement of tuition fees and mandatory expenses up to ₹1,00,000 per academic year",
+    deadline: "15 Dec",
+    documents: ["Proof of merit-based admission in 1st year MBBS, Engineering, Agriculture, BSc Nursing, or MBA","Income certificate issued by local village officer or Tahsildar (< ₹3 Lakhs)","Higher secondary (10+2) mark sheet and national entrance exam rank card (KEAM, NEET, JEE)","Residential certificate of domicile in eligible states","Federal Bank savings account passbook copy"],
+    steps: [
+      "Download application form from Federal Bank CSR portal or collect from nearest branch",
+      "Submit completed application along with college fee receipts to the nearest Federal Bank branch",
+      "Branch verification and onward transmission to Hormis Memorial Foundation CSR desk",
+      "Final scholarship awardees announced and course fees directly reimbursed"
+    ]
+  }
 ];
 
 /* deadline dates (ISO) for the urgency radar — kept separate from the
@@ -2217,6 +2261,8 @@ const DEADLINE_INFO = {
   "sbif-asha-scholarship": { date: "2026-11-30" },
   "siemens-engineering-scholarship": { date: "2026-10-20" },
   "legrand-empowering-scholarship": { date: "2027-08-31" },
+  "sitaram-jindal-foundation-scheme": { date: "2026-12-31" },
+  "federal-bank-hormis-memorial": { date: "2026-12-15" },
 };
 SCHOLARSHIPS.forEach(s => {
   const info = DEADLINE_INFO[s.id] || {};
