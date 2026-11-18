@@ -2381,6 +2381,50 @@ const SCHOLARSHIPS = [
       "Trust committee reviews applications and disburses tuition aid directly to bank account"
     ]
   }
+  ,
+  {
+    id: "schaeffler-india-hope-engineering",
+    name: "Schaeffler India Hope Engineering Scholarship Program",
+    provider: "Schaeffler India CSR",
+    type: "both",
+    levels: ["ug"],
+    categories: ["general","obc","sc","st","ews"],
+    minScore: 60,
+    maxIncome: 500000,
+    gender: "any",
+    states: ["GJ","MH","TN"],
+    amount: "₹75,000 per year towards tuition and books for 4-year engineering studies",
+    deadline: "15 Sep",
+    documents: ["Class 12 board examination scorecard with minimum 60% marks in science","Admission confirmation in 1st year B.E./B.Tech in recognized government or private engineering institute","Family income certificate proving gross annual income under ₹5 Lakhs","Government photo ID (Aadhaar card) and domicile certificate of Gujarat, Maharashtra, or Tamil Nadu","Student bank account passbook copy"],
+    steps: [
+      "Apply online through the Schaeffler Hope Engineering CSR portal",
+      "Upload verified academic mark sheets, college fee receipts, and domicile records",
+      "Document screening followed by telephonic verification interview",
+      "Final selection and electronic transfer of grant to student bank account"
+    ]
+  }
+  ,
+  {
+    id: "vivo-for-education-scholarship",
+    name: "Vivo for Education Scholarship Program for Higher Studies",
+    provider: "Vivo India CSR",
+    type: "both",
+    levels: ["ug"],
+    categories: ["general","obc","sc","st","ews"],
+    minScore: 70,
+    maxIncome: 500000,
+    gender: "any",
+    states: "all",
+    amount: "One-time scholarship grant of ₹50,000 to cover annual college tuition fees",
+    deadline: "20 Nov",
+    documents: ["Class 12 scorecard with minimum 70% aggregate marks","Proof of current admission in undergraduate course at recognized university or college","Income certificate proving family income less than ₹5,00,000 per annum","Aadhaar card and valid photo identity proof","Applicant's active bank passbook details"],
+    steps: [
+      "Fill online application form on the Vivo for Education portal",
+      "Submit academic documents, college fee challan, and family income certificate",
+      "Shortlisting based on academic merit and socio-economic vulnerability",
+      "Grant disbursed directly to selected students to cover educational fees"
+    ]
+  }
 ];
 
 /* deadline dates (ISO) for the urgency radar — kept separate from the
@@ -2493,6 +2537,8 @@ const DEADLINE_INFO = {
   "educations-com-study-bachelor-usa": { date: "2027-06-30" },
   "teach-for-india-fellowship": { date: "2027-03-15" },
   "tata-trusts-medical-healthcare": { date: "2026-10-31" },
+  "schaeffler-india-hope-engineering": { date: "2027-09-15" },
+  "vivo-for-education-scholarship": { date: "2026-11-20" },
 };
 SCHOLARSHIPS.forEach(s => {
   const info = DEADLINE_INFO[s.id] || {};
