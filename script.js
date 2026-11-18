@@ -2007,6 +2007,72 @@ const SCHOLARSHIPS = [
       "Direct bank transfer (DBT) of scholarship funds to selected scholars"
     ]
   }
+  ,
+  {
+    id: "ongc-merit-scholarship-sc-st",
+    name: "ONGC Foundation Merit Scholarship for SC/ST Students",
+    provider: "ONGC Foundation (Oil and Natural Gas Corporation)",
+    type: "both",
+    levels: ["ug","pg"],
+    categories: ["sc","st"],
+    minScore: 60,
+    maxIncome: 450000,
+    gender: "any",
+    states: "all",
+    amount: "₹48,000 per annum (₹4,000 per month) for Engineering, MBBS, MBA, and Master's in Geophysics",
+    deadline: "15 Jan",
+    documents: ["Caste Certificate (SC/ST) issued by competent revenue authority","Annual family income certificate showing total earnings below ₹4.5 Lakhs","Class 12 / Bachelor mark sheet showing 60%+ marks or 6.0 CGPA","Proof of admission in 1st year of eligible professional course","PAN card, Aadhaar card, and student bank passbook copy"],
+    steps: [
+      "Register on ONGC Foundation portal (ongcscholar.org)",
+      "Fill online application form for SC/ST category category scheme",
+      "Upload self-attested documents and get institutional endorsement form signed by Dean/Principal",
+      "ONGC review board announces merit list and disburses grants via Direct Benefit Transfer"
+    ]
+  }
+  ,
+  {
+    id: "lic-golden-jubilee-scholarship",
+    name: "LIC Golden Jubilee Scholarship Scheme",
+    provider: "Life Insurance Corporation of India (LIC)",
+    type: "both",
+    levels: ["ug","diploma"],
+    categories: ["general","obc","sc","st","ews"],
+    minScore: 60,
+    maxIncome: 250000,
+    gender: "any",
+    states: "all",
+    amount: "₹20,000 to ₹40,000 per annum for higher secondary, graduation, and professional courses",
+    deadline: "22 Dec",
+    documents: ["Class 10 or 12 mark sheet with minimum 60% aggregate marks","Proof of admission in recognized college, university, or polytechnic institution","Income certificate proving parental income within ₹2,50,000 per annum","Aadhaar card copy","Active bank account passbook copy with IFSC code"],
+    steps: [
+      "Apply online through LIC of India Golden Jubilee Foundation official portal",
+      "Select divisional office based on your domicile district",
+      "Submit completed profile form and receive application acknowledgement slip",
+      "LIC Divisional Office shortlists candidates based on merit rank and family income verification"
+    ]
+  }
+  ,
+  {
+    id: "sbif-asha-scholarship",
+    name: "SBIF Asha Scholarship Program for Meritorious Undergraduates",
+    provider: "State Bank of India Foundation (SBIF)",
+    type: "both",
+    levels: ["ug"],
+    categories: ["general","obc","sc","st","ews"],
+    minScore: 75,
+    maxIncome: 300000,
+    gender: "any",
+    states: "all",
+    amount: "Up to ₹50,000 for one academic year to support tuition and educational expenses",
+    deadline: "30 Nov",
+    documents: ["Class 12 board examination mark sheet showing 75%+ marks","Admission letter or institutional bonafide certificate for 1st year degree program","Family income certificate issued by Tehsildar or revenue authority (< ₹3 Lakhs)","Identity card and government-issued photo ID (Aadhaar Card)","Applicant's bank account details"],
+    steps: [
+      "Log in to the SBIF Asha portal and fill out the online scholarship application form",
+      "Upload scanned academic transcripts, college enrollment proof, and income certificate",
+      "Screening of applications followed by telephonic background verification",
+      "Final merit list released and financial grant transferred to beneficiary account"
+    ]
+  }
 ];
 
 /* deadline dates (ISO) for the urgency radar — kept separate from the
@@ -2102,6 +2168,9 @@ const DEADLINE_INFO = {
   "loreal-india-women-in-science": { date: "2027-01-07" },
   "kotak-kanya-scholarship": { date: "2027-09-30" },
   "rolls-royce-unnati-stem": { date: "2027-08-31" },
+  "ongc-merit-scholarship-sc-st": { date: "2027-01-15" },
+  "lic-golden-jubilee-scholarship": { date: "2026-12-22" },
+  "sbif-asha-scholarship": { date: "2026-11-30" },
 };
 SCHOLARSHIPS.forEach(s => {
   const info = DEADLINE_INFO[s.id] || {};
