@@ -2249,6 +2249,50 @@ const SCHOLARSHIPS = [
       "Scholarship committee selects and notifies recipients in late March"
     ]
   }
+  ,
+  {
+    id: "utoronto-international-scholar",
+    name: "International Scholar Award at University of Toronto (UTM & UTSC)",
+    provider: "University of Toronto (Canada)",
+    type: "merit",
+    levels: ["ug"],
+    categories: ["general","obc","sc","st","ews"],
+    minScore: 88,
+    maxIncome: 0,
+    gender: "any",
+    states: "all",
+    amount: "Up to $100,000 CAD awarded over four years ($25,000 CAD per year renewable)",
+    deadline: "15 Jan",
+    documents: ["OUAC / University of Toronto international undergraduate application","Official Grade 11 and Grade 12 predicted/interim academic scorecards","English language proficiency results (IELTS/TOEFL)","Valid Indian passport"],
+    steps: [
+      "Submit OUAC 105 or U of T International application by early January deadline",
+      "Automatic consideration based on academic excellence upon admission to UTM or UTSC",
+      "Submit all required academic transcripts via the Join U of T applicant portal",
+      "Recipients notified simultaneously with their official offer of university admission"
+    ]
+  }
+  ,
+  {
+    id: "aryabhata-science-ucd",
+    name: "Aryabhata Science Scholarship for Indian Students",
+    provider: "University College Dublin (UCD, Ireland)",
+    type: "merit",
+    levels: ["ug"],
+    categories: ["general","obc","sc","st","ews"],
+    minScore: 85,
+    maxIncome: 0,
+    gender: "any",
+    states: "all",
+    amount: "50% to 100% full tuition fee waiver for undergraduate science programs in UCD",
+    deadline: "28 Feb",
+    documents: ["Formal offer of admission to an undergraduate degree program in UCD College of Science","High school board transcripts showing exceptional marks in mathematics and sciences (85%+)","Scholarship personal statement outlining passion for scientific research and innovation","Valid Indian passport"],
+    steps: [
+      "Apply and receive conditional or firm offer of admission to UCD College of Science",
+      "Access the UCD Scholarship Applications portal via SISWeb",
+      "Submit Aryabhata Science Scholarship essay and supporting academic portfolio",
+      "UCD India scholarship committee reviews submissions and awards tuition waivers"
+    ]
+  }
 ];
 
 /* deadline dates (ISO) for the urgency radar — kept separate from the
@@ -2355,6 +2399,8 @@ const DEADLINE_INFO = {
   "santoor-scholarship-girls": { date: "2026-10-15" },
   "miami-presidential-fellows": { date: "2026-12-01" },
   "marquette-global-scholar": { date: "2027-02-01" },
+  "utoronto-international-scholar": { date: "2027-01-15" },
+  "aryabhata-science-ucd": { date: "2027-02-28" },
 };
 SCHOLARSHIPS.forEach(s => {
   const info = DEADLINE_INFO[s.id] || {};
