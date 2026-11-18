@@ -2161,6 +2161,50 @@ const SCHOLARSHIPS = [
       "Final scholarship awardees announced and course fees directly reimbursed"
     ]
   }
+  ,
+  {
+    id: "keep-india-smiling-foundational",
+    name: "Keep India Smiling Foundational Scholarship Program",
+    provider: "Colgate-Palmolive (India) Limited",
+    type: "both",
+    levels: ["ug","diploma"],
+    categories: ["general","obc","sc","st","ews"],
+    minScore: 60,
+    maxIncome: 500000,
+    gender: "any",
+    states: "all",
+    amount: "₹30,000 to ₹50,000 per year for 3–4 years of undergraduate or vocational professional studies",
+    deadline: "31 Jan",
+    documents: ["Class 12 board examination scorecard with minimum 60% marks","Proof of current admission in recognized undergraduate degree, diploma, or BDS/MBBS program","Income certificate / BPL ration card / IT return showing annual family income under ₹5,00,000","Passport size photograph and Aadhaar card","Active bank account details"],
+    steps: [
+      "Apply online through the Colgate Keep India Smiling portal",
+      "Upload attested academic scorecards, enrollment certificate, and proof of family income",
+      "Undergo telephonic verification and background check by the scrutiny team",
+      "Successful applicants receive scholarship grants directly into their bank accounts"
+    ]
+  }
+  ,
+  {
+    id: "santoor-scholarship-girls",
+    name: "Santoor Women's Scholarship Program",
+    provider: "Wipro Cares & Wipro Consumer Care",
+    type: "both",
+    levels: ["ug"],
+    categories: ["general","obc","sc","st","ews"],
+    minScore: 60,
+    maxIncome: 0,
+    gender: "female",
+    states: ["AP","KA","TG","CG"],
+    amount: "₹24,000 per annum until completion of undergraduate course (3 or 4 years)",
+    deadline: "15 Oct",
+    documents: ["Class 10 and Class 12 passing certificate from a government school/junior college","Proof of enrollment in full-time 3/4-year degree course in Andhra Pradesh, Karnataka, Telangana, or Chhattisgarh","College identity card or bonafide certificate","Aadhaar card copy","Applicant bank passbook copy"],
+    steps: [
+      "Submit online application on Santoor Scholarship portal or send physical form via post",
+      "Provide government school verification certificates and current college admission proof",
+      "Screening of candidate profiles with preference given to rural and backward district applicants",
+      "Award letters issued and annual scholarship amount credited directly via DBT"
+    ]
+  }
 ];
 
 /* deadline dates (ISO) for the urgency radar — kept separate from the
@@ -2263,6 +2307,8 @@ const DEADLINE_INFO = {
   "legrand-empowering-scholarship": { date: "2027-08-31" },
   "sitaram-jindal-foundation-scheme": { date: "2026-12-31" },
   "federal-bank-hormis-memorial": { date: "2026-12-15" },
+  "keep-india-smiling-foundational": { date: "2027-01-31" },
+  "santoor-scholarship-girls": { date: "2026-10-15" },
 };
 SCHOLARSHIPS.forEach(s => {
   const info = DEADLINE_INFO[s.id] || {};
