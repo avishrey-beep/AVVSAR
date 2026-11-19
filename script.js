@@ -2557,6 +2557,72 @@ const SCHOLARSHIPS = [
       "Monash selection committee awards competitive 100% tuition waivers to outstanding scholars"
     ]
   }
+  ,
+  {
+    id: "aditya-birla-scholarship-programme",
+    name: "Aditya Birla Group Scholarship Programme",
+    provider: "Aditya Birla Centre for Community Initiatives and Rural Development",
+    type: "merit",
+    levels: ["ug","pg"],
+    categories: ["general","obc","sc","st","ews"],
+    minScore: 85,
+    maxIncome: 0,
+    gender: "any",
+    states: "all",
+    amount: "₹1,00,000/year for Engineering (IITs/BITS) / ₹1,75,000/year for Management (IIMs/XLRI) / ₹1,80,000 for Law (NLUs)",
+    deadline: "15 Aug",
+    documents: ["Top-tier entrance rank verification (JEE Advanced / CAT / CLAT) at premier partner institutes","Completed Aditya Birla Scholarship questionnaire and essay on leadership and personal philosophy","Class 10 and 12 mark sheets and prior degree records","Dean/Director endorsement from participating premier institute"],
+    steps: [
+      "Eligible top rankers admitted into IITs, BITS, IIMs, XLRI, and NLUs receive invitation through institute Dean",
+      "Submit comprehensive application form and two reflective essays",
+      "Independent assessment panel evaluates academic track record and leadership potential",
+      "Shortlisted finalists attend personal interviews with eminent jury in Mumbai"
+    ]
+  }
+  ,
+  {
+    id: "op-jindal-engineering-management",
+    name: "OP Jindal Engineering & Management Scholarship (OPJEMS)",
+    provider: "OP Jindal Group",
+    type: "merit",
+    levels: ["ug","pg"],
+    categories: ["general","obc","sc","st","ews"],
+    minScore: 80,
+    maxIncome: 0,
+    gender: "any",
+    states: "all",
+    amount: "₹1,50,000 for Management students / ₹80,000 for Engineering students",
+    deadline: "25 Aug",
+    documents: ["Institutional bonafide from designated OPJEMS partner college (top IITs, NITs, and IIMs)","Previous academic year CGPA/scorecard demonstrating top-20 rank in batch","Government photo identity proof (Aadhaar / Voter ID)","Applicant bank account details"],
+    steps: [
+      "Designated partner engineering and management institutions nominate top academic performers",
+      "Nominated students take an online behavioral and leadership test conducted by OPJEMS",
+      "Top shortlisted candidates participate in personal interview round with industry leaders",
+      "Merit list published and scholarships awarded at national convocation"
+    ]
+  }
+  ,
+  {
+    id: "dr-reddy-sashakt-scholarship",
+    name: "Dr. Reddy's Foundation Sashakt Scholarship for Young Women",
+    provider: "Dr. Reddy's Foundation",
+    type: "merit",
+    levels: ["ug"],
+    categories: ["general","obc","sc","st","ews"],
+    minScore: 75,
+    maxIncome: 0,
+    gender: "female",
+    states: "all",
+    amount: "₹2,40,000 across 3 years (₹80,000/year) covering tuition, books, and living expenses for pure science B.Sc",
+    deadline: "30 Nov",
+    documents: ["Class 12 board examination scorecard with exceptional marks in science subjects","Confirmed admission offer into B.Sc pure/natural sciences in designated premier institutions","Statement of purpose describing passion for scientific inquiry and research career ambition","Class 10 certificate and Aadhaar card","Applicant bank passbook copy"],
+    steps: [
+      "Apply online through the Sashakt Scholarship portal after securing admission in eligible science colleges",
+      "Upload 12th board marks, admission slip, and personal statement of purpose",
+      "Screening of academic credentials and essays by foundation mentors",
+      "Selected women scholars receive annual grant and mentorship from senior women scientists"
+    ]
+  }
 ];
 
 /* deadline dates (ISO) for the urgency radar — kept separate from the
@@ -2677,6 +2743,9 @@ const DEADLINE_INFO = {
   "singapore-international-graduate-award": { date: "2026-12-01" },
   "hong-kong-phd-fellowship-scheme": { date: "2026-12-01" },
   "monash-international-leadership-scholarship": { date: "2027-01-15" },
+  "aditya-birla-scholarship-programme": { date: "2027-08-15" },
+  "op-jindal-engineering-management": { date: "2027-08-25" },
+  "dr-reddy-sashakt-scholarship": { date: "2026-11-30" },
 };
 SCHOLARSHIPS.forEach(s => {
   const info = DEADLINE_INFO[s.id] || {};
