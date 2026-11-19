@@ -2623,6 +2623,72 @@ const SCHOLARSHIPS = [
       "Selected women scholars receive annual grant and mentorship from senior women scientists"
     ]
   }
+  ,
+  {
+    id: "medha-britti-puraskar-odisha",
+    name: "Odisha e-Medhabruti Merit Scholarship Scheme",
+    provider: "Higher Education Department, Government of Odisha",
+    type: "merit",
+    levels: ["ug","pg"],
+    categories: ["general","obc","sc","st","ews"],
+    minScore: 60,
+    maxIncome: 600000,
+    gender: "any",
+    states: ["OD"],
+    amount: "₹10,000/year for general degree / ₹20,000/year for technical & professional undergraduate courses",
+    deadline: "31 Dec",
+    documents: ["Odisha resident/domicile certificate issued by competent revenue authority","Annual family income certificate (< ₹6,00,000)","Class 12 mark sheet with minimum 60% aggregate marks","College admission receipt and institutional bonafide certificate","Aadhaar card linked with active bank account"],
+    steps: [
+      "Register on the Odisha State Scholarship Portal (scholarship.odisha.gov.in)",
+      "Select e-Medhabruti Junior, Senior, or Technical/Professional scholarship scheme",
+      "Fill student profile details and link Aadhaar-seeded bank account",
+      "Institute validates application online followed by State nodal officer sanction and DBT transfer"
+    ]
+  }
+  ,
+  {
+    id: "kind-circle-merit-scholarship",
+    name: "Kind Circle Scholarship for Meritorious Students",
+    provider: "Kind Circle Foundation",
+    type: "both",
+    levels: ["ug","diploma"],
+    categories: ["general","obc","sc","st","ews"],
+    minScore: 75,
+    maxIncome: 400000,
+    gender: "any",
+    states: "all",
+    amount: "Up to ₹12,000 per annum to cover institutional fees, books, and essential study materials",
+    deadline: "31 Dec",
+    documents: ["Class 10 and 12 mark sheets demonstrating academic excellence (75%+)","Family income certificate showing household earnings below ₹4,00,000","College admission slip and fee receipt for the current academic session","Aadhaar card copy","Student's bank account passbook copy"],
+    steps: [
+      "Submit online application through Kind Circle scholarship portal",
+      "Upload self-attested copies of academic mark cards, college enrollment proof, and income certificate",
+      "Telephone verification round to understand financial need and academic motivation",
+      "Direct disbursement of scholarship funds into the student's personal bank account"
+    ]
+  }
+  ,
+  {
+    id: "tata-housing-wings-scholarship",
+    name: "Tata Housing Wings Scholarship for Girls in Civil Engineering & Architecture",
+    provider: "Tata Housing Development Company Limited",
+    type: "both",
+    levels: ["ug"],
+    categories: ["general","obc","sc","st","ews"],
+    minScore: 60,
+    maxIncome: 300000,
+    gender: "female",
+    states: "all",
+    amount: "Up to ₹60,000 or 80% of tuition fee per year for B.Tech Civil Engineering or B.Arch courses",
+    deadline: "15 Jan",
+    documents: ["Proof of admission in 2nd year of B.E./B.Tech (Civil Engineering) or B.Arch at AICTE/CoA approved college","Annual family income certificate below ₹3,00,000 issued by Tehsildar/competent authority","1st year engineering/architecture mark sheets with minimum 60% aggregate","Aadhaar card copy","Bank passbook details with cancelled cheque"],
+    steps: [
+      "Fill online application form on Tata Housing Wings scholarship portal",
+      "Submit 1st year engineering mark sheets, college fee receipts, and income documentation",
+      "Verification of documents and need evaluation by Tata Housing CSR team",
+      "Scholarship grant disbursed to cover college fee expenses"
+    ]
+  }
 ];
 
 /* deadline dates (ISO) for the urgency radar — kept separate from the
@@ -2746,6 +2812,9 @@ const DEADLINE_INFO = {
   "aditya-birla-scholarship-programme": { date: "2027-08-15" },
   "op-jindal-engineering-management": { date: "2027-08-25" },
   "dr-reddy-sashakt-scholarship": { date: "2026-11-30" },
+  "medha-britti-puraskar-odisha": { date: "2026-12-31" },
+  "kind-circle-merit-scholarship": { date: "2026-12-31" },
+  "tata-housing-wings-scholarship": { date: "2027-01-15" },
 };
 SCHOLARSHIPS.forEach(s => {
   const info = DEADLINE_INFO[s.id] || {};
