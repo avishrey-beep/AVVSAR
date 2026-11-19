@@ -2491,6 +2491,72 @@ const SCHOLARSHIPS = [
       "French Embassy jury reviews academic merit and announces Charpak laureates"
     ]
   }
+  ,
+  {
+    id: "singapore-international-graduate-award",
+    name: "Singapore International Graduate Award (SINGA)",
+    provider: "A*STAR, NTU, NUS & SUTD (Singapore)",
+    type: "merit",
+    levels: ["phd"],
+    categories: ["general","obc","sc","st","ews"],
+    minScore: 80,
+    maxIncome: 0,
+    gender: "any",
+    states: "all",
+    amount: "Full PhD tuition support + monthly stipend of S$2,700 to S$3,200 + S$1,500 one-time airfare grant + S$1,000 settling-in allowance",
+    deadline: "01 Dec",
+    documents: ["Official bachelor's and master's academic transcripts and degree certificates","Two online recommendation reports from academic referees","Passport copy and recent passport-size photograph","Proposed research interest description in biomedical sciences or physical sciences/engineering"],
+    steps: [
+      "Explore research areas and supervisors across A*STAR research institutes and NTU/NUS/SUTD labs",
+      "Submit online scholarship application through the A*STAR SINGA portal",
+      "Nominate two academic referees who will submit confidential recommendation letters online",
+      "Shortlisted candidates attend virtual technical interviews with faculty panel"
+    ]
+  }
+  ,
+  {
+    id: "hong-kong-phd-fellowship-scheme",
+    name: "Hong Kong PhD Fellowship Scheme (HKPFS)",
+    provider: "Research Grants Council (RGC) of Hong Kong",
+    type: "merit",
+    levels: ["phd"],
+    categories: ["general","obc","sc","st","ews"],
+    minScore: 85,
+    maxIncome: 0,
+    gender: "any",
+    states: "all",
+    amount: "Annual stipend of HK$337,200 (~US$43,230) + conference/research travel allowance of HK$14,000/year for 3 years",
+    deadline: "01 Dec",
+    documents: ["Initial HKPFS online application reference number from RGC portal","Full PhD admission application submitted to participating Hong Kong university (HKU, CUHK, HKUST, etc.)","Undergraduate and postgraduate transcripts and degree certificates","Research proposal and two confidential referee reports","Valid Indian passport"],
+    steps: [
+      "Submit initial online application via RGC HKPFS electronic portal to obtain HKPFS reference number",
+      "Submit formal PhD applications to up to two participating universities quoting HKPFS reference number",
+      "Universities nominate top applicants to the RGC selection panel",
+      "RGC Subject Panels review international nominees and declare fellowship results in March"
+    ]
+  }
+  ,
+  {
+    id: "monash-international-leadership-scholarship",
+    name: "Monash International Leadership Scholarship",
+    provider: "Monash University (Australia)",
+    type: "merit",
+    levels: ["ug","pg"],
+    categories: ["general","obc","sc","st","ews"],
+    minScore: 90,
+    maxIncome: 0,
+    gender: "any",
+    states: "all",
+    amount: "100% full course tuition fees paid until minimum number of degree points achieved",
+    deadline: "15 Jan",
+    documents: ["Full unconditional offer letter of admission to undergraduate or postgraduate coursework degree at Monash","Certified academic transcripts and high school / graduation mark sheets","500-word personal statement demonstrating leadership potential and university ambassador vision","Valid Indian passport"],
+    steps: [
+      "Apply for full-time on-campus undergraduate or master's program at Monash University",
+      "Receive full unconditional study offer from Monash admissions",
+      "Submit separate online International Leadership Scholarship application form with personal statement",
+      "Monash selection committee awards competitive 100% tuition waivers to outstanding scholars"
+    ]
+  }
 ];
 
 /* deadline dates (ISO) for the urgency radar — kept separate from the
@@ -2608,6 +2674,9 @@ const DEADLINE_INFO = {
   "daad-wise-research-internship": { date: "2026-11-01" },
   "swiss-government-excellence-scholarship": { date: "2026-11-12" },
   "charpak-master-scholarship-france": { date: "2027-03-20" },
+  "singapore-international-graduate-award": { date: "2026-12-01" },
+  "hong-kong-phd-fellowship-scheme": { date: "2026-12-01" },
+  "monash-international-leadership-scholarship": { date: "2027-01-15" },
 };
 SCHOLARSHIPS.forEach(s => {
   const info = DEADLINE_INFO[s.id] || {};
