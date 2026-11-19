@@ -2689,6 +2689,72 @@ const SCHOLARSHIPS = [
       "Scholarship grant disbursed to cover college fee expenses"
     ]
   }
+  ,
+  {
+    id: "mukhymantri-yuva-swavalamban-gujarat",
+    name: "Mukhymantri Yuva Swavalamban Yojana (MYSY)",
+    provider: "Education Department, Government of Gujarat",
+    type: "both",
+    levels: ["ug","diploma"],
+    categories: ["general","obc","sc","st","ews"],
+    minScore: 80,
+    maxIncome: 600000,
+    gender: "any",
+    states: ["GJ"],
+    amount: "50% tuition fee assistance (up to ₹2,00,000/yr for Medical, ₹50,000/yr for Engineering) + hostel stipend",
+    deadline: "31 Dec",
+    documents: ["Class 10 or 12 board scorecard with 80th percentile or above","Gujarat domicile/residential certificate","Family income certificate showing total annual income within ₹6,00,000","College admission confirmation letter and fee structure challan","Aadhaar card and bank account details linked to student"],
+    steps: [
+      "Register on MYSY portal (mysy.guj.nic.in) using board exam roll number",
+      "Fill student academic details, college admission quota, and family income particulars",
+      "Visit nearest designated Help Centre with original documents for in-person verification",
+      "Department of Higher Education approves and releases financial grant directly into bank account"
+    ]
+  }
+  ,
+  {
+    id: "jagananna-vidya-deevena-ap",
+    name: "Jagananna Vidya Deevena Fee Reimbursement Scheme",
+    provider: "Higher Education Department, Government of Andhra Pradesh",
+    type: "need",
+    levels: ["ug","pg","diploma"],
+    categories: ["general","obc","sc","st","ews"],
+    minScore: 0,
+    maxIncome: 250000,
+    gender: "any",
+    states: ["AP"],
+    amount: "100% complete fee reimbursement credited directly into mother's bank account in quarterly installments",
+    deadline: "31 Jan",
+    documents: ["Rice card / BPL ration card / certified income certificate (< ₹2.5 Lakhs)","College admission confirmation and tuition fee receipt","Aadhaar cards of both student and mother","Mother's active bank account passbook copy","75% minimum institutional attendance certification"],
+    steps: [
+      "Apply through Village/Ward Volunteer or Grama Ward Sachivalayam portal (JnanaBhumi)",
+      "College Principal verifies student admission and attendance records",
+      "Welfare and Education Assistant conducts door-to-door physical verification",
+      "Quarterly full tuition reimbursement credited directly to the mother's bank account"
+    ]
+  }
+  ,
+  {
+    id: "kerala-suvarna-jubilee-scholarship",
+    name: "Suvarna Jubilee Merit Scholarship",
+    provider: "Directorate of Collegiate Education (DCE), Government of Kerala",
+    type: "both",
+    levels: ["ug","pg"],
+    categories: ["general","obc","sc","st","ews"],
+    minScore: 50,
+    maxIncome: 100000,
+    gender: "any",
+    states: ["KL"],
+    amount: "₹10,000 per annum for undergraduate and postgraduate students from BPL households",
+    deadline: "31 Dec",
+    documents: ["BPL certificate issued by competent local authority (Panchayat/Municipality/Corporation)","Class 12 / Degree final mark list with minimum 50% aggregate marks","Institutional bonafide certificate from government or aided college in Kerala","Kerala domicile proof","Applicant bank passbook copy"],
+    steps: [
+      "Register online on the DCE Scholarship portal (dcescholarship.kerala.gov.in)",
+      "Fill application for Suvarna Jubilee Merit Scholarship and submit institutional details",
+      "Submit printout along with BPL certificate and mark sheets to the college office for verification",
+      "College verifies and forwards data to DCE for direct electronic benefit disbursement"
+    ]
+  }
 ];
 
 /* deadline dates (ISO) for the urgency radar — kept separate from the
@@ -2815,6 +2881,9 @@ const DEADLINE_INFO = {
   "medha-britti-puraskar-odisha": { date: "2026-12-31" },
   "kind-circle-merit-scholarship": { date: "2026-12-31" },
   "tata-housing-wings-scholarship": { date: "2027-01-15" },
+  "mukhymantri-yuva-swavalamban-gujarat": { date: "2026-12-31" },
+  "jagananna-vidya-deevena-ap": { date: "2027-01-31" },
+  "kerala-suvarna-jubilee-scholarship": { date: "2026-12-31" },
 };
 SCHOLARSHIPS.forEach(s => {
   const info = DEADLINE_INFO[s.id] || {};
