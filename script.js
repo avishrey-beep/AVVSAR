@@ -2425,6 +2425,72 @@ const SCHOLARSHIPS = [
       "Grant disbursed directly to selected students to cover educational fees"
     ]
   }
+  ,
+  {
+    id: "daad-wise-research-internship",
+    name: "DAAD WISE Working Internships in Science and Engineering",
+    provider: "German Academic Exchange Service (DAAD)",
+    type: "merit",
+    levels: ["ug"],
+    categories: ["general","obc","sc","st","ews"],
+    minScore: 85,
+    maxIncome: 0,
+    gender: "any",
+    states: "all",
+    amount: "Monthly stipend of €992 + travel subsidy of €1,075 + comprehensive health insurance",
+    deadline: "01 Nov",
+    documents: ["DAAD online portal application form and curriculum vitae (CV)","Formal invitation/acceptance letter from a German professor or research host","Institutional approval/no-objection certificate from Indian university Dean/HOD","Academic transcripts of all completed semesters","Valid Indian passport"],
+    steps: [
+      "Identify and secure an internship placement with a German public university professor",
+      "Register on the DAAD scholarship portal during open application call",
+      "Upload CV, project proposal summary, invitation letter, and institutional endorsement",
+      "DAAD selection committee evaluates research synergy and announces awardees"
+    ]
+  }
+  ,
+  {
+    id: "swiss-government-excellence-scholarship",
+    name: "Swiss Government Excellence Scholarships for Foreign Scholars",
+    provider: "Federal Commission for Scholarships for Foreign Students (FCS), Switzerland",
+    type: "merit",
+    levels: ["pg","phd"],
+    categories: ["general","obc","sc","st","ews"],
+    minScore: 80,
+    maxIncome: 0,
+    gender: "any",
+    states: "all",
+    amount: "Monthly living stipend (CHF 1,920 for PhD) + tuition fee exemption + mandatory health insurance + return flight",
+    deadline: "12 Nov",
+    documents: ["FCS application form with short research proposal (max 5 pages)","Acceptance letter from a professor at an eligible Swiss cantonal university or ETH/EPFL","Two confidential letters of recommendation from academic referees","Attested degree certificates and grade sheets","Medical certificate and copy of valid passport"],
+    steps: [
+      "Obtain written agreement from a Swiss university professor willing to supervise research",
+      "Request official application package from the Swiss Embassy in New Delhi",
+      "Submit three complete hardcopy dossiers to the Swiss Embassy before national deadline",
+      "FCS scientific committee evaluates proposals and issues fellowship offers"
+    ]
+  }
+  ,
+  {
+    id: "charpak-master-scholarship-france",
+    name: "Charpak Master's Scholarship Program",
+    provider: "Embassy of France in India / Campus France",
+    type: "merit",
+    levels: ["pg"],
+    categories: ["general","obc","sc","st","ews"],
+    minScore: 75,
+    maxIncome: 0,
+    gender: "any",
+    states: "all",
+    amount: "Monthly living allowance of €860 + student visa fee waiver + tuition waiver up to €5,000 + social security coverage",
+    deadline: "20 Mar",
+    documents: ["Proof of application or acceptance letter into a Master's degree in a French higher education institution","Curriculum vitae (max 2 pages) and statement of purpose (max 2 pages)","Academic mark sheets for Class 12 and all undergraduate semesters","French language proficiency certificate (optional/if applicable) and English scores","Valid Indian passport"],
+    steps: [
+      "Apply to eligible Master's degree programs at French institutions via Campus France / Études en France",
+      "Create account on the Institut Français India scholarship portal",
+      "Submit online application dossier with statement of purpose and university choices",
+      "French Embassy jury reviews academic merit and announces Charpak laureates"
+    ]
+  }
 ];
 
 /* deadline dates (ISO) for the urgency radar — kept separate from the
@@ -2539,6 +2605,9 @@ const DEADLINE_INFO = {
   "tata-trusts-medical-healthcare": { date: "2026-10-31" },
   "schaeffler-india-hope-engineering": { date: "2027-09-15" },
   "vivo-for-education-scholarship": { date: "2026-11-20" },
+  "daad-wise-research-internship": { date: "2026-11-01" },
+  "swiss-government-excellence-scholarship": { date: "2026-11-12" },
+  "charpak-master-scholarship-france": { date: "2027-03-20" },
 };
 SCHOLARSHIPS.forEach(s => {
   const info = DEADLINE_INFO[s.id] || {};
