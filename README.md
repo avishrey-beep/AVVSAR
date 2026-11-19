@@ -12,7 +12,7 @@
 [![Status](https://img.shields.io/badge/Status-Active_Prototype-2ECC71?style=for-the-badge)]()
 [![Privacy](https://img.shields.io/badge/Privacy-100%25_Client--Side-blue?style=for-the-badge)]()
 [![Tests](https://img.shields.io/badge/Tests-10%20Passing-brightgreen?style=for-the-badge)](test.html)
-[![Scholarships](https://img.shields.io/badge/Scholarships-17%20Schemes-orange?style=for-the-badge)](script.js)
+[![Scholarships](https://img.shields.io/badge/Scholarships-123%20Schemes-orange?style=for-the-badge)](script.js)
 [![CONTRIBUTING](https://img.shields.io/badge/Contributing-Welcome-9B59B6?style=for-the-badge)](CONTRIBUTING.md)
 
 </div>

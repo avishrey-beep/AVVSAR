@@ -3432,6 +3432,11 @@ document.querySelectorAll("[data-scroll]").forEach(el => {
 });
 
 /* count-up stat animation */
+const statScholarshipsEl = document.getElementById("statScholarshipsCount") || document.querySelector(".hero-stats .stat:first-child .stat-num");
+if (statScholarshipsEl && typeof SCHOLARSHIPS !== "undefined" && Array.isArray(SCHOLARSHIPS)) {
+  statScholarshipsEl.dataset.count = SCHOLARSHIPS.length;
+}
+
 const statNums = document.querySelectorAll(".stat-num");
 const statObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
